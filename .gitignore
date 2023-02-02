@@ -1,3 +1,6 @@
+.vscode
+.eslintcache
 node_modules
 npm-debug.log
 yzh
+
