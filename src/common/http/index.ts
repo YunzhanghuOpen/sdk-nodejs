@@ -1,7 +1,7 @@
-import axios from "axios";
-import * as urlencode from "urlencode";
+import axios from "axios"
+import * as urlencode from "urlencode"
 
-const BASE_URL = "https://api-service.yunzhanghu.com/";
+const BASE_URL = "https://api-service.yunzhanghu.com/"
 const getInstance = (
   config: { request_id?: string; dealer_id?: string; base_url?: string } = {}
 ) => {
@@ -13,38 +13,38 @@ const getInstance = (
       "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
     },
     timeout: 30 * 1000,
-  });
+  })
   // 拦截器
   instance.interceptors.request.use(function (config) {
     // urlencode
     if (config.method === "get") {
-      const { params: urlData } = config;
-      const { data, sign, ...resData } = urlData;
+      const { params: urlData } = config
+      const { data, sign, ...resData } = urlData
       config.data = {
         data: urlencode(data),
         sign: urlencode(sign),
         ...resData,
-      };
+      }
     }
-    return config;
-  });
+    return config
+  })
 
   instance.interceptors.response.use(function (response) {
-    const { data } = response;
+    const { data } = response
     if (data) {
-      const { request_id, requestID, ...resResponse } = data;
+      const { request_id, requestID, ...resResponse } = data
       if (request_id || requestID) {
         response.data = {
           ...resResponse,
           request_id: request_id || requestID,
-        };
+        }
       }
     }
 
-    return response;
-  });
+    return response
+  })
 
-  return instance;
-};
+  return instance
+}
 
-export default getInstance;
+export default getInstance
