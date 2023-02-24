@@ -14,9 +14,11 @@ interface GetInvoiceStatResponse {
     dealer_id: string;
     /** 综合服务主体 ID */
     broker_id: string;
-    /** 已开具发票金额 */
+    /** 已开发票金额 */
     invoiced: string;
-    /** 待开具发票金额 */
+    /** 开票中发票金额 */
+    invoicing: string;
+    /** 待开发票金额 */
     not_invoiced: string;
 }
 /** GetInvoiceAmountRequest 查询可开具发票额度和发票开具信息请求 */

@@ -1,4 +1,4 @@
-import YZHclient from "../../common/client";
+import YZHclient from "../../common/client"
 
 /** H5GetStartUrlRequest 预启动请求 */
 interface H5GetStartUrlRequest {
@@ -109,7 +109,7 @@ export class Bizlicxjjh5 extends YZHclient {
   }) {
     super(conf)
   }
-   
+
   // H5GetStartUrl 预启动
   async H5GetStartUrl(
     req: H5GetStartUrlRequest,
@@ -125,5 +125,4 @@ export class Bizlicxjjh5 extends YZHclient {
   ): Promise<H5EcoCityAicStatusResponse> {
     return this.request("get", "/api/aic/new-economy/h5/v1/status", req, { encryption: false }, cb)
   }
-
 }

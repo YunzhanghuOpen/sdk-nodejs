@@ -1,4 +1,4 @@
-import YZHclient from "../../common/client";
+import YZHclient from "../../common/client"
 
 /** CreateBankpayOrderRequest 银行卡实时支付请求 */
 interface CreateBankpayOrderRequest {
@@ -28,7 +28,6 @@ interface CreateBankpayOrderRequest {
 
 /** CreateBankpayOrderResponse 银行卡实时支付返回 */
 interface CreateBankpayOrderResponse {
-  
   order_id: string
   /** 综合服务平台流水号 */
   ref: string
@@ -224,7 +223,6 @@ interface CancelOrderRequest {
 
 /** CancelOrderResponse 取消待支付订单返回 */
 interface CancelOrderResponse {
-  
   ok: string
 }
 
@@ -236,7 +234,6 @@ interface ListAccountRequest {
 
 /** ListAccountResponse 查询平台企业余额返回 */
 interface ListAccountResponse {
-  
   dealer_infos: AccountInfo[]
 }
 
@@ -423,8 +420,7 @@ interface ConfirmBatchOrderRequest {
 }
 
 /** ConfirmBatchOrderResponse 批次确认响应 */
-interface ConfirmBatchOrderResponse {
-}
+interface ConfirmBatchOrderResponse {}
 
 export class Payment extends YZHclient {
   constructor(conf: {
@@ -439,7 +435,7 @@ export class Payment extends YZHclient {
   }) {
     super(conf)
   }
-   
+
   // CreateBankpayOrder 银行卡实时支付
   async CreateBankpayOrder(
     req: CreateBankpayOrderRequest,
@@ -469,7 +465,13 @@ export class Payment extends YZHclient {
     req: GetOrderRequest,
     cb?: (error: null | string, rep: GetOrderResponse) => void
   ): Promise<GetOrderResponse> {
-    return this.request("get", "/api/payment/v1/query-order", req, { encryption: req?.data_type===" encryption" }, cb)
+    return this.request(
+      "get",
+      "/api/payment/v1/query-order",
+      req,
+      { encryption: req?.data_type === "encryption" },
+      cb
+    )
   }
 
   // GetDealerVARechargeAccount 查询平台企业汇款信息
@@ -519,5 +521,4 @@ export class Payment extends YZHclient {
   ): Promise<ConfirmBatchOrderResponse> {
     return this.request("post", "/api/payment/v1/confirm-batch", req, { encryption: false }, cb)
   }
-
 }

@@ -1,4 +1,4 @@
-import YZHclient from "../../common/client";
+import YZHclient from "../../common/client"
 
 /** GetTaxFileRequest 下载个人所得税扣缴明细表请求 */
 interface GetTaxFileRequest {
@@ -57,7 +57,7 @@ export class Tax extends YZHclient {
   }) {
     super(conf)
   }
-   
+
   // GetTaxFile 下载个人所得税扣缴明细表
   async GetTaxFile(
     req: GetTaxFileRequest,
@@ -73,5 +73,4 @@ export class Tax extends YZHclient {
   ): Promise<GetUserCrossResponse> {
     return this.request("post", "/api/tax/v1/user/cross", req, { encryption: false }, cb)
   }
-
 }

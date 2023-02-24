@@ -1,4 +1,4 @@
-import YZHclient from "../../common/client";
+import YZHclient from "../../common/client"
 
 /** GetInvoiceStatRequest 查询平台企业已开具和待开具发票金额请求 */
 interface GetInvoiceStatRequest {
@@ -151,8 +151,7 @@ interface SendReminderEmailRequest {
 }
 
 /** SendReminderEmailResponse 发送发票扫描件压缩包下载链接邮件返回 */
-interface SendReminderEmailResponse {
-}
+interface SendReminderEmailResponse {}
 
 /** NotifyInvoiceDoneRequest 发票开具完成通知 */
 interface NotifyInvoiceDoneRequest {
@@ -205,7 +204,7 @@ export class Invoice extends YZHclient {
   }) {
     super(conf)
   }
-   
+
   // GetInvoiceStat 查询平台企业已开具和待开具发票金额
   async GetInvoiceStat(
     req: GetInvoiceStatRequest,
@@ -235,7 +234,13 @@ export class Invoice extends YZHclient {
     req: GetInvoiceStatusRequest,
     cb?: (error: null | string, rep: GetInvoiceStatusResponse) => void
   ): Promise<GetInvoiceStatusResponse> {
-    return this.request("post", "/api/invoice/v2/invoice/invoice-status", req, { encryption: false }, cb)
+    return this.request(
+      "post",
+      "/api/invoice/v2/invoice/invoice-status",
+      req,
+      { encryption: false },
+      cb
+    )
   }
 
   // GetInvoiceFile 下载 PDF 版发票
@@ -243,7 +248,13 @@ export class Invoice extends YZHclient {
     req: GetInvoiceFileRequest,
     cb?: (error: null | string, rep: GetInvoiceFileResponse) => void
   ): Promise<GetInvoiceFileResponse> {
-    return this.request("post", "/api/invoice/v2/invoice/invoice-pdf", req, { encryption: false }, cb)
+    return this.request(
+      "post",
+      "/api/invoice/v2/invoice/invoice-pdf",
+      req,
+      { encryption: false },
+      cb
+    )
   }
 
   // SendReminderEmail 发送发票扫描件压缩包下载链接邮件
@@ -251,7 +262,12 @@ export class Invoice extends YZHclient {
     req: SendReminderEmailRequest,
     cb?: (error: null | string, rep: SendReminderEmailResponse) => void
   ): Promise<SendReminderEmailResponse> {
-    return this.request("post", "/api/invoice/v2/invoice/reminder/email", req, { encryption: false }, cb)
+    return this.request(
+      "post",
+      "/api/invoice/v2/invoice/reminder/email",
+      req,
+      { encryption: false },
+      cb
+    )
   }
-
 }

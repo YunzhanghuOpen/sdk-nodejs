@@ -52,7 +52,7 @@ interface RechargeRecordInfo {
     /** 平台企业付款银行账号 */
     recharge_account_no: string;
 }
-/** ListDailyOrderRequest 查询日订单请求 */
+/** ListDailyOrderRequest 查询日订单数据请求 */
 interface ListDailyOrderRequest {
     /** 订单查询日期, 格式：yyyy-MM-dd格式：yyyy-MM-dd */
     order_date: string;
@@ -65,7 +65,7 @@ interface ListDailyOrderRequest {
     /** 如果为 encryption，则对返回的 data 进行加密 */
     data_type: string;
 }
-/** ListDailyOrderResponse 查询日订单返回 */
+/** ListDailyOrderResponse 查询日订单数据返回 */
 interface ListDailyOrderResponse {
     /** 总数目 */
     total_num: number;
@@ -96,6 +96,8 @@ interface DealerOrderInfo {
     bill: string;
     /** 订单状态 */
     status: string;
+    /** 订单状态码描述 */
+    status_message: string;
     /** 订单详情 */
     status_detail: string;
     /** 订单详细状态码描述 */
@@ -129,7 +131,7 @@ interface ListDailyBillResponse {
     /** 总条数 */
     total_num: number;
     /** 条目信息 */
-    bills: DealerBillInfo[];
+    list: DealerBillInfo[];
 }
 /** DealerBillInfo 流水详情 */
 interface DealerBillInfo {

@@ -1,4 +1,4 @@
-import YZHclient from "../../common/client";
+import YZHclient from "../../common/client"
 
 /** BankCardFourAuthVerifyRequest 银行卡四要素鉴权请求（下发短信验证码）请求 */
 interface BankCardFourAuthVerifyRequest {
@@ -35,8 +35,7 @@ interface BankCardFourAuthConfirmRequest {
 }
 
 /** BankCardFourAuthConfirmResponse 银行卡四要素确认请求（上传短信验证码）返回 */
-interface BankCardFourAuthConfirmResponse {
-}
+interface BankCardFourAuthConfirmResponse {}
 
 /** BankCardFourVerifyRequest 银行卡四要素验证请求 */
 interface BankCardFourVerifyRequest {
@@ -51,8 +50,7 @@ interface BankCardFourVerifyRequest {
 }
 
 /** BankCardFourVerifyResponse 银行卡四要素验证返回 */
-interface BankCardFourVerifyResponse {
-}
+interface BankCardFourVerifyResponse {}
 
 /** BankCardThreeVerifyRequest 银行卡三要素验证请求 */
 interface BankCardThreeVerifyRequest {
@@ -65,8 +63,7 @@ interface BankCardThreeVerifyRequest {
 }
 
 /** BankCardThreeVerifyResponse 银行卡三要素验证返回 */
-interface BankCardThreeVerifyResponse {
-}
+interface BankCardThreeVerifyResponse {}
 
 /** IDCardVerifyRequest 身份证实名验证请求 */
 interface IDCardVerifyRequest {
@@ -77,8 +74,7 @@ interface IDCardVerifyRequest {
 }
 
 /** IDCardVerifyResponse 身份证实名验证返回 */
-interface IDCardVerifyResponse {
-}
+interface IDCardVerifyResponse {}
 
 /** UserExemptedInfoRequest 上传免验证用户名单信息请求 */
 interface UserExemptedInfoRequest {
@@ -142,7 +138,6 @@ interface UserWhiteCheckRequest {
 
 /** UserWhiteCheckResponse 查看免验证用户名单是否存在返回 */
 interface UserWhiteCheckResponse {
-  
   ok: boolean
 }
 
@@ -179,7 +174,7 @@ export class Authentication extends YZHclient {
   }) {
     super(conf)
   }
-   
+
   // BankCardFourAuthVerify 银行卡四要素鉴权请求（下发短信验证码）
   async BankCardFourAuthVerify(
     req: BankCardFourAuthVerifyRequest,
@@ -201,7 +196,13 @@ export class Authentication extends YZHclient {
     req: BankCardFourVerifyRequest,
     cb?: (error: null | string, rep: BankCardFourVerifyResponse) => void
   ): Promise<BankCardFourVerifyResponse> {
-    return this.request("post", "/authentication/verify-bankcard-four-factor", req, { encryption: false }, cb)
+    return this.request(
+      "post",
+      "/authentication/verify-bankcard-four-factor",
+      req,
+      { encryption: false },
+      cb
+    )
   }
 
   // BankCardThreeVerify 银行卡三要素验证
@@ -209,7 +210,13 @@ export class Authentication extends YZHclient {
     req: BankCardThreeVerifyRequest,
     cb?: (error: null | string, rep: BankCardThreeVerifyResponse) => void
   ): Promise<BankCardThreeVerifyResponse> {
-    return this.request("post", "/authentication/verify-bankcard-three-factor", req, { encryption: false }, cb)
+    return this.request(
+      "post",
+      "/authentication/verify-bankcard-three-factor",
+      req,
+      { encryption: false },
+      cb
+    )
   }
 
   // IDCardVerify 身份证实名验证
@@ -225,7 +232,13 @@ export class Authentication extends YZHclient {
     req: UserExemptedInfoRequest,
     cb?: (error: null | string, rep: UserExemptedInfoResponse) => void
   ): Promise<UserExemptedInfoResponse> {
-    return this.request("post", "/api/payment/v1/user/exempted/info", req, { encryption: false }, cb)
+    return this.request(
+      "post",
+      "/api/payment/v1/user/exempted/info",
+      req,
+      { encryption: false },
+      cb
+    )
   }
 
   // UserWhiteCheck 查看免验证用户名单是否存在
@@ -243,5 +256,4 @@ export class Authentication extends YZHclient {
   ): Promise<GetBankCardInfoResponse> {
     return this.request("get", "/api/payment/v1/card", req, { encryption: false }, cb)
   }
-
 }
