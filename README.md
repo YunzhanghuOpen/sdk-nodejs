@@ -6,7 +6,7 @@
 
 ## 环境要求
 
-云账户 SDK for Node.js 支持 Node.js 12.0.0 版本及以上版本。
+云账户 SDK for Node.js 支持 Node.js 12.0.0 及以上版本。
 
 ## 配置密钥
 
@@ -49,7 +49,7 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 
 1. 执行以下安装命令安装云账户 Node.js SDK：
 
-   > npm install @yunzhanghu/sdk-nodej --save
+   > npm install @yunzhanghu/sdk-nodejs --save
 
 2. 在您的代码中引用对应模块代码，可参考示例。
 
