@@ -1,7 +1,9 @@
 import axios from "axios"
 import * as urlencode from "urlencode"
-
+import * as pkg from "../../../package.json"
+import * as child_process from "child_process"
 const BASE_URL = "https://api-service.yunzhanghu.com/"
+
 const getInstance = (
   config: { request_id?: string; dealer_id?: string; base_url?: string } = {}
 ) => {
@@ -11,12 +13,17 @@ const getInstance = (
       "request-id": config?.request_id,
       "dealer-id": config?.dealer_id,
       "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      "User-Agent": `yunzhanghu-sdk-nodejs/${pkg.version}/${child_process
+        .execSync("uname -m -r -s")
+        .toString("utf-8")
+        .replace("\n", "")}/${process.version}`,
     },
     timeout: 30 * 1000,
   })
+
   // 拦截器
   instance.interceptors.request.use(function (config) {
-    // urlencode
+    // URL Encode
     if (config.method === "get") {
       const { params: urlData } = config
       const { data, sign, ...resData } = urlData

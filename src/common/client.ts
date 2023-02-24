@@ -17,10 +17,11 @@ export class YZHClient {
   public yzh_public_key: string
   public sign_type: "rsa" | "sha256"
   public base_url?: string
+
   /**
    * 构造函数参数
-   * @param {string} dealer_id 平台企业ID
-   * @param {string} broker_id 综合服务主体ID
+   * @param {string} dealer_id 平台企业 ID
+   * @param {string} broker_id 综合服务主体 ID
    * @param {string} app_key App Key
    * @param {string} des3_key 3DES Key
    * @param {string} private_key 平台企业私钥
@@ -64,11 +65,12 @@ export class YZHClient {
       )
     }
   }
-  // 基础请求方法
+
+  // 基础请求：进行请求实例生成 Header，动态设置、请求体包装等偏底层操作
   private doRequest(method: string, action: string, req: any): Promise<ResponseData> {
     // 请求参数加密
     const encryptParams = this.generatorResquestParams(req)
-    // 生成请求实例 配置header
+    // 生成请求实例，配置 Header
     const instance = getInstance({
       request_id: req?.request_id ?? this.mess(),
       dealer_id: this.dealer_id,
@@ -84,7 +86,8 @@ export class YZHClient {
     }
     return instance(instanceConf)
   }
-  // 公共请求方法
+
+  // 公共请求：调用封装好的基础请求方法 doRequest，进行发送请求与响应内容处理
   async request(
     method: string,
     action: string,
@@ -98,7 +101,7 @@ export class YZHClient {
     }
     try {
       const result = await this.doRequest(method, action, req ?? {})
-      // 错误码处理 =>验签 =>解密
+      // 错误码处理 > 验签 > 解密
       const responseData = await this.parseResponse(result, options?.encryption)
       cb && cb(null, responseData)
 
@@ -111,8 +114,9 @@ export class YZHClient {
       }
     }
   }
+
   /**
-   * 加密请求参数
+   * 请求参数加密
    * @param {object} params
    * @returns {*} object
    */
@@ -137,10 +141,11 @@ export class YZHClient {
       throw new YZHSDKHttpException(`${err}`)
     }
   }
+
   /**
-   * 生成签名方法RSA-SHA256
+   * 生成签名（RSA-SHA256）
    * @param {string} data 经过加密后的具体数据
-   * @param {string} mess 随机数，用于签名
+   * @param {string} mess 自定义随机字符串，用于签名
    * @param {string} timestamp 时间戳，精确到秒
    * @returns {string} 签名内容
    */
@@ -157,9 +162,9 @@ export class YZHClient {
   }
 
   /**
-   * 生成签名方法HmacSHA256
+   * 生成签名（HmacSHA256）
    * @param {string} data 经过加密后的具体数据
-   * @param {string} mess 随机数，用于签名
+   * @param {string} mess 自定义随机字符串，用于签名
    * @param {string} timestamp 时间戳，精确到秒
    * @returns {string} 签名内容
    */
@@ -175,11 +180,11 @@ export class YZHClient {
   }
 
   /**
-   * 生成签名方法
+   * 生成签名
    * @param {string} data 经过加密后的具体数据
-   * @param {string} mess 随机数，用于签名
+   * @param {string} mess 自定义随机字符串，用于签名
    * @param {string} timestamp 时间戳，精确到秒
-   * @param {string} sign_type 签名生成方式
+   * @param {string} sign_type 签名方式
    * @returns {string} 签名内容
    */
   private generatorSign = (data: string, mess: string, timestamp: string) => {
@@ -198,7 +203,8 @@ export class YZHClient {
       throw new YZHSDKHttpException(`${err}`)
     }
   }
-  // 随机数生成
+
+  // 自定义随机字符串
   private mess = () => {
     const buf = crypto.randomBytes(16)
     const token = buf.toString("hex")
@@ -206,7 +212,7 @@ export class YZHClient {
   }
 
   /**
-   * 3DES加密数据
+   * 3DES 加密数据
    * @param plaintext
    * @returns 字符串加密数据
    */
@@ -225,27 +231,28 @@ export class YZHClient {
     }
   }
 
-  // 返回结果处理
+  // 返回处理结果
   private async parseResponse(result: ResponseData, encryption?: boolean) {
     if (result.status !== 200) {
       const yzhError = new YZHSDKHttpException(result.statusText)
       yzhError.httpCode = result.status
       throw yzhError
     } else {
-      // 200
+      // httpcode 200
       const { data: axiosData } = result
       let response = axiosData
-      //需解密
+      // 需解密
       if (encryption) {
         response = { ...response, data: this.decryption(response.data) }
       }
       return response
     }
   }
+
   /**
-   *3DES解密数据
+   * 3DES 解密数据
    * @param ciphertext
-   * @returns 明文
+   * @returns 明文数据
    */
   decryption = (ciphertext: string) => {
     try {
@@ -260,14 +267,14 @@ export class YZHClient {
       throw new YZHSDKHttpException(`${err}`)
     }
   }
+
   /**
-   *
-   * @description 工具方法 验签
+   * 验签
    * @param {string} data 返回的数据
-   * @param {string} mess 返回的随机数
+   * @param {string} mess 返回的随机字符串
    * @param {string} timestamp 返回的时间戳
    * @param {string} sign 返回的签名
-   * @returns {boolean} true:验签成功;false:验签失败
+   * @returns {boolean} true：验签成功；false：验签失败
    */
   verifyRSASHA256 = (data: string, mess: string, timestamp: string, sign: string) => {
     try {
@@ -290,8 +297,9 @@ export class YZHClient {
       throw new YZHSDKHttpException(`${err}`)
     }
   }
+
   /**
-   * @description 工具方法 为文件密码解密
+   * 文件密码解密
    * @param ciphertextbase64
    * @returns 解密后的密码
    */
@@ -313,14 +321,14 @@ export class YZHClient {
   }
 
   /**
-   * 验签+解密一体方法
+   * 验签+解密
    * @param responseData 回调返回对象
    * @returns
    */
   notifyDecoder: (params: {
     /** 返回的数据 */
     data: string
-    /** mess 返回的随机数 */
+    /** 返回的随机字符串 */
     mess: string
     /** 返回的时间戳 */
     timestamp: string

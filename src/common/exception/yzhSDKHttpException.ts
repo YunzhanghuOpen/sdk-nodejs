@@ -1,7 +1,7 @@
 export default class YZHSDKHttpException extends Error {
-  // 请求id
+  // 请求 ID
   request_id: string
-  // http状态码
+  // HTTP 状态码
   httpCode?: number
   // 接口返回状态码
   code?: string
