@@ -1,4 +1,4 @@
-import YZHclient from "../../common/client";
+import YZHclient from "../../common/client"
 
 /** ApiUseSignContractRequest 获取协议预览 URL 请求 */
 interface ApiUseSignContractRequest {
@@ -89,7 +89,7 @@ export class Apiusersign extends YZHclient {
   }) {
     super(conf)
   }
-   
+
   // ApiUseSignContract 获取协议预览 URL
   async ApiUseSignContract(
     req: ApiUseSignContractRequest,
@@ -121,5 +121,4 @@ export class Apiusersign extends YZHclient {
   ): Promise<ApiUserSignReleaseResponse> {
     return this.request("post", "/api/sign/v1/user/release", req, { encryption: false }, cb)
   }
-
 }

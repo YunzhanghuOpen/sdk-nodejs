@@ -1,4 +1,4 @@
-import YZHclient from "../../common/client";
+import YZHclient from "../../common/client"
 
 /** H5UserPresignRequest 预申请签约请求 */
 interface H5UserPresignRequest {
@@ -109,7 +109,7 @@ export class H5usersign extends YZHclient {
   }) {
     super(conf)
   }
-   
+
   // H5UserPresign 预申请签约
   async H5UserPresign(
     req: H5UserPresignRequest,
@@ -141,5 +141,4 @@ export class H5usersign extends YZHclient {
   ): Promise<H5UserReleaseResponse> {
     return this.request("post", "/api/sdk/v1/sign/release", req, { encryption: false }, cb)
   }
-
 }

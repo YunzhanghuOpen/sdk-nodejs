@@ -9,7 +9,7 @@ interface H5UserPresignRequest {
     real_name: string;
     /** 证件号码 */
     id_card: string;
-    /** 证件类型 0：身份证 2：港澳居民来往内地通行证 3：护照 5：台湾居民来往大陆通行证 */
+    /** 证件类型 0：身份证 2：港澳居民来往内地通行证 3：护照 5：台湾居民来往大陆通行证 9：港澳居民居住证 10：台湾居民居住证 11：外国人永久居留身份证 12：外国人工作许可证 */
     certificate_type: number;
 }
 /** H5UserPresignResponse 预申请签约返回 */
@@ -18,6 +18,8 @@ interface H5UserPresignResponse {
     uid: string;
     /** H5 签约 token */
     token: string;
+    /** 签约状态 */
+    status: number;
 }
 /** H5UserSignRequest 申请签约请求 */
 interface H5UserSignRequest {
@@ -63,7 +65,7 @@ interface H5UserReleaseRequest {
     real_name: string;
     /** 证件号码 */
     id_card: string;
-    /** 证件类型   0：身份证 2：港澳居民来往内地通行证 3：护照 5：台湾居民来往大陆通行证 */
+    /** 证件类型 0：身份证 2：港澳居民来往内地通行证 3：护照 5：台湾居民来往大陆通行证 9：港澳居民居住证 10：台湾居民居住证 11：外国人永久居留身份证 12：外国人工作许可证 */
     certificate_type: number;
 }
 /** H5UserReleaseResponse 用户解约（测试账号专用接口）返回 */
