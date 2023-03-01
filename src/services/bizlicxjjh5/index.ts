@@ -1,4 +1,4 @@
-import YZHclient from "../../common/client"
+import YZHclient from "../../common/client";
 
 /** H5GetStartUrlRequest 预启动请求 */
 interface H5GetStartUrlRequest {
@@ -17,7 +17,7 @@ interface H5GetStartUrlRequest {
   /** 跳转 URL */
   return_url: string
   /** H5 页面 Title */
-  custom_title: number
+  customer_title: number
 }
 
 /** H5GetStartUrlResponse 预启动返回 */

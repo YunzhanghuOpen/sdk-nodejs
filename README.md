@@ -55,8 +55,8 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 
 ### 通过源码包安装
 
-1. 前往 [Github 仓库](https://github.com/YunzhanghuOpen/sdk-nodejs) 下载源码压缩包;
-2. 解压源码包到您项目的合适位置;
+1. 前往 [Github 仓库](https://github.com/YunzhanghuOpen/sdk-nodejs) 下载源码压缩包；
+2. 解压源码包到您项目的合适位置；
 3. 在您的代码中引用对应模块代码，可参考示例。
 
 ## 快速使用
