@@ -89,7 +89,7 @@ interface H5APIEcoCityAicStatusResponse {
     /** 姓名 */
     real_name: string;
 }
-export declare class Bizlicxjjh5api extends YZHclient {
+export declare class BizlicXjjH5APIServiceClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
         broker_id: string;

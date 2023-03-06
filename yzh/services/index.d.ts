@@ -6,5 +6,5 @@ export { H5UserSignServiceClient } from "./h5usersign";
 export { InvoiceClient } from "./invoice";
 export { PaymentClient } from "./payment";
 export { TaxClient } from "./tax";
-export { Bizlicxjjh5api } from "./bizlicxjjh5api";
-export { Bizlicxjjh5 } from "./bizlicxjjh5";
+export { BizlicXjjH5APIServiceClient } from "./bizlicxjjh5api";
+export { BizlicXjjH5ServiceClient } from "./bizlicxjjh5";

@@ -3,7 +3,7 @@ const config = require("./conf/config.js")
 
 // 个体工商户注册（云账户新经济 H5）
 
-const bizlicxjjh5 = new yzhAPI.Bizlicxjjh5({
+const bizlicxjjh5 = new yzhAPI.BizlicXjjH5ServiceClient({
   ...config,
   base_url: "https://api-aic.yunzhanghu.com/",
 })

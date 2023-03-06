@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Bizlicxjjh5 = exports.Bizlicxjjh5api = exports.TaxClient = exports.PaymentClient = exports.InvoiceClient = exports.H5UserSignServiceClient = exports.DataServiceClient = exports.AuthenticationClient = exports.ApiUserSignServiceClient = exports.Util = void 0;
+exports.BizlicXjjH5ServiceClient = exports.BizlicXjjH5APIServiceClient = exports.TaxClient = exports.PaymentClient = exports.InvoiceClient = exports.H5UserSignServiceClient = exports.DataServiceClient = exports.AuthenticationClient = exports.ApiUserSignServiceClient = exports.Util = void 0;
 var utils_1 = require("../common/utils");
 Object.defineProperty(exports, "Util", { enumerable: true, get: function () { return utils_1.Util; } });
 var apiusersign_1 = require("./apiusersign");
@@ -18,6 +18,6 @@ Object.defineProperty(exports, "PaymentClient", { enumerable: true, get: functio
 var tax_1 = require("./tax");
 Object.defineProperty(exports, "TaxClient", { enumerable: true, get: function () { return tax_1.TaxClient; } });
 var bizlicxjjh5api_1 = require("./bizlicxjjh5api");
-Object.defineProperty(exports, "Bizlicxjjh5api", { enumerable: true, get: function () { return bizlicxjjh5api_1.Bizlicxjjh5api; } });
+Object.defineProperty(exports, "BizlicXjjH5APIServiceClient", { enumerable: true, get: function () { return bizlicxjjh5api_1.BizlicXjjH5APIServiceClient; } });
 var bizlicxjjh5_1 = require("./bizlicxjjh5");
-Object.defineProperty(exports, "Bizlicxjjh5", { enumerable: true, get: function () { return bizlicxjjh5_1.Bizlicxjjh5; } });
+Object.defineProperty(exports, "BizlicXjjH5ServiceClient", { enumerable: true, get: function () { return bizlicxjjh5_1.BizlicXjjH5ServiceClient; } });

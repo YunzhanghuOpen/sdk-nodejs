@@ -96,7 +96,7 @@ interface NotifyH5EcoCityAicRequest {
   type: number
 }
 
-export class Bizlicxjjh5 extends YZHclient {
+export class BizlicXjjH5ServiceClient extends YZHclient {
   constructor(conf: {
     dealer_id: string
     broker_id: string

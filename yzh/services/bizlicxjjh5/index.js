@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Bizlicxjjh5 = void 0;
+exports.BizlicXjjH5ServiceClient = void 0;
 const client_1 = require("../../common/client");
-class Bizlicxjjh5 extends client_1.default {
+class BizlicXjjH5ServiceClient extends client_1.default {
     constructor(conf) {
         super(conf);
     }
@@ -15,4 +15,4 @@ class Bizlicxjjh5 extends client_1.default {
         return this.request("get", "/api/aic/new-economy/h5/v1/status", req, { encryption: false }, cb);
     }
 }
-exports.Bizlicxjjh5 = Bizlicxjjh5;
+exports.BizlicXjjH5ServiceClient = BizlicXjjH5ServiceClient;
