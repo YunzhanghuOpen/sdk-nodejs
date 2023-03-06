@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Payment = void 0;
+exports.PaymentClient = void 0;
 const client_1 = require("../../common/client");
-class Payment extends client_1.default {
+class PaymentClient extends client_1.default {
     constructor(conf) {
         super(conf);
     }
@@ -47,4 +47,4 @@ class Payment extends client_1.default {
         return this.request("post", "/api/payment/v1/confirm-batch", req, { encryption: false }, cb);
     }
 }
-exports.Payment = Payment;
+exports.PaymentClient = PaymentClient;

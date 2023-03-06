@@ -223,7 +223,7 @@ interface StatementDetail {
     /** 项目名称 */
     project_name: string;
 }
-export declare class Dataservice extends YZHclient {
+export declare class DataServiceClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
         broker_id: string;

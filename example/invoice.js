@@ -3,7 +3,7 @@ const config = require("./conf/config.js")
 
 // 发票开具
 
-const invoice = new yzhAPI.Invoice(config)
+const invoice = new yzhAPI.InvoiceClient(config)
 
 // 查询平台企业已开具和待开具发票金额
 invoice

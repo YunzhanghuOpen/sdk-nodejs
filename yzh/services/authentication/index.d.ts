@@ -130,7 +130,7 @@ interface GetBankCardInfoResponse {
     /** 云账户是否支持向该银行支付 */
     is_support: boolean;
 }
-export declare class Authentication extends YZHclient {
+export declare class AuthenticationClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
         broker_id: string;

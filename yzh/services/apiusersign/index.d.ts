@@ -67,7 +67,7 @@ interface ApiUserSignReleaseResponse {
     /** 是否解约成功 */
     status: string;
 }
-export declare class Apiusersign extends YZHclient {
+export declare class ApiUserSignServiceClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
         broker_id: string;

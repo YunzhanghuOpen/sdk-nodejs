@@ -5,7 +5,7 @@ const path = require("path")
 
 // 用户信息验证
 
-const authentication = new yzhAPI.Authentication(config)
+const authentication = new yzhAPI.AuthenticationClient(config)
 
 // 银行卡四要素鉴权请求（下发短信验证码）
 authentication

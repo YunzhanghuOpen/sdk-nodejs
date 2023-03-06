@@ -76,7 +76,7 @@ interface ApiUserSignReleaseResponse {
   status: string
 }
 
-export class Apiusersign extends YZHclient {
+export class ApiUserSignServiceClient extends YZHclient {
   constructor(conf: {
     dealer_id: string
     broker_id: string

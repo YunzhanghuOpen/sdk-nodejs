@@ -76,8 +76,8 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 ```
 const yunzhanghu = require("@yunzhanghu/sdk-nodejs")
 
-// 实例化要请求的 client 对象(以 Invoice 为例)
-const client = new yunzhanghu.Invoice({
+// 实例化要请求的 client 对象(以 InvoiceClient 为例)
+const client = new yunzhanghu.InvoiceClient({
   // 为了保护密钥安全，建议将密钥配置到环境变量中或配置文件中。
   // 请勿在代码中使用硬编码密钥，可能导致密钥暴露，存在安全隐患。
 

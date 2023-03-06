@@ -3,7 +3,7 @@ const config = require("./conf/config.js")
 
 // H5 签约
 
-const h5usersign = new yzhAPI.H5usersign(config)
+const h5usersign = new yzhAPI.H5UserSignServiceClient(config)
 
 // 预申请签约
 h5usersign

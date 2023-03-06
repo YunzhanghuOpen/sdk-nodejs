@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.H5usersign = void 0;
+exports.H5UserSignServiceClient = void 0;
 const client_1 = require("../../common/client");
-class H5usersign extends client_1.default {
+class H5UserSignServiceClient extends client_1.default {
     constructor(conf) {
         super(conf);
     }
@@ -23,4 +23,4 @@ class H5usersign extends client_1.default {
         return this.request("post", "/api/sdk/v1/sign/release", req, { encryption: false }, cb);
     }
 }
-exports.H5usersign = H5usersign;
+exports.H5UserSignServiceClient = H5UserSignServiceClient;

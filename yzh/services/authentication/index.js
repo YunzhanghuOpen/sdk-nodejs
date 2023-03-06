@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Authentication = void 0;
+exports.AuthenticationClient = void 0;
 const client_1 = require("../../common/client");
-class Authentication extends client_1.default {
+class AuthenticationClient extends client_1.default {
     constructor(conf) {
         super(conf);
     }
@@ -39,4 +39,4 @@ class Authentication extends client_1.default {
         return this.request("get", "/api/payment/v1/card", req, { encryption: false }, cb);
     }
 }
-exports.Authentication = Authentication;
+exports.AuthenticationClient = AuthenticationClient;

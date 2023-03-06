@@ -2,7 +2,7 @@ const yzhAPI = require("../yzh/index.js")
 const config = require("./conf/config.js")
 
 // 个人所得税扣缴明细表
-const tax = new yzhAPI.Tax(config)
+const tax = new yzhAPI.TaxClient(config)
 
 // 下载个人所得税扣缴明细表
 tax

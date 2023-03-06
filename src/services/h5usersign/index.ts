@@ -96,7 +96,7 @@ interface NotifyH5UserSignRequest {
   phone: string
 }
 
-export class H5usersign extends YZHclient {
+export class H5UserSignServiceClient extends YZHclient {
   constructor(conf: {
     dealer_id: string
     broker_id: string
