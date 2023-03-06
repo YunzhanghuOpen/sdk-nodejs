@@ -227,7 +227,7 @@ class YZHClient {
     doRequest(method, action, req) {
         var _a;
         // 请求参数加密
-        const encryptParams = this.generatorResquestParams(req);
+        const encryptParams = this.generatorRequestParams(req);
         // 生成请求实例，配置 Header
         const instance = (0, http_1.default)({
             request_id: (_a = req === null || req === void 0 ? void 0 : req.request_id) !== null && _a !== void 0 ? _a : this.mess(),
@@ -272,7 +272,7 @@ class YZHClient {
      * @param {object} params
      * @returns {*} object
      */
-    generatorResquestParams(params) {
+    generatorRequestParams(params) {
         try {
             const t = Date.now().toString();
             const m = this.mess();

@@ -1,4 +1,4 @@
-import YZHclient from "../../common/client";
+import YZHclient from "../../common/client"
 
 /** H5GetStartUrlRequest 预启动请求 */
 interface H5GetStartUrlRequest {

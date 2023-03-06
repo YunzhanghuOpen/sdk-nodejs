@@ -39,7 +39,7 @@ export declare class YZHClient {
      * @param {object} params
      * @returns {*} object
      */
-    private generatorResquestParams;
+    private generatorRequestParams;
     /**
      * 生成签名（RSA-SHA256）
      * @param {string} data 经过加密后的具体数据
