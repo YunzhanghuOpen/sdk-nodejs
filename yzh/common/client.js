@@ -225,12 +225,12 @@ class YZHClient {
     }
     // 基础请求：进行请求实例生成 Header，动态设置、请求体包装等偏底层操作
     doRequest(method, action, req) {
-        var _a;
+        const { request_id, ...resReq } = req;
         // 请求参数加密
-        const encryptParams = this.generatorRequestParams(req);
+        const encryptParams = this.generatorRequestParams(resReq);
         // 生成请求实例，配置 Header
         const instance = (0, http_1.default)({
-            request_id: (_a = req === null || req === void 0 ? void 0 : req.request_id) !== null && _a !== void 0 ? _a : this.mess(),
+            request_id: request_id !== null && request_id !== void 0 ? request_id : this.mess(),
             dealer_id: this.dealer_id,
             base_url: this.base_url,
         });

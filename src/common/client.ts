@@ -68,11 +68,12 @@ export class YZHClient {
 
   // 基础请求：进行请求实例生成 Header，动态设置、请求体包装等偏底层操作
   private doRequest(method: string, action: string, req: any): Promise<ResponseData> {
+    const { request_id, ...resReq } = req
     // 请求参数加密
-    const encryptParams = this.generatorRequestParams(req)
+    const encryptParams = this.generatorRequestParams(resReq)
     // 生成请求实例，配置 Header
     const instance = getInstance({
-      request_id: req?.request_id ?? this.mess(),
+      request_id: request_id ?? this.mess(),
       dealer_id: this.dealer_id,
       base_url: this.base_url,
     })
