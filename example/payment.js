@@ -1,7 +1,7 @@
 const yzhAPI = require("../yzh/index.js")
 const config = require("./conf/config.js")
 // 实时支付
-const payment = new yzhAPI.Payment(config)
+const payment = new yzhAPI.PaymentClient(config)
 
 // 银行卡实时支付
 payment

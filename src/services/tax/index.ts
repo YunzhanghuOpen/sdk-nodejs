@@ -44,7 +44,7 @@ interface GetUserCrossResponse {
   is_cross: boolean
 }
 
-export class Tax extends YZHclient {
+export class TaxClient extends YZHclient {
   constructor(conf: {
     dealer_id: string
     broker_id: string

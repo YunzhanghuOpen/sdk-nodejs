@@ -38,7 +38,7 @@ interface GetUserCrossResponse {
     /** 跨集团标识 */
     is_cross: boolean;
 }
-export declare class Tax extends YZHclient {
+export declare class TaxClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
         broker_id: string;

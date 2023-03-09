@@ -3,7 +3,7 @@ const config = require("./conf/config.js")
 
 // 对账文件获取
 
-const dataService = new yzhAPI.Dataservice(config)
+const dataService = new yzhAPI.DataServiceClient(config)
 
 // 查询日订单文件
 dataService

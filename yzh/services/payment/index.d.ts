@@ -333,7 +333,7 @@ interface ConfirmBatchOrderRequest {
 /** ConfirmBatchOrderResponse 批次确认响应 */
 interface ConfirmBatchOrderResponse {
 }
-export declare class Payment extends YZHclient {
+export declare class PaymentClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
         broker_id: string;

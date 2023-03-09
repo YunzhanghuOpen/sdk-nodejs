@@ -73,7 +73,7 @@ interface H5UserReleaseResponse {
     /** 是否解约成功 */
     status: string;
 }
-export declare class H5usersign extends YZHclient {
+export declare class H5UserSignServiceClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
         broker_id: string;

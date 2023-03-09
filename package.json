@@ -1,6 +1,6 @@
 {
   "name": "@yunzhanghu/sdk-nodejs",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "云账户 SDK for Node.js",
   "main": "yzh/index.js",
   "scripts": {

@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Tax = void 0;
+exports.TaxClient = void 0;
 const client_1 = require("../../common/client");
-class Tax extends client_1.default {
+class TaxClient extends client_1.default {
     constructor(conf) {
         super(conf);
     }
@@ -15,4 +15,4 @@ class Tax extends client_1.default {
         return this.request("post", "/api/tax/v1/user/cross", req, { encryption: false }, cb);
     }
 }
-exports.Tax = Tax;
+exports.TaxClient = TaxClient;

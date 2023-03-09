@@ -161,7 +161,7 @@ interface GetBankCardInfoResponse {
   is_support: boolean
 }
 
-export class Authentication extends YZHclient {
+export class AuthenticationClient extends YZHclient {
   constructor(conf: {
     dealer_id: string
     broker_id: string

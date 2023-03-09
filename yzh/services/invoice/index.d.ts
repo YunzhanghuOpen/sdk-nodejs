@@ -101,6 +101,37 @@ interface GetInvoiceStatusResponse {
     /** 快递单号 */
     waybill_number: string[];
 }
+/** GetInvoiceInformationRequest 查询发票信息请求 */
+interface GetInvoiceInformationRequest {
+    /** 发票申请编号 */
+    invoice_apply_id: string;
+    /** 发票申请单 ID */
+    application_id: string;
+}
+/** GetInvoiceInformationResponse 查询发票信息返回 */
+interface GetInvoiceInformationResponse {
+    /** 发票信息 */
+    information: InformationDataInfo[];
+}
+/** InformationDataInfo 查询发票信息返回 */
+interface InformationDataInfo {
+    /** 货物或应税劳务、服务名称 */
+    goods_services_name: string;
+    /** 发票号码 */
+    invoice_num: string;
+    /** 发票代码 */
+    invoice_code: string;
+    /** 不含税金额 */
+    price_amount: string;
+    /** 税额 */
+    tax_amount: string;
+    /** 税率 */
+    tax_rate: string;
+    /** 价税合计 */
+    price_tax_amount: string;
+    /** 开票日期 */
+    invoiced_date: string;
+}
 /** BankNameAccount 系统支持的开户行及账号 */
 interface BankNameAccount {
     /** 开户行及账号 */
@@ -139,7 +170,7 @@ interface SendReminderEmailRequest {
 /** SendReminderEmailResponse 发送发票扫描件压缩包下载链接邮件返回 */
 interface SendReminderEmailResponse {
 }
-export declare class Invoice extends YZHclient {
+export declare class InvoiceClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
         broker_id: string;
@@ -154,6 +185,7 @@ export declare class Invoice extends YZHclient {
     GetInvoiceAmount(req: GetInvoiceAmountRequest, cb?: (error: null | string, rep: GetInvoiceAmountResponse) => void): Promise<GetInvoiceAmountResponse>;
     ApplyInvoice(req: ApplyInvoiceRequest, cb?: (error: null | string, rep: ApplyInvoiceResponse) => void): Promise<ApplyInvoiceResponse>;
     GetInvoiceStatus(req: GetInvoiceStatusRequest, cb?: (error: null | string, rep: GetInvoiceStatusResponse) => void): Promise<GetInvoiceStatusResponse>;
+    GetInvoiceInformation(req: GetInvoiceInformationRequest, cb?: (error: null | string, rep: GetInvoiceInformationResponse) => void): Promise<GetInvoiceInformationResponse>;
     GetInvoiceFile(req: GetInvoiceFileRequest, cb?: (error: null | string, rep: GetInvoiceFileResponse) => void): Promise<GetInvoiceFileResponse>;
     SendReminderEmail(req: SendReminderEmailRequest, cb?: (error: null | string, rep: SendReminderEmailResponse) => void): Promise<SendReminderEmailResponse>;
 }

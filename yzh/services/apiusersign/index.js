@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Apiusersign = void 0;
+exports.ApiUserSignServiceClient = void 0;
 const client_1 = require("../../common/client");
-class Apiusersign extends client_1.default {
+class ApiUserSignServiceClient extends client_1.default {
     constructor(conf) {
         super(conf);
     }
@@ -23,4 +23,4 @@ class Apiusersign extends client_1.default {
         return this.request("post", "/api/sign/v1/user/release", req, { encryption: false }, cb);
     }
 }
-exports.Apiusersign = Apiusersign;
+exports.ApiUserSignServiceClient = ApiUserSignServiceClient;

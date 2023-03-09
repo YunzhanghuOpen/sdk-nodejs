@@ -16,7 +16,7 @@ interface H5GetStartUrlRequest {
     /** 跳转 URL */
     return_url: string;
     /** H5 页面 Title */
-    custom_title: number;
+    customer_title: number;
 }
 /** H5GetStartUrlResponse 预启动返回 */
 interface H5GetStartUrlResponse {
@@ -59,7 +59,7 @@ interface H5EcoCityAicStatusResponse {
     /** 姓名 */
     real_name: string;
 }
-export declare class Bizlicxjjh5 extends YZHclient {
+export declare class BizlicXjjH5ServiceClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
         broker_id: string;

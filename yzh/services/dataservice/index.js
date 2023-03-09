@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Dataservice = void 0;
+exports.DataServiceClient = void 0;
 const client_1 = require("../../common/client");
-class Dataservice extends client_1.default {
+class DataServiceClient extends client_1.default {
     constructor(conf) {
         super(conf);
     }
@@ -35,4 +35,4 @@ class Dataservice extends client_1.default {
         return this.request("get", "/api/dataservice/v1/statements-daily", req, { encryption: false }, cb);
     }
 }
-exports.Dataservice = Dataservice;
+exports.DataServiceClient = DataServiceClient;

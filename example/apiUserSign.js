@@ -3,7 +3,7 @@ const config = require("./conf/config.js")
 
 // API 签约
 
-const apiusersign = new yzhAPI.Apiusersign(config)
+const apiusersign = new yzhAPI.ApiUserSignServiceClient(config)
 
 // 获取协议预览 URL
 apiusersign

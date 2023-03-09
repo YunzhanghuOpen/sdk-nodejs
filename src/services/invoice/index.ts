@@ -110,6 +110,40 @@ interface GetInvoiceStatusResponse {
   waybill_number: string[]
 }
 
+/** GetInvoiceInformationRequest 查询发票信息请求 */
+interface GetInvoiceInformationRequest {
+  /** 发票申请编号 */
+  invoice_apply_id: string
+  /** 发票申请单 ID */
+  application_id: string
+}
+
+/** GetInvoiceInformationResponse 查询发票信息返回 */
+interface GetInvoiceInformationResponse {
+  /** 发票信息 */
+  information: InformationDataInfo[]
+}
+
+/** InformationDataInfo 查询发票信息返回 */
+interface InformationDataInfo {
+  /** 货物或应税劳务、服务名称 */
+  goods_services_name: string
+  /** 发票号码 */
+  invoice_num: string
+  /** 发票代码 */
+  invoice_code: string
+  /** 不含税金额 */
+  price_amount: string
+  /** 税额 */
+  tax_amount: string
+  /** 税率 */
+  tax_rate: string
+  /** 价税合计 */
+  price_tax_amount: string
+  /** 开票日期 */
+  invoiced_date: string
+}
+
 /** BankNameAccount 系统支持的开户行及账号 */
 interface BankNameAccount {
   /** 开户行及账号 */
@@ -191,7 +225,7 @@ interface NotifyInvoiceDoneRequest {
   reject_reason: string
 }
 
-export class Invoice extends YZHclient {
+export class InvoiceClient extends YZHclient {
   constructor(conf: {
     dealer_id: string
     broker_id: string
@@ -237,6 +271,20 @@ export class Invoice extends YZHclient {
     return this.request(
       "post",
       "/api/invoice/v2/invoice/invoice-status",
+      req,
+      { encryption: false },
+      cb
+    )
+  }
+
+  // GetInvoiceInformation 查询发票信息
+  async GetInvoiceInformation(
+    req: GetInvoiceInformationRequest,
+    cb?: (error: null | string, rep: GetInvoiceInformationResponse) => void
+  ): Promise<GetInvoiceInformationResponse> {
+    return this.request(
+      "post",
+      "/api/invoice/v2/invoice-information",
       req,
       { encryption: false },
       cb

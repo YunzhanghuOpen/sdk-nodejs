@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Invoice = void 0;
+exports.InvoiceClient = void 0;
 const client_1 = require("../../common/client");
-class Invoice extends client_1.default {
+class InvoiceClient extends client_1.default {
     constructor(conf) {
         super(conf);
     }
@@ -22,6 +22,10 @@ class Invoice extends client_1.default {
     async GetInvoiceStatus(req, cb) {
         return this.request("post", "/api/invoice/v2/invoice/invoice-status", req, { encryption: false }, cb);
     }
+    // GetInvoiceInformation 查询发票信息
+    async GetInvoiceInformation(req, cb) {
+        return this.request("post", "/api/invoice/v2/invoice-information", req, { encryption: false }, cb);
+    }
     // GetInvoiceFile 下载 PDF 版发票
     async GetInvoiceFile(req, cb) {
         return this.request("post", "/api/invoice/v2/invoice/invoice-pdf", req, { encryption: false }, cb);
@@ -31,4 +35,4 @@ class Invoice extends client_1.default {
         return this.request("post", "/api/invoice/v2/invoice/reminder/email", req, { encryption: false }, cb);
     }
 }
-exports.Invoice = Invoice;
+exports.InvoiceClient = InvoiceClient;

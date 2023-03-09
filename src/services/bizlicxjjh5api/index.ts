@@ -1,4 +1,4 @@
-import YZHclient from "../../common/client";
+import YZHclient from "../../common/client"
 
 /** H5PreCollectBizlicMsgRequest 工商实名信息录入请求 */
 interface H5PreCollectBizlicMsgRequest {
@@ -128,7 +128,7 @@ interface NotifyH5APIEcoCityAicRequest {
   type: number
 }
 
-export class Bizlicxjjh5api extends YZHclient {
+export class BizlicXjjH5APIServiceClient extends YZHclient {
   constructor(conf: {
     dealer_id: string
     broker_id: string
@@ -141,13 +141,19 @@ export class Bizlicxjjh5api extends YZHclient {
   }) {
     super(conf)
   }
-   
+
   // H5PreCollectBizlicMsg 工商实名信息录入
   async H5PreCollectBizlicMsg(
     req: H5PreCollectBizlicMsgRequest,
     cb?: (error: null | string, rep: H5PreCollectBizlicMsgResponse) => void
   ): Promise<H5PreCollectBizlicMsgResponse> {
-    return this.request("post", "/api/aic/new-economy/api-h5/v1/collect", req, { encryption: false }, cb)
+    return this.request(
+      "post",
+      "/api/aic/new-economy/api-h5/v1/collect",
+      req,
+      { encryption: false },
+      cb
+    )
   }
 
   // H5APIGetStartUrl 预启动
@@ -155,7 +161,13 @@ export class Bizlicxjjh5api extends YZHclient {
     req: H5APIGetStartUrlRequest,
     cb?: (error: null | string, rep: H5APIGetStartUrlResponse) => void
   ): Promise<H5APIGetStartUrlResponse> {
-    return this.request("get", "/api/aic/new-economy/api-h5/v1/h5url", req, { encryption: false }, cb)
+    return this.request(
+      "get",
+      "/api/aic/new-economy/api-h5/v1/h5url",
+      req,
+      { encryption: false },
+      cb
+    )
   }
 
   // H5APIEcoCityAicStatus 查询个体工商户状态
@@ -163,7 +175,12 @@ export class Bizlicxjjh5api extends YZHclient {
     req: H5APIEcoCityAicStatusRequest,
     cb?: (error: null | string, rep: H5APIEcoCityAicStatusResponse) => void
   ): Promise<H5APIEcoCityAicStatusResponse> {
-    return this.request("get", "/api/aic/new-economy/api-h5/v1/status", req, { encryption: false }, cb)
+    return this.request(
+      "get",
+      "/api/aic/new-economy/api-h5/v1/status",
+      req,
+      { encryption: false },
+      cb
+    )
   }
-
 }
