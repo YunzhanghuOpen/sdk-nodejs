@@ -1,7 +1,7 @@
 const yzhAPI = require("../yzh/index.js")
 const config = require("./conf/config.js")
 
-// API 签约
+// 用户签约（API 签约）
 
 const apiusersign = new yzhAPI.ApiUserSignServiceClient(config)
 
