@@ -1,7 +1,7 @@
 const yzhAPI = require("../yzh/index.js")
 const config = require("./conf/config.js")
 
-// H5 签约
+// 用户签约（H5 签约）
 
 const h5usersign = new yzhAPI.H5UserSignServiceClient(config)
 
