@@ -1,6 +1,6 @@
 const yunzhanghu = require("../yzh/index.js")
 
-// 模拟异步通知接口验签+解密
+// 异步通知
 
 const util = new yunzhanghu.Util({
   dealer_id: process.env.DEALER_ID,
