@@ -74,7 +74,7 @@ class YZHClient {
                         return this.generatorSignHmacSHA256(data, mess, timestamp);
                     }
                     default:
-                        throw new yzhSDKHttpException_1.default(`sign_type类型不存在`);
+                        throw new yzhSDKHttpException_1.default(`sign_type 类型不存在`);
                 }
             }
             catch (err) {
@@ -299,7 +299,7 @@ class YZHClient {
             throw yzhError;
         }
         else {
-            // httpcode 200
+            // Httpcode 200
             const { data: axiosData } = result;
             let response = axiosData;
             // 需解密
