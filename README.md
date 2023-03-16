@@ -12,7 +12,7 @@
 
 ### 1、获取配置
 
-使用云账户 SDK for Node.js 前，您需先获取 dealer_id、broker_id、3DES Key、App Key 信息。  
+使用云账户 SDK for Node.js 前，您需先获取 dealer_id、broker_id、3DES Key、App Key、云账户公钥。  
 获取方式：使用开户邮件中的账号登录【[云账户综合服务平台](https://service.yunzhanghu.com)】，选择“业务中心 > 业务管理 > 对接信息”，查看并获取以上配置信息。
 ![获取配置信息](https://yos.yunzhanghu.com/getobject/duijiexinxi.png?isAttachment=false&fileID=9487bd54b93a5abf49003c2b8ce7e069bfa24220&signature=X%2BR7PocQgPqSpR2xM1TgYU6lAapr%2FB9p3aFof03Gcfw%3D)
 
@@ -41,29 +41,29 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 登录【[云账户综合服务平台](https://service.yunzhanghu.com)】，选择“业务中心 > 业务管理 > 对接信息”，单击页面右上角的“编辑”，配置平台企业公钥。  
 ![配置平台企业公钥信息](https://yos.yunzhanghu.com/getobject/dujiexinxi-2.png?isAttachment=false&fileID=84e3cd1684a61c1e32eb0e7b7f43390cd053206b&signature=mqW8Zbk7h3gYXfzjR99pK%2B0pgVLcLly3VjBB2KsqDvQ%3D)
 
-## 安装 Node.js SDK
+## 安装云账户 SDK for Node.js
 
 ### 通过 NPM 安装
 
-推荐通过 Node.js 的包管理工具 NPM 获取并安装 Node.js SDK。NPM 详细介绍请参考[ NPM 官网](https://www.npmjs.com/) 。
+推荐通过 Node.js 的包管理工具 NPM 获取并安装云账户 SDK for Node.js。NPM 详细介绍请参考[ NPM 官网](https://www.npmjs.com/) 。
 
-1. 执行以下安装命令安装云账户 Node.js SDK：
+1. 执行以下安装命令安装云账户 SDK for Node.js：
 
    > npm install @yunzhanghu/sdk-nodejs --save
 
-2. 在您的代码中引用对应模块代码，可参考示例。
+2. 在您的代码中引用对应模块代码，具体引用方式可参考下文示例。
 
 ### 通过源码包安装
 
 1. 前往 [Github 仓库](https://github.com/YunzhanghuOpen/sdk-nodejs) 下载源码压缩包；
 2. 解压源码包到您项目的合适位置；
-3. 在您的代码中引用对应模块代码，可参考示例。
+3. 在您的代码中引用对应模块代码，具体引用方式可参考下文示例。
 
 ## 快速使用
 
 ### 示例功能列表
 
-- [用户信息验证](./example/verify.js)
+- [用户信息验证](./example/authentication.js)
 - [用户签约（H5 签约）](./example/h5UserSign.js) or [用户签约（API 签约）](./example/apiUserSign.js)
 - [个体工商户注册（云账户新经济 H5）](./example/bizlicXjjH5.js) or [个体工商户注册（云账户新经济 H5+API）](./example/bizlicXjjH5Api.js)
 - [实时支付](./example/payment.js)
