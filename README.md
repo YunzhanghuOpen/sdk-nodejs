@@ -104,8 +104,8 @@ client
   .GetInvoiceAmount({
     dealer_id: process.env.DEALER_ID,
     broker_id: process.env.BROKER_ID,
-//  可自定义 Header 中的 request-id，建议将 request-id 记录在日志中
-//  request_id:'req1678257009001'
+// 可自定义 Header 中的 request-id，建议将 request-id 记录在日志中
+// request_id:'req1678257009001'
   })
   .then((data) => {
     console.log("data", data)
