@@ -7,7 +7,7 @@ const apiusersign = new yzhAPI.ApiUserSignServiceClient(config)
 
 // 获取协议预览 URL
 apiusersign
-  .ApiUseSignContract({
+  .ApiUserSignContract({
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
   })

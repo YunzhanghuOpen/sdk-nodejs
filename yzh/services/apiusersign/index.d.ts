@@ -13,6 +13,20 @@ interface ApiUseSignContractResponse {
     /** 协议名称 */
     title: string;
 }
+/** ApiUserSignContractRequest 获取协议预览 URL 请求 V2 */
+interface ApiUserSignContractRequest {
+    /** 平台企业 ID */
+    dealer_id: string;
+    /** 综合服务主体 ID */
+    broker_id: string;
+}
+/** ApiUserSignContractResponse 获取协议预览 URL 返回 V2 */
+interface ApiUserSignContractResponse {
+    /** 预览跳转 URL */
+    url: string;
+    /** 协议名称 */
+    title: string;
+}
 /** ApiUserSignRequest 用户签约请求 */
 interface ApiUserSignRequest {
     /** 综合服务主体 ID */
@@ -79,6 +93,7 @@ export declare class ApiUserSignServiceClient extends YZHclient {
         base_url?: string;
     });
     ApiUseSignContract(req: ApiUseSignContractRequest, cb?: (error: null | string, rep: ApiUseSignContractResponse) => void): Promise<ApiUseSignContractResponse>;
+    ApiUserSignContract(req: ApiUserSignContractRequest, cb?: (error: null | string, rep: ApiUserSignContractResponse) => void): Promise<ApiUserSignContractResponse>;
     ApiUserSign(req: ApiUserSignRequest, cb?: (error: null | string, rep: ApiUserSignResponse) => void): Promise<ApiUserSignResponse>;
     GetApiUserSignStatus(req: GetApiUserSignStatusRequest, cb?: (error: null | string, rep: GetApiUserSignStatusResponse) => void): Promise<GetApiUserSignStatusResponse>;
     ApiUserSignRelease(req: ApiUserSignReleaseRequest, cb?: (error: null | string, rep: ApiUserSignReleaseResponse) => void): Promise<ApiUserSignReleaseResponse>;

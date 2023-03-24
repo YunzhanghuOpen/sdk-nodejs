@@ -26,7 +26,7 @@ class YZHClient {
          * @param {string} timestamp 时间戳，精确到秒
          * @returns {string} 签名内容
          */
-        this.generatorSignRSASHA256 = (data, mess, timestamp) => {
+        this.signRSASHA256 = (data, mess, timestamp) => {
             try {
                 const plaintext = `data=${data}&mess=${mess}&timestamp=${timestamp}&key=${this.app_key}`;
                 const sign = crypto.createSign("RSA-SHA256");
@@ -45,7 +45,7 @@ class YZHClient {
          * @param {string} timestamp 时间戳，精确到秒
          * @returns {string} 签名内容
          */
-        this.generatorSignHmacSHA256 = (data, mess, timestamp) => {
+        this.signHmacSHA256 = (data, mess, timestamp) => {
             try {
                 const plaintext = `data=${data}&mess=${mess}&timestamp=${timestamp}&key=${this.app_key}`;
                 const hmac = crypto.createHmac("sha256", this.app_key);
@@ -64,14 +64,14 @@ class YZHClient {
          * @param {string} sign_type 签名方式
          * @returns {string} 签名内容
          */
-        this.generatorSign = (data, mess, timestamp) => {
+        this.sign = (data, mess, timestamp) => {
             try {
                 switch (this.sign_type) {
                     case "rsa": {
-                        return this.generatorSignRSASHA256(data, mess, timestamp);
+                        return this.signRSASHA256(data, mess, timestamp);
                     }
                     case "sha256": {
-                        return this.generatorSignHmacSHA256(data, mess, timestamp);
+                        return this.signHmacSHA256(data, mess, timestamp);
                     }
                     default:
                         throw new yzhSDKHttpException_1.default(`sign_type 类型不存在`);
@@ -111,7 +111,7 @@ class YZHClient {
          * @param ciphertext
          * @returns 明文数据
          */
-        this.decryption = (ciphertext) => {
+        this.decrypt = (ciphertext) => {
             try {
                 const iv = this.des3_key.slice(0, 8);
                 const cipherChunks = [];
@@ -188,7 +188,7 @@ class YZHClient {
                 const verifyResult = verifyMap[this.sign_type](data, mess, timestamp, sign);
                 let plaintext = {};
                 if (verifyResult) {
-                    plaintext = this.decryption(data);
+                    plaintext = this.decrypt(data);
                 }
                 return {
                     result: verifyResult,
@@ -278,7 +278,7 @@ class YZHClient {
             const m = this.mess();
             const plaintext = JSON.stringify(params);
             const data = this.encrypt(plaintext);
-            const signStr = this.generatorSign(data, m, t);
+            const signStr = this.sign(data, m, t);
             return {
                 data,
                 mess: m,
@@ -299,12 +299,12 @@ class YZHClient {
             throw yzhError;
         }
         else {
-            // Httpcode 200
+            // HTTP Status Code 200
             const { data: axiosData } = result;
             let response = axiosData;
             // 需解密
             if (encryption) {
-                response = { ...response, data: this.decryption(response.data) };
+                response = { ...response, data: this.decrypt(response.data) };
             }
             return response;
         }

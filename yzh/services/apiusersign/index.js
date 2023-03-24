@@ -10,6 +10,10 @@ class ApiUserSignServiceClient extends client_1.default {
     async ApiUseSignContract(req, cb) {
         return this.request("get", "/api/sign/v1/user/contract", req, { encryption: false }, cb);
     }
+    // ApiUserSignContract 获取协议预览 URL V2
+    async ApiUserSignContract(req, cb) {
+        return this.request("get", "/api/sign/v1/user/contract", req, { encryption: false }, cb);
+    }
     // ApiUserSign 用户签约
     async ApiUserSign(req, cb) {
         return this.request("post", "/api/sign/v1/user/sign", req, { encryption: false }, cb);

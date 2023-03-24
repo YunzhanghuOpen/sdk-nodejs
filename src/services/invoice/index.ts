@@ -284,7 +284,7 @@ export class InvoiceClient extends YZHclient {
   ): Promise<GetInvoiceInformationResponse> {
     return this.request(
       "post",
-      "/api/invoice/v2/invoice-information",
+      "/api/invoice/v2/invoice-face-information",
       req,
       { encryption: false },
       cb

@@ -89,3 +89,16 @@ invoice
   .catch((err) => {
     console.log(err.toString())
   })
+
+// 查询发票信息
+invoice
+  .GetInvoiceInformation({
+    invoice_apply_id: "",
+    application_id: "423721",
+  })
+  .then((data) => {
+    console.log('响应内容: %j', data)
+  })
+  .catch((err) => {
+    console.log(err.toString())
+  })

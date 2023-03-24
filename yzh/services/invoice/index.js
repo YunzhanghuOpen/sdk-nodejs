@@ -24,7 +24,7 @@ class InvoiceClient extends client_1.default {
     }
     // GetInvoiceInformation 查询发票信息
     async GetInvoiceInformation(req, cb) {
-        return this.request("post", "/api/invoice/v2/invoice-information", req, { encryption: false }, cb);
+        return this.request("post", "/api/invoice/v2/invoice-face-information", req, { encryption: false }, cb);
     }
     // GetInvoiceFile 下载 PDF 版发票
     async GetInvoiceFile(req, cb) {
