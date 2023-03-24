@@ -16,6 +16,22 @@ interface ApiUseSignContractResponse {
   title: string
 }
 
+/** ApiUserSignContractRequest 获取协议预览 URL 请求 V2 */
+interface ApiUserSignContractRequest {
+  /** 平台企业 ID */
+  dealer_id: string
+  /** 综合服务主体 ID */
+  broker_id: string
+}
+
+/** ApiUserSignContractResponse 获取协议预览 URL 返回 V2 */
+interface ApiUserSignContractResponse {
+  /** 预览跳转 URL */
+  url: string
+  /** 协议名称 */
+  title: string
+}
+
 /** ApiUserSignRequest 用户签约请求 */
 interface ApiUserSignRequest {
   /** 综合服务主体 ID */
@@ -95,6 +111,14 @@ export class ApiUserSignServiceClient extends YZHclient {
     req: ApiUseSignContractRequest,
     cb?: (error: null | string, rep: ApiUseSignContractResponse) => void
   ): Promise<ApiUseSignContractResponse> {
+    return this.request("get", "/api/sign/v1/user/contract", req, { encryption: false }, cb)
+  }
+
+  // ApiUserSignContract 获取协议预览 URL V2
+  async ApiUserSignContract(
+    req: ApiUserSignContractRequest,
+    cb?: (error: null | string, rep: ApiUserSignContractResponse) => void
+  ): Promise<ApiUserSignContractResponse> {
     return this.request("get", "/api/sign/v1/user/contract", req, { encryption: false }, cb)
   }
 

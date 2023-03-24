@@ -130,7 +130,7 @@ export class YZHClient {
 
       const data = this.encrypt(plaintext)
 
-      const signStr = this.generatorSign(data, m, t)
+      const signStr = this.sign(data, m, t)
       return {
         data,
         mess: m,
@@ -150,7 +150,7 @@ export class YZHClient {
    * @param {string} timestamp 时间戳，精确到秒
    * @returns {string} 签名内容
    */
-  private generatorSignRSASHA256 = (data: string, mess: string, timestamp: string) => {
+  private signRSASHA256 = (data: string, mess: string, timestamp: string) => {
     try {
       const plaintext = `data=${data}&mess=${mess}&timestamp=${timestamp}&key=${this.app_key}`
       const sign = crypto.createSign("RSA-SHA256")
@@ -169,7 +169,7 @@ export class YZHClient {
    * @param {string} timestamp 时间戳，精确到秒
    * @returns {string} 签名内容
    */
-  private generatorSignHmacSHA256 = (data: string, mess: string, timestamp: string) => {
+  private signHmacSHA256 = (data: string, mess: string, timestamp: string) => {
     try {
       const plaintext = `data=${data}&mess=${mess}&timestamp=${timestamp}&key=${this.app_key}`
       const hmac = crypto.createHmac("sha256", this.app_key)
@@ -188,14 +188,14 @@ export class YZHClient {
    * @param {string} sign_type 签名方式
    * @returns {string} 签名内容
    */
-  private generatorSign = (data: string, mess: string, timestamp: string) => {
+  private sign = (data: string, mess: string, timestamp: string) => {
     try {
       switch (this.sign_type) {
         case "rsa": {
-          return this.generatorSignRSASHA256(data, mess, timestamp)
+          return this.signRSASHA256(data, mess, timestamp)
         }
         case "sha256": {
-          return this.generatorSignHmacSHA256(data, mess, timestamp)
+          return this.signHmacSHA256(data, mess, timestamp)
         }
         default:
           throw new YZHSDKHttpException(`sign_type类型不存在`)
@@ -239,12 +239,12 @@ export class YZHClient {
       yzhError.httpCode = result.status
       throw yzhError
     } else {
-      // httpcode 200
+      // HTTP Status Code 200
       const { data: axiosData } = result
       let response = axiosData
       // 需解密
       if (encryption) {
-        response = { ...response, data: this.decryption(response.data) }
+        response = { ...response, data: this.decrypt(response.data) }
       }
       return response
     }
@@ -255,7 +255,7 @@ export class YZHClient {
    * @param ciphertext
    * @returns 明文数据
    */
-  decryption = (ciphertext: string) => {
+  decrypt = (ciphertext: string) => {
     try {
       const iv = this.des3_key.slice(0, 8)
       const cipherChunks = []
@@ -350,7 +350,7 @@ export class YZHClient {
       const verifyResult = verifyMap[this.sign_type](data, mess, timestamp, sign)
       let plaintext = {}
       if (verifyResult) {
-        plaintext = this.decryption(data)
+        plaintext = this.decrypt(data)
       }
       return {
         result: verifyResult,
