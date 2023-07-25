@@ -74,7 +74,7 @@ class YZHClient {
                         return this.signHmacSHA256(data, mess, timestamp);
                     }
                     default:
-                        throw new yzhSDKHttpException_1.default(`sign_type 类型不存在`);
+                        throw new yzhSDKHttpException_1.default(`sign_type类型不存在`);
                 }
             }
             catch (err) {

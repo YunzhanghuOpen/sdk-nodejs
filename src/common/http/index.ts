@@ -7,16 +7,20 @@ const BASE_URL = "https://api-service.yunzhanghu.com/"
 const getInstance = (
   config: { request_id?: string; dealer_id?: string; base_url?: string } = {}
 ) => {
+  let uname = ""
+  try {
+    uname = child_process.execSync("uname -m -r -s").toString("utf-8").replace("\n", "")
+  } catch (_) {
+    uname = "unkown"
+  }
+
   const instance = axios.create({
     baseURL: config.base_url || BASE_URL,
     headers: {
       "request-id": config?.request_id,
       "dealer-id": config?.dealer_id,
       "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-      "User-Agent": `yunzhanghu-sdk-nodejs/${pkg.version}/${child_process
-        .execSync("uname -m -r -s")
-        .toString("utf-8")
-        .replace("\n", "")}/${process.version}`,
+      "User-Agent": `yunzhanghu-sdk-nodejs/${pkg.version}/${uname}/${process.version}`,
     },
     timeout: 30 * 1000,
   })
