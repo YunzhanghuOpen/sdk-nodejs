@@ -23,7 +23,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDe4ipz4/EGFZphz2rYy8T2hdCL
 *
 QqP7lt6FdvzGxehaHwIDAQAB
 -----END PUBLIC KEY-----`,
-  // 签名方式，登录云账户综合服务平台，选择“业务中心 > 业务管理 > 对接信息”获取，默认为 RSA 签名方式。
+  // 签名算法，登录云账户综合服务平台，选择“业务中心 > 业务管理 > 对接信息”获取
   // 签名算法为 RSA，参数固定为：rsa
   sign_type: "rsa",
 }
