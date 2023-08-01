@@ -93,7 +93,8 @@ const client = new yunzhanghu.InvoiceClient({
   private_key: process.env.PRIVATE_KEY,
   // 云账户公钥，登录云账户综合服务平台，选择“业务中心 > 业务管理 > 对接信息”获取
   yzh_public_key: process.env.YZH_PUBLIC_KEY,
-  // 签名算法为 RSA，参数固定为：rsa
+  // 签名方式，登录云账户综合服务平台，选择“业务中心 > 业务管理 > 对接信息”获取
+  // 签名方式为 RSA，参数固定为：rsa
   sign_type: process.env.SIGN_TYPE,
 })
 
