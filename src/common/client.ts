@@ -144,7 +144,7 @@ export class YZHClient {
   }
 
   /**
-   * 生成签名（RSA-SHA256）
+   * 生成签名（RSA 签名算法）
    * @param {string} data 经过加密后的具体数据
    * @param {string} mess 自定义随机字符串，用于签名
    * @param {string} timestamp 时间戳，精确到秒
@@ -163,7 +163,7 @@ export class YZHClient {
   }
 
   /**
-   * 生成签名（HmacSHA256）
+   * 生成签名（HMAC 签名算法）
    * @param {string} data 经过加密后的具体数据
    * @param {string} mess 自定义随机字符串，用于签名
    * @param {string} timestamp 时间戳，精确到秒
