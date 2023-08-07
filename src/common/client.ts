@@ -26,7 +26,7 @@ export class YZHClient {
    * @param {string} des3_key 3DES Key
    * @param {string} private_key 平台企业私钥
    * @param {string} yzh_public_key 云账户公钥
-   * @param {string} sign_type 签名方式"rsa" | "sha256"
+   * @param {string} sign_type 签名算法，支持 RSA、HMAC，枚举分别为 rsa、sha256
    * @param {string} base_url 可选，默认为 https://api-service.yunzhanghu.com/
    */
   constructor(conf: {
@@ -144,7 +144,7 @@ export class YZHClient {
   }
 
   /**
-   * 生成签名（RSA-SHA256）
+   * 生成签名（RSA 签名算法）
    * @param {string} data 经过加密后的具体数据
    * @param {string} mess 自定义随机字符串，用于签名
    * @param {string} timestamp 时间戳，精确到秒
@@ -163,7 +163,7 @@ export class YZHClient {
   }
 
   /**
-   * 生成签名（HmacSHA256）
+   * 生成签名（HMAC 签名算法）
    * @param {string} data 经过加密后的具体数据
    * @param {string} mess 自定义随机字符串，用于签名
    * @param {string} timestamp 时间戳，精确到秒
@@ -185,7 +185,7 @@ export class YZHClient {
    * @param {string} data 经过加密后的具体数据
    * @param {string} mess 自定义随机字符串，用于签名
    * @param {string} timestamp 时间戳，精确到秒
-   * @param {string} sign_type 签名方式
+   * @param {string} sign_type 签名算法，支持 RSA、HMAC，枚举分别为 rsa、sha256
    * @returns {string} 签名内容
    */
   private sign = (data: string, mess: string, timestamp: string) => {
