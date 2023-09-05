@@ -180,6 +180,7 @@ export declare class InvoiceClient extends YZHclient {
         yzh_public_key: string;
         sign_type: "rsa" | "sha256";
         base_url?: string;
+        timeout?: number;
     });
     GetInvoiceStat(req: GetInvoiceStatRequest, cb?: (error: null | string, rep: GetInvoiceStatResponse) => void): Promise<GetInvoiceStatResponse>;
     GetInvoiceAmount(req: GetInvoiceAmountRequest, cb?: (error: null | string, rep: GetInvoiceAmountResponse) => void): Promise<GetInvoiceAmountResponse>;

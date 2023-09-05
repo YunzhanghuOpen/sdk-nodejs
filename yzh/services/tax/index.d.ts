@@ -48,6 +48,7 @@ export declare class TaxClient extends YZHclient {
         yzh_public_key: string;
         sign_type: "rsa" | "sha256";
         base_url?: string;
+        timeout?: number;
     });
     GetTaxFile(req: GetTaxFileRequest, cb?: (error: null | string, rep: GetTaxFileResponse) => void): Promise<GetTaxFileResponse>;
     GetUserCross(req: GetUserCrossRequest, cb?: (error: null | string, rep: GetUserCrossResponse) => void): Promise<GetUserCrossResponse>;

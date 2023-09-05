@@ -99,6 +99,7 @@ export declare class BizlicXjjH5APIServiceClient extends YZHclient {
         yzh_public_key: string;
         sign_type: "rsa" | "sha256";
         base_url?: string;
+        timeout?: number;
     });
     H5PreCollectBizlicMsg(req: H5PreCollectBizlicMsgRequest, cb?: (error: null | string, rep: H5PreCollectBizlicMsgResponse) => void): Promise<H5PreCollectBizlicMsgResponse>;
     H5APIGetStartUrl(req: H5APIGetStartUrlRequest, cb?: (error: null | string, rep: H5APIGetStartUrlResponse) => void): Promise<H5APIGetStartUrlResponse>;

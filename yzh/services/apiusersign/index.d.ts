@@ -91,6 +91,7 @@ export declare class ApiUserSignServiceClient extends YZHclient {
         yzh_public_key: string;
         sign_type: "rsa" | "sha256";
         base_url?: string;
+        timeout?: number;
     });
     ApiUseSignContract(req: ApiUseSignContractRequest, cb?: (error: null | string, rep: ApiUseSignContractResponse) => void): Promise<ApiUseSignContractResponse>;
     ApiUserSignContract(req: ApiUserSignContractRequest, cb?: (error: null | string, rep: ApiUserSignContractResponse) => void): Promise<ApiUserSignContractResponse>;

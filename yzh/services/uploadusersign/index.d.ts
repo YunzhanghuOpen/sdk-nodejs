@@ -59,6 +59,7 @@ export declare class UploadUserSignServiceClient extends YZHclient {
         yzh_public_key: string;
         sign_type: "rsa" | "sha256";
         base_url?: string;
+        timeout?: number;
     });
     UploadUserSign(req: UploadUserSignRequest, cb?: (error: null | string, rep: UploadUserSignResponse) => void): Promise<UploadUserSignResponse>;
     GetUploadUserSignStatus(req: GetUploadUserSignStatusRequest, cb?: (error: null | string, rep: GetUploadUserSignStatusResponse) => void): Promise<GetUploadUserSignStatusResponse>;

@@ -358,6 +358,7 @@ export declare class PaymentClient extends YZHclient {
         yzh_public_key: string;
         sign_type: "rsa" | "sha256";
         base_url?: string;
+        timeout?: number;
     });
     CreateBankpayOrder(req: CreateBankpayOrderRequest, cb?: (error: null | string, rep: CreateBankpayOrderResponse) => void): Promise<CreateBankpayOrderResponse>;
     CreateAlipayOrder(req: CreateAlipayOrderRequest, cb?: (error: null | string, rep: CreateAlipayOrderResponse) => void): Promise<CreateAlipayOrderResponse>;

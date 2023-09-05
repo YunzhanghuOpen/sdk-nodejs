@@ -83,6 +83,7 @@ export declare class H5UserSignServiceClient extends YZHclient {
         yzh_public_key: string;
         sign_type: "rsa" | "sha256";
         base_url?: string;
+        timeout?: number;
     });
     H5UserPresign(req: H5UserPresignRequest, cb?: (error: null | string, rep: H5UserPresignResponse) => void): Promise<H5UserPresignResponse>;
     H5UserSign(req: H5UserSignRequest, cb?: (error: null | string, rep: H5UserSignResponse) => void): Promise<H5UserSignResponse>;

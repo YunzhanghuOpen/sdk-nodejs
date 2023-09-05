@@ -69,6 +69,7 @@ export declare class BizlicXjjH5ServiceClient extends YZHclient {
         yzh_public_key: string;
         sign_type: "rsa" | "sha256";
         base_url?: string;
+        timeout?: number;
     });
     H5GetStartUrl(req: H5GetStartUrlRequest, cb?: (error: null | string, rep: H5GetStartUrlResponse) => void): Promise<H5GetStartUrlResponse>;
     H5EcoCityAicStatus(req: H5EcoCityAicStatusRequest, cb?: (error: null | string, rep: H5EcoCityAicStatusResponse) => void): Promise<H5EcoCityAicStatusResponse>;

@@ -140,6 +140,7 @@ export declare class AuthenticationClient extends YZHclient {
         yzh_public_key: string;
         sign_type: "rsa" | "sha256";
         base_url?: string;
+        timeout?: number;
     });
     BankCardFourAuthVerify(req: BankCardFourAuthVerifyRequest, cb?: (error: null | string, rep: BankCardFourAuthVerifyResponse) => void): Promise<BankCardFourAuthVerifyResponse>;
     BankCardFourAuthConfirm(req: BankCardFourAuthConfirmRequest, cb?: (error: null | string, rep: BankCardFourAuthConfirmResponse) => void): Promise<BankCardFourAuthConfirmResponse>;
