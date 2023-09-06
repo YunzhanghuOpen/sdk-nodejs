@@ -425,8 +425,8 @@ interface ConfirmBatchOrderRequest {
 /** ConfirmBatchOrderResponse 批次确认返回 */
 interface ConfirmBatchOrderResponse {}
 
-/** DeleteBatchOrderRequest 批次撤销请求 */
-interface DeleteBatchOrderRequest {
+/** CancelBatchOrderRequest 批次撤销请求 */
+interface CancelBatchOrderRequest {
   /** 平台企业批次号 */
   batch_id: string
   /** 平台企业 ID */
@@ -435,8 +435,8 @@ interface DeleteBatchOrderRequest {
   broker_id: string
 }
 
-/** DeleteBatchOrderResponse 批次撤销返回 */
-interface DeleteBatchOrderResponse {}
+/** CancelBatchOrderResponse 批次撤销返回 */
+interface CancelBatchOrderResponse {}
 
 export class PaymentClient extends YZHclient {
   constructor(conf: {
@@ -539,11 +539,11 @@ export class PaymentClient extends YZHclient {
     return this.request("post", "/api/payment/v1/confirm-batch", req, { encryption: false }, cb)
   }
 
-  // DeleteBatchOrder 批次撤销
-  async DeleteBatchOrder(
-    req: DeleteBatchOrderRequest,
-    cb?: (error: null | string, rep: DeleteBatchOrderResponse) => void
-  ): Promise<DeleteBatchOrderResponse> {
-    return this.request("post", "/api/payment/v1/delete-batch", req, { encryption: false }, cb)
+  // CancelBatchOrder 批次撤销
+  async CancelBatchOrder(
+    req: CancelBatchOrderRequest,
+    cb?: (error: null | string, rep: CancelBatchOrderResponse) => void
+  ): Promise<CancelBatchOrderResponse> {
+    return this.request("post", "/api/payment/v1/cancel-batch", req, { encryption: false }, cb)
   }
 }

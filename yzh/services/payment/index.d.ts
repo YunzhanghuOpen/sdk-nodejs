@@ -336,8 +336,8 @@ interface ConfirmBatchOrderRequest {
 /** ConfirmBatchOrderResponse 批次确认返回 */
 interface ConfirmBatchOrderResponse {
 }
-/** DeleteBatchOrderRequest 批次撤销请求 */
-interface DeleteBatchOrderRequest {
+/** CancelBatchOrderRequest 批次撤销请求 */
+interface CancelBatchOrderRequest {
     /** 平台企业批次号 */
     batch_id: string;
     /** 平台企业 ID */
@@ -345,8 +345,8 @@ interface DeleteBatchOrderRequest {
     /** 综合服务主体 ID */
     broker_id: string;
 }
-/** DeleteBatchOrderResponse 批次撤销返回 */
-interface DeleteBatchOrderResponse {
+/** CancelBatchOrderResponse 批次撤销返回 */
+interface CancelBatchOrderResponse {
 }
 export declare class PaymentClient extends YZHclient {
     constructor(conf: {
@@ -370,6 +370,6 @@ export declare class PaymentClient extends YZHclient {
     CancelOrder(req: CancelOrderRequest, cb?: (error: null | string, rep: CancelOrderResponse) => void): Promise<CancelOrderResponse>;
     CreateBatchOrder(req: CreateBatchOrderRequest, cb?: (error: null | string, rep: CreateBatchOrderResponse) => void): Promise<CreateBatchOrderResponse>;
     ConfirmBatchOrder(req: ConfirmBatchOrderRequest, cb?: (error: null | string, rep: ConfirmBatchOrderResponse) => void): Promise<ConfirmBatchOrderResponse>;
-    DeleteBatchOrder(req: DeleteBatchOrderRequest, cb?: (error: null | string, rep: DeleteBatchOrderResponse) => void): Promise<DeleteBatchOrderResponse>;
+    CancelBatchOrder(req: CancelBatchOrderRequest, cb?: (error: null | string, rep: CancelBatchOrderResponse) => void): Promise<CancelBatchOrderResponse>;
 }
 export {};

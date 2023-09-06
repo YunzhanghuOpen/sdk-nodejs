@@ -46,9 +46,9 @@ class PaymentClient extends client_1.default {
     async ConfirmBatchOrder(req, cb) {
         return this.request("post", "/api/payment/v1/confirm-batch", req, { encryption: false }, cb);
     }
-    // DeleteBatchOrder 批次撤销
-    async DeleteBatchOrder(req, cb) {
-        return this.request("post", "/api/payment/v1/delete-batch", req, { encryption: false }, cb);
+    // CancelBatchOrder 批次撤销
+    async CancelBatchOrder(req, cb) {
+        return this.request("post", "/api/payment/v1/cancel-batch", req, { encryption: false }, cb);
     }
 }
 exports.PaymentClient = PaymentClient;
