@@ -64,7 +64,7 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 ### 示例功能列表
 
 - [用户信息验证](./example/authentication.js)
-- [用户签约（H5 签约）](./example/h5UserSign.js) or [用户签约（API 签约）](./example/apiUserSign.js)
+- [用户签约（H5 签约）](./example/h5UserSign.js) or [用户签约（API 签约）](./example/apiUserSign.js) or [用户签约（签约信息上传）](./example/uploadusersign.js)
 - [个体工商户注册（云账户新经济 H5）](./example/bizlicXjjH5.js) or [个体工商户注册（云账户新经济 H5+API）](./example/bizlicXjjH5Api.js)
 - [实时支付](./example/payment.js)
 - [异步通知](./example/notify.js)
