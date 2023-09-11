@@ -184,3 +184,18 @@ payment
   .catch((err) => {
     console.log(err.toString())
   })
+
+// 批次撤销
+payment
+  .CancelBatchOrder({
+    batch_id: "batchtest1234",
+    dealer_id: config.dealer_id,
+    broker_id: config.broker_id,
+    channel: "支付宝",
+  })
+  .then((data) => {
+    console.log("响应内容：", data)
+  })
+  .catch((err) => {
+    console.log(err.toString())
+  })

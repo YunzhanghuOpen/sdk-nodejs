@@ -235,7 +235,7 @@ class YZHClient {
             request_id: request_id !== null && request_id !== void 0 ? request_id : this.mess(),
             dealer_id: this.dealer_id,
             base_url: this.base_url,
-            timeout: this.timeout
+            timeout: this.timeout,
         });
         // 返回请求实例
         const baseInstanceConf = { method: method, url: action };
