@@ -8,9 +8,9 @@ const dataService = new yzhAPI.DataServiceClient(config)
 // 查询日订单文件
 dataService
   .GetDailyOrderFile({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     order_date: "2023-01-13",
   })
@@ -31,9 +31,9 @@ dataService
 // 查询日流水文件
 dataService
   .GetDailyBillFileV2({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     bill_date: "2023-01-13",
   })
@@ -54,9 +54,9 @@ dataService
 // 查询平台企业预付业务服务费记录
 dataService
   .ListDealerRechargeRecordV2({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     begin_at: "2023-01-01",
     end_at: "2023-01-30",
@@ -78,9 +78,9 @@ dataService
 // 查询日订单数据
 dataService
   .ListDailyOrder({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     order_date: "2023-01-13",
     offset: 0,
@@ -105,9 +105,9 @@ dataService
 // 查询日订单文件（支付和退款订单）
 dataService
   .GetDailyOrderFileV2({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     order_date: "2023-01-13",
   })
@@ -128,9 +128,9 @@ dataService
 // 查询日流水数据
 dataService
   .ListDailyBill({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     bill_date: "2022-10-28",
     offset: 0,
@@ -154,9 +154,9 @@ dataService
 // 查询余额日账单数据
 dataService
   .ListBalanceDailyStatement({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     statement_date: "2022-10-28",
   })

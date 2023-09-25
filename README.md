@@ -64,8 +64,13 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 ### 示例功能列表
 
 - [用户信息验证](./example/authentication.js)
-- [用户签约（H5 签约）](./example/h5UserSign.js) or [用户签约（API 签约）](./example/apiUserSign.js) or [用户签约（签约信息上传）](./example/uploadusersign.js)
-- [个体工商户注册（云账户新经济 H5）](./example/bizlicXjjH5.js) or [个体工商户注册（云账户新经济 H5+API）](./example/bizlicXjjH5Api.js)
+- 用户签约
+   - [H5 签约](./example/h5UserSign.js)
+   - [API 签约](./example/apiUserSign.js)
+   - [签约信息上传](./example/uploadusersign.js)
+- 个体工商户注册
+   - [云账户新经济 H5](./example/bizlicXjjH5.js)
+   - [云账户新经济 H5](./example/bizlicXjjH5.js) 
 - [实时支付](./example/payment.js)
 - [异步通知](./example/notify.js)
 - [对账文件获取](./example/dataService.js)
@@ -103,9 +108,9 @@ const client = new yunzhanghu.InvoiceClient({
 // 如：GetInvoiceAmount 查询可开具发票额度和发票开具信息
 client
   .GetInvoiceAmount({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     dealer_id: process.env.DEALER_ID,
     broker_id: process.env.BROKER_ID,

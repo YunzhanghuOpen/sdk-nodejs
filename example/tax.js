@@ -7,9 +7,9 @@ const tax = new yzhAPI.TaxClient(config)
 // 下载个人所得税扣缴明细表
 tax
   .GetTaxFile({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     dealer_id: config.dealer_id,
     ent_id: "accumulus_tj",
@@ -32,9 +32,9 @@ tax
 // 查询纳税人是否为跨集团用户
 tax
   .GetUserCross({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     dealer_id: config.dealer_id,
     ent_id: "accumulus_tj",

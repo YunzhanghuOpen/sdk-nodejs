@@ -8,9 +8,9 @@ const apiusersign = new yzhAPI.ApiUserSignServiceClient(config)
 // 获取协议预览 URL
 apiusersign
   .ApiUserSignContract({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
@@ -32,9 +32,9 @@ apiusersign
 // 用户签约
 apiusersign
   .ApiUserSign({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
@@ -60,9 +60,9 @@ apiusersign
 // 获取用户签约状态
 apiusersign
   .GetApiUserSignStatus({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
@@ -87,9 +87,9 @@ apiusersign
 // 用户解约（测试账号专用接口）
 apiusersign
   .ApiUserSignRelease({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     dealer_id: this.dealer_id,
     broker_id: this.broker_id,

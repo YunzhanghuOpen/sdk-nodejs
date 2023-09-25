@@ -6,9 +6,9 @@ const payment = new yzhAPI.PaymentClient(config)
 // 银行卡实时支付
 payment
   .CreateBankpayOrder({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     order_id: "nodetest123",
     dealer_id: config.dealer_id,
@@ -38,9 +38,9 @@ payment
 // 支付宝实时支付
 payment
   .CreateAlipayOrder({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     order_id: "nodetest123",
     dealer_id: config.dealer_id,
@@ -71,9 +71,9 @@ payment
 // 微信实时支付
 payment
   .CreateWxpayOrder({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     order_id: "nodetest1234",
     dealer_id: config.dealer_id,
@@ -104,9 +104,9 @@ payment
 // 查询单笔订单信息
 payment
   .GetOrder({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     order_id: "nodetest123",
     channel: "支付宝",
@@ -129,9 +129,9 @@ payment
 // 查询平台企业余额
 payment
   .ListAccount({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     dealer_id: config.dealer_id,
   })
@@ -152,9 +152,9 @@ payment
 // 查询电子回单
 payment
   .GetEleReceiptFile({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     order_id: "120530112204453",
     ref: "",
@@ -176,9 +176,9 @@ payment
 // 取消待支付订单
 payment
   .CancelOrder({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     dealer_id: config.dealer_id,
     order_id: "2222",
@@ -193,9 +193,9 @@ payment
 // 查询平台企业汇款信息
 payment
   .GetDealerVARechargeAccount({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
@@ -217,9 +217,9 @@ payment
 // 批次下单
 payment
   .CreateBatchOrder({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     batch_id: "batchtest123456",
     dealer_id: config.dealer_id,
@@ -258,9 +258,9 @@ payment
 // 批次确认
 payment
   .ConfirmBatchOrder({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     batch_id: "batchtest123456",
     dealer_id: config.dealer_id,
@@ -284,9 +284,9 @@ payment
 // 批次撤销
 payment
   .CancelBatchOrder({
-    // request-id：请求ID，请求的唯一标识
+    // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestId",
     batch_id: "batchtest123456",
     dealer_id: config.dealer_id,
