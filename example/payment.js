@@ -291,7 +291,6 @@ payment
     batch_id: "batchtest123456",
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
-    channel: "支付宝",
   })
   .then((data) => {
     if (data.code === "0000") {
