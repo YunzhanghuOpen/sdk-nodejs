@@ -11,7 +11,7 @@ h5usersign
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
-    request_id: "requestId",
+    request_id: "requestIdExample123456789",
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
     real_name: "张三",
@@ -38,7 +38,7 @@ h5usersign
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
-    request_id: "requestId",
+    request_id: "requestIdExample123456789",
     token: "55866120-532d-44dd-9251-cf453c7f4c63",
     color: "",
     url: "https://www.example.com",
@@ -64,7 +64,7 @@ h5usersign
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
-    request_id: "requestId",
+    request_id: "requestIdExample123456789",
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
     real_name: "张三",
@@ -90,7 +90,7 @@ h5usersign
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
-    request_id: "requestId",
+    request_id: "requestIdExample123456789",
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
     real_name: "张三",

@@ -13,7 +13,7 @@ authentication
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
-    request_id: "requestId",
+    request_id: "requestIdExample123456789",
     real_name: "张三",
     card_no: "8888888888888888888",
     id_card: "110121202202222222",
@@ -39,7 +39,7 @@ authentication
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
-    request_id: "requestId",
+    request_id: "requestIdExample123456789",
     real_name: "张三",
     card_no: "8888888888888888888",
     id_card: "110121202202222222",
@@ -67,7 +67,7 @@ authentication
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
-    request_id: "requestId",
+    request_id: "requestIdExample123456789",
     real_name: "张三",
     card_no: "8888888888888888888",
     id_card: "110121202202222222",
@@ -93,7 +93,7 @@ authentication
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
-    request_id: "requestId",
+    request_id: "requestIdExample123456789",
     real_name: "张三",
     card_no: "8888888888888888888",
     id_card: "110121202202222222",
@@ -118,7 +118,7 @@ authentication
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
-    request_id: "requestId",
+    request_id: "requestIdExample123456789",
     real_name: "张三",
     id_card: "110121202202222222",
   })
@@ -142,7 +142,7 @@ authentication
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
-    request_id: "requestId",
+    request_id: "requestIdExample123456789",
     card_no: "8888888888888888888",
     bank_name: "招商银行",
   })
@@ -177,7 +177,7 @@ authentication
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
-    request_id: "requestId",
+    request_id: "requestIdExample123456789",
     id_card: "parssport0001",
     card_type: "passport",
     real_name: "测试",
@@ -211,7 +211,7 @@ authentication
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
-    request_id: "requestId",
+    request_id: "requestIdExample123456789",
     id_card: "110121202202222222",
     real_name: "测试",
   })
