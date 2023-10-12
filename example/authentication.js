@@ -188,7 +188,7 @@ authentication
     country: "CHN",
     birthday: "20200101",
     gender: "男",
-    notify_url: "",
+    notify_url: "https://www.example.com",
     ref: "test019011901",
   })
   .then((data) => {
