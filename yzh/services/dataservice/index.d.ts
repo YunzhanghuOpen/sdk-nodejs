@@ -40,9 +40,9 @@ interface RechargeRecordInfo {
     /** 预付业务服务费记录 ID */
     recharge_id: string;
     /** 预付业务服务费 */
-    amount: string;
+    amount: number;
     /** 实际到账金额 */
-    actual_amount: string;
+    actual_amount: number;
     /** 创建时间 */
     created_at: string;
     /** 资金用途 */
