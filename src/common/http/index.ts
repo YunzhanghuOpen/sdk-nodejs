@@ -1,7 +1,7 @@
 import axios from "axios"
-import JsonBigString from "json-bigint"
 import * as urlencode from "urlencode"
 import * as pkg from "../../../package.json"
+const JsonBigString = require("json-bigint")({ storeAsString: true })
 const BASE_URL = "https://api-service.yunzhanghu.com/"
 
 const getInstance = (
@@ -19,7 +19,7 @@ const getInstance = (
     transformResponse: [
       function toJson(data) {
         try {
-          return JsonBigString({ storeAsString: true }).parse(data)
+          return JsonBigString.parse(data)
         } catch (e) {
           // data 返回的内容不是合法的json字符串时会报错，此时直接返回原 data 数据
           return data

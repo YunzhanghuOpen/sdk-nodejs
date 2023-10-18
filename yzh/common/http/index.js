@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
 const urlencode = require("urlencode");
 const pkg = require("../../../package.json");
+const JsonBigString = require('json-bigint')({ 'storeAsString': true });
 const BASE_URL = "https://api-service.yunzhanghu.com/";
 const getInstance = (config = {}) => {
     var _a;
@@ -15,6 +16,17 @@ const getInstance = (config = {}) => {
             "User-Agent": `yunzhanghu-sdk-nodejs/${pkg.version}/${process.version}`,
         },
         timeout: (_a = config.timeout) !== null && _a !== void 0 ? _a : 30 * 1000,
+        transformResponse: [
+            function toJson(data) {
+                try {
+                    return JsonBigString.parse(data);
+                }
+                catch (e) {
+                    // data 返回的内容不是合法的json字符串时会报错，此时直接返回原 data 数据
+                    return data;
+                }
+            },
+        ],
     });
     // 拦截器
     instance.interceptors.request.use(function (config) {
