@@ -2,7 +2,6 @@ const yzhAPI = require("../yzh/index.js")
 const config = require("./conf/config.js")
 
 // 个体工商户注册（云账户新经济 H5）
-
 const bizlicxjjh5 = new yzhAPI.BizlicXjjH5ServiceClient({
   ...config,
   base_url: "https://api-aic.yunzhanghu.com/",
@@ -30,7 +29,7 @@ bizlicxjjh5
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -58,7 +57,7 @@ bizlicxjjh5
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {

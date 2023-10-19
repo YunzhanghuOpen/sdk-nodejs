@@ -1,7 +1,6 @@
 const yunzhanghu = require("../yzh/index.js")
 
 // 异步通知
-
 const util = new yunzhanghu.Util({
   dealer_id: process.env.DEALER_ID,
   broker_id: process.env.BROKER_ID,

@@ -4,7 +4,6 @@ const fs = require("fs")
 const path = require("path")
 
 // 用户信息验证
-
 const authentication = new yzhAPI.AuthenticationClient(config)
 
 // 银行卡四要素鉴权请求（下发短信验证码）
@@ -25,7 +24,7 @@ authentication
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -53,7 +52,7 @@ authentication
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -79,7 +78,7 @@ authentication
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -104,7 +103,7 @@ authentication
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -128,7 +127,7 @@ authentication
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -152,7 +151,7 @@ authentication
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -197,7 +196,7 @@ authentication
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -221,7 +220,7 @@ authentication
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {

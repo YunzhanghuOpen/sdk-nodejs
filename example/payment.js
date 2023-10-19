@@ -1,5 +1,6 @@
 const yzhAPI = require("../yzh/index.js")
 const config = require("./conf/config.js")
+
 // 实时支付
 const payment = new yzhAPI.PaymentClient(config)
 
@@ -27,7 +28,7 @@ payment
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -60,7 +61,7 @@ payment
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -93,7 +94,7 @@ payment
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -118,7 +119,7 @@ payment
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -141,7 +142,7 @@ payment
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -165,7 +166,7 @@ payment
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -206,7 +207,7 @@ payment
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -273,7 +274,7 @@ payment
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -298,7 +299,7 @@ payment
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {

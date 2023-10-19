@@ -2,7 +2,6 @@ const yzhAPI = require("../yzh/index.js")
 const config = require("./conf/config.js")
 
 // 用户签约（H5 签约）
-
 const h5usersign = new yzhAPI.H5UserSignServiceClient(config)
 
 // 预申请签约
@@ -24,7 +23,7 @@ h5usersign
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -50,7 +49,7 @@ h5usersign
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -76,7 +75,7 @@ h5usersign
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
@@ -103,7 +102,7 @@ h5usersign
       console.log("操作成功 ", data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.requset_id)
+      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
     } 
   })
   .catch((err) => {
