@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
 const urlencode = require("urlencode");
 const pkg = require("../../../package.json");
-const JsonBigString = require('json-bigint')({ 'storeAsString': true });
+const JsonBigString = require("json-bigint")({ storeAsString: true });
 const BASE_URL = "https://api-service.yunzhanghu.com/";
 const getInstance = (config = {}) => {
     var _a;
@@ -29,11 +29,12 @@ const getInstance = (config = {}) => {
         ],
     });
     // 拦截器
-    instance.interceptors.request.use(function (config) {
+    instance.interceptors.request.use((config) => {
         // URL Encode
         if (config.method === "get") {
             const { params: urlData } = config;
             const { data, sign, ...resData } = urlData;
+            // eslint-disable-next-line no-param-reassign
             config.data = {
                 data: urlencode(data),
                 sign: urlencode(sign),
@@ -42,7 +43,7 @@ const getInstance = (config = {}) => {
         }
         return config;
     });
-    instance.interceptors.response.use(function (response) {
+    instance.interceptors.response.use((response) => {
         const { data } = response;
         if (data) {
             const { request_id, requestID, ...resResponse } = data;

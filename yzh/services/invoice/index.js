@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InvoiceClient = void 0;
 const client_1 = require("../../common/client");
 class InvoiceClient extends client_1.default {
+    // eslint-disable-next-line no-useless-constructor
     constructor(conf) {
         super(conf);
     }

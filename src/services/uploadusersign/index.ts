@@ -54,21 +54,8 @@ interface GetUploadUserSignStatusResponse {
   updated_at: string
 }
 
-/** NotifyUploadUserSignRequest 签约成功状态回调通知 */
-interface NotifyUploadUserSignRequest {
-  /** 平台企业 ID */
-  dealer_id: string
-  /** 综合服务主体 ID */
-  broker_id: string
-  /** 姓名 */
-  real_name: string
-  /** 证件号码 */
-  id_card: string
-  /** 手机号 */
-  phone: string
-}
-
 export class UploadUserSignServiceClient extends YZHclient {
+  // eslint-disable-next-line no-useless-constructor
   constructor(conf: {
     dealer_id: string
     broker_id: string

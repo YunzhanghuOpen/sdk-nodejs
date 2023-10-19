@@ -1,6 +1,7 @@
 import YZHclient from "../client"
 
 export class Util extends YZHclient {
+  // eslint-disable-next-line no-useless-constructor
   constructor(conf: {
     dealer_id: string
     broker_id: string

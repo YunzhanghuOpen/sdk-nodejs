@@ -1,7 +1,10 @@
 import axios from "axios"
 import * as urlencode from "urlencode"
+
 import * as pkg from "../../../package.json"
+
 const JsonBigString = require("json-bigint")({ storeAsString: true })
+
 const BASE_URL = "https://api-service.yunzhanghu.com/"
 
 const getInstance = (
@@ -29,11 +32,12 @@ const getInstance = (
   })
 
   // 拦截器
-  instance.interceptors.request.use(function (config) {
+  instance.interceptors.request.use((config) => {
     // URL Encode
     if (config.method === "get") {
       const { params: urlData } = config
       const { data, sign, ...resData } = urlData
+      // eslint-disable-next-line no-param-reassign
       config.data = {
         data: urlencode(data),
         sign: urlencode(sign),
@@ -43,7 +47,7 @@ const getInstance = (
     return config
   })
 
-  instance.interceptors.response.use(function (response) {
+  instance.interceptors.response.use((response) => {
     const { data } = response
     if (data) {
       const { request_id, requestID, ...resResponse } = data

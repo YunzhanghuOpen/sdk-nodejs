@@ -96,39 +96,8 @@ interface H5APIEcoCityAicStatusResponse {
   real_name: string
 }
 
-/** NotifyH5APIEcoCityAicRequest 结果回调 */
-interface NotifyH5APIEcoCityAicRequest {
-  /** 用户唯一标识 */
-  open_id: string
-  /** 平台企业端的用户 ID */
-  dealer_user_id: string
-  /** 注册/注销提交时间 */
-  submit_at: string
-  /** 注册/注销完成时间 */
-  registed_at: string
-  /** 用户签约状态 */
-  status: number
-  /** 注册状态描述 */
-  status_message: string
-  /** 注册详情状态码 */
-  status_detail: number
-  /** 注册详情状态码描述 */
-  status_detail_message: string
-  /** 平台企业 ID */
-  dealer_id: string
-  /** 综合服务主体 ID */
-  broker_id: string
-  /** 统一社会信用代码 */
-  uscc: string
-  /** 身份证号码 */
-  id_card: string
-  /** 姓名 */
-  real_name: string
-  /** 回调类型 */
-  type: number
-}
-
 export class BizlicXjjH5APIServiceClient extends YZHclient {
+  // eslint-disable-next-line no-useless-constructor
   constructor(conf: {
     dealer_id: string
     broker_id: string

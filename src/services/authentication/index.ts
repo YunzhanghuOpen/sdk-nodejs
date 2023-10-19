@@ -110,24 +110,6 @@ interface UserExemptedInfoResponse {
   ok: string
 }
 
-/** NotifyUserExemptedInfoRequest 上传免验证用户名单信息审核结果通知 */
-interface NotifyUserExemptedInfoRequest {
-  /** 综合服务主体 ID */
-  broker_id: string
-  /** 平台企业 ID */
-  dealer_id: string
-  /** 姓名 */
-  real_name: string
-  /** 证件号 */
-  id_card: string
-  /** 审核状态 */
-  status: string
-  /** 流水号 */
-  ref: string
-  /** 审核信息 */
-  comment: string
-}
-
 /** UserWhiteCheckRequest 查看免验证用户名单是否存在请求 */
 interface UserWhiteCheckRequest {
   /** 证件号码 */
@@ -162,6 +144,7 @@ interface GetBankCardInfoResponse {
 }
 
 export class AuthenticationClient extends YZHclient {
+  // eslint-disable-next-line no-useless-constructor
   constructor(conf: {
     dealer_id: string
     broker_id: string

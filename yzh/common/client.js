@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.YZHClient = void 0;
-const http_1 = require("../common/http");
+/* eslint-disable no-param-reassign */
 const crypto = require("crypto");
+const http_1 = require("../common/http");
 const yzhSDKHttpException_1 = require("./exception/yzhSDKHttpException");
 const clearEncoding = "utf8";
 const cipherEncoding = "base64";
@@ -83,6 +84,7 @@ class YZHClient {
             }
         };
         // 自定义随机字符串
+        // eslint-disable-next-line class-methods-use-this
         this.mess = () => {
             const buf = crypto.randomBytes(16);
             const token = buf.toString("hex");
@@ -238,7 +240,7 @@ class YZHClient {
             timeout: this.timeout,
         });
         // 返回请求实例
-        const baseInstanceConf = { method: method, url: action };
+        const baseInstanceConf = { method, url: action };
         let instanceConf;
         if (method === "get") {
             instanceConf = { ...baseInstanceConf, params: encryptParams };
@@ -295,6 +297,7 @@ class YZHClient {
         }
     }
     // 返回处理结果
+    // eslint-disable-next-line @typescript-eslint/require-await
     async parseResponse(result, encryption) {
         if (result.status !== 200) {
             const yzhError = new yzhSDKHttpException_1.default(result.statusText);

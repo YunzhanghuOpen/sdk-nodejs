@@ -1,6 +1,9 @@
-import getInstance from "../common/http"
+/* eslint-disable no-param-reassign */
 import * as crypto from "crypto"
+
+import getInstance from "../common/http"
 import YZHSDKHttpException from "./exception/yzhSDKHttpException"
+
 const clearEncoding = "utf8"
 const cipherEncoding = "base64"
 
@@ -10,13 +13,21 @@ type ResponseData = any
 
 export class YZHClient {
   public dealer_id: string
+
   public broker_id: string
+
   public app_key: string
+
   public des3_key: string
+
   public private_key: string
+
   public yzh_public_key: string
+
   public sign_type: "rsa" | "sha256"
+
   public base_url?: string
+
   public timeout?: number
 
   /**
@@ -84,7 +95,7 @@ export class YZHClient {
     })
 
     // 返回请求实例
-    const baseInstanceConf = { method: method, url: action }
+    const baseInstanceConf = { method, url: action }
     let instanceConf
     if (method === "get") {
       instanceConf = { ...baseInstanceConf, params: encryptParams }
@@ -212,6 +223,7 @@ export class YZHClient {
   }
 
   // 自定义随机字符串
+  // eslint-disable-next-line class-methods-use-this
   private mess = () => {
     const buf = crypto.randomBytes(16)
     const token = buf.toString("hex")
@@ -239,6 +251,7 @@ export class YZHClient {
   }
 
   // 返回处理结果
+  // eslint-disable-next-line @typescript-eslint/require-await
   private async parseResponse(result: ResponseData, encryption?: boolean) {
     if (result.status !== 200) {
       const yzhError = new YZHSDKHttpException(result.statusText)

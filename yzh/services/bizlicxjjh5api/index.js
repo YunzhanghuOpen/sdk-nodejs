@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BizlicXjjH5APIServiceClient = void 0;
 const client_1 = require("../../common/client");
 class BizlicXjjH5APIServiceClient extends client_1.default {
+    // eslint-disable-next-line no-useless-constructor
     constructor(conf) {
         super(conf);
     }
