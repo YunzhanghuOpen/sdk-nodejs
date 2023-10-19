@@ -1,24 +1,28 @@
-import YZHclient from "../../common/client";
+import YZHclient from '../../common/client';
 /** GetDailyOrderFileRequest 查询日订单文件请求 */
 interface GetDailyOrderFileRequest {
     /** 订单查询日期, 格式：yyyy-MM-dd */
     order_date: string;
 }
+
 /** GetDailyOrderFileResponse 查询日订单文件返回 */
 interface GetDailyOrderFileResponse {
     /** 下载地址 */
     order_download_url: string;
 }
+
 /** GetDailyBillFileV2Request 查询日流水文件请求 */
 interface GetDailyBillFileV2Request {
     /** 所需获取的日流水日期，格式：yyyy-MM-dd */
     bill_date: string;
 }
+
 /** GetDailyBillFileV2Response 查询日流水文件返回 */
 interface GetDailyBillFileV2Response {
     /** 下载地址 */
     bill_download_url: string;
 }
+
 /** ListDealerRechargeRecordV2Request 平台企业预付业务服务费记录请求 */
 interface ListDealerRechargeRecordV2Request {
     /** 开始时间，格式：yyyy-MM-dd */
@@ -26,11 +30,13 @@ interface ListDealerRechargeRecordV2Request {
     /** 结束时间，格式：yyyy-MM-dd */
     end_at: string;
 }
+
 /** ListDealerRechargeRecordV2Response 平台企业预付业务服务费记录返回 */
 interface ListDealerRechargeRecordV2Response {
     /** 预付业务服务费记录 */
     data: RechargeRecordInfo[];
 }
+
 /** RechargeRecordInfo 预付业务服务费记录信息 */
 interface RechargeRecordInfo {
     /** 平台企业 ID */
@@ -52,6 +58,7 @@ interface RechargeRecordInfo {
     /** 平台企业付款银行账号 */
     recharge_account_no: string;
 }
+
 /** ListDailyOrderRequest 查询日订单数据请求 */
 interface ListDailyOrderRequest {
     /** 订单查询日期, 格式：yyyy-MM-dd格式：yyyy-MM-dd */
@@ -65,6 +72,7 @@ interface ListDailyOrderRequest {
     /** 如果为 encryption，则对返回的 data 进行加密 */
     data_type: string;
 }
+
 /** ListDailyOrderResponse 查询日订单数据返回 */
 interface ListDailyOrderResponse {
     /** 总数目 */
@@ -72,6 +80,7 @@ interface ListDailyOrderResponse {
     /** 条目信息 */
     list: DealerOrderInfo[];
 }
+
 /** DealerOrderInfo 平台企业支付订单信息 */
 interface DealerOrderInfo {
     /** 综合服务主体 ID */
@@ -115,6 +124,7 @@ interface DealerOrderInfo {
     /** 完成时间 */
     finished_time: string;
 }
+
 /** ListDailyBillRequest 查询日流水数据请求 */
 interface ListDailyBillRequest {
     /** 流水查询日期 */
@@ -126,6 +136,7 @@ interface ListDailyBillRequest {
     /** 如果为 encryption，则对返回的 data 进行加密 */
     data_type: string;
 }
+
 /** ListDailyBillResponse 查询日流水数据返回 */
 interface ListDailyBillResponse {
     /** 总条数 */
@@ -133,6 +144,7 @@ interface ListDailyBillResponse {
     /** 条目信息 */
     list: DealerBillInfo[];
 }
+
 /** DealerBillInfo 流水详情 */
 interface DealerBillInfo {
     /** 综合服务主体 ID */
@@ -166,26 +178,31 @@ interface DealerBillInfo {
     /** 备注 */
     remark: string;
 }
+
 /** GetDailyOrderFileV2Request 查询日订单文件（支付和退款订单）请求 */
 interface GetDailyOrderFileV2Request {
     /** 订单查询日期, 格式：yyyy-MM-dd */
     order_date: string;
 }
+
 /** GetDailyOrderFileV2Response 查询日订单文件（支付和退款订单）返回 */
 interface GetDailyOrderFileV2Response {
     /** 下载地址 */
     url: string;
 }
+
 /** ListBalanceDailyStatementRequest 查询余额日账单数据请求 */
 interface ListBalanceDailyStatementRequest {
     /** 账单查询日期 格式：yyyy-MM-dd */
     statement_date: string;
 }
+
 /** ListBalanceDailyStatementResponse 查询余额日账单数据返回 */
 interface ListBalanceDailyStatementResponse {
     /** 条目信息 */
     list: StatementDetail[];
 }
+
 /** StatementDetail 余额账单信息详情 */
 interface StatementDetail {
     /** 账单 ID */
@@ -223,6 +240,7 @@ interface StatementDetail {
     /** 项目名称 */
     project_name: string;
 }
+
 export declare class DataServiceClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
@@ -231,16 +249,38 @@ export declare class DataServiceClient extends YZHclient {
         des3_key: string;
         private_key: string;
         yzh_public_key: string;
-        sign_type: "rsa" | "sha256";
+        sign_type: 'rsa' | 'sha256';
         base_url?: string;
         timeout?: number;
     });
-    ListDailyOrder(req: ListDailyOrderRequest, cb?: (error: null | string, rep: ListDailyOrderResponse) => void): Promise<ListDailyOrderResponse>;
-    GetDailyOrderFile(req: GetDailyOrderFileRequest, cb?: (error: null | string, rep: GetDailyOrderFileResponse) => void): Promise<GetDailyOrderFileResponse>;
-    GetDailyOrderFileV2(req: GetDailyOrderFileV2Request, cb?: (error: null | string, rep: GetDailyOrderFileV2Response) => void): Promise<GetDailyOrderFileV2Response>;
-    ListDailyBill(req: ListDailyBillRequest, cb?: (error: null | string, rep: ListDailyBillResponse) => void): Promise<ListDailyBillResponse>;
-    GetDailyBillFileV2(req: GetDailyBillFileV2Request, cb?: (error: null | string, rep: GetDailyBillFileV2Response) => void): Promise<GetDailyBillFileV2Response>;
-    ListDealerRechargeRecordV2(req: ListDealerRechargeRecordV2Request, cb?: (error: null | string, rep: ListDealerRechargeRecordV2Response) => void): Promise<ListDealerRechargeRecordV2Response>;
-    ListBalanceDailyStatement(req: ListBalanceDailyStatementRequest, cb?: (error: null | string, rep: ListBalanceDailyStatementResponse) => void): Promise<ListBalanceDailyStatementResponse>;
+    ListDailyOrder(
+        req: ListDailyOrderRequest,
+        cb?: (error: null | string, rep: ListDailyOrderResponse) => void
+    ): Promise<ListDailyOrderResponse>;
+    GetDailyOrderFile(
+        req: GetDailyOrderFileRequest,
+        cb?: (error: null | string, rep: GetDailyOrderFileResponse) => void
+    ): Promise<GetDailyOrderFileResponse>;
+    GetDailyOrderFileV2(
+        req: GetDailyOrderFileV2Request,
+        cb?: (error: null | string, rep: GetDailyOrderFileV2Response) => void
+    ): Promise<GetDailyOrderFileV2Response>;
+    ListDailyBill(
+        req: ListDailyBillRequest,
+        cb?: (error: null | string, rep: ListDailyBillResponse) => void
+    ): Promise<ListDailyBillResponse>;
+    GetDailyBillFileV2(
+        req: GetDailyBillFileV2Request,
+        cb?: (error: null | string, rep: GetDailyBillFileV2Response) => void
+    ): Promise<GetDailyBillFileV2Response>;
+    ListDealerRechargeRecordV2(
+        req: ListDealerRechargeRecordV2Request,
+        cb?: (error: null | string, rep: ListDealerRechargeRecordV2Response) => void
+    ): Promise<ListDealerRechargeRecordV2Response>;
+    ListBalanceDailyStatement(
+        req: ListBalanceDailyStatementRequest,
+        cb?: (error: null | string, rep: ListBalanceDailyStatementResponse) => void
+    ): Promise<ListBalanceDailyStatementResponse>;
 }
+
 export {};

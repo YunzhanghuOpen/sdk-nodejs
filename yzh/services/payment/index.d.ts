@@ -1,4 +1,4 @@
-import YZHclient from "../../common/client";
+import YZHclient from '../../common/client';
 /** CreateBankpayOrderRequest 银行卡实时支付请求 */
 interface CreateBankpayOrderRequest {
     /** 平台企业订单号 */
@@ -24,6 +24,7 @@ interface CreateBankpayOrderRequest {
     /** 项目标识 */
     project_id: string;
 }
+
 /** CreateBankpayOrderResponse 银行卡实时支付返回 */
 interface CreateBankpayOrderResponse {
     /** 平台企业订单号 */
@@ -33,6 +34,7 @@ interface CreateBankpayOrderResponse {
     /** 订单金额 */
     pay: string;
 }
+
 /** CreateAlipayOrderRequest 支付宝实时支付请求 */
 interface CreateAlipayOrderRequest {
     /** 平台企业订单号 */
@@ -60,6 +62,7 @@ interface CreateAlipayOrderRequest {
     /** 校验支付宝账户姓名，固定值：Check */
     check_name: string;
 }
+
 /** CreateAlipayOrderResponse 支付宝实时支付返回 */
 interface CreateAlipayOrderResponse {
     /** 平台企业订单号 */
@@ -69,6 +72,7 @@ interface CreateAlipayOrderResponse {
     /** 订单金额 */
     pay: string;
 }
+
 /** CreateWxpayOrderRequest 微信实时支付请求 */
 interface CreateWxpayOrderRequest {
     /** 平台企业订单号 */
@@ -100,6 +104,7 @@ interface CreateWxpayOrderRequest {
     /** 描述信息，该字段已废弃 */
     notes: string;
 }
+
 /** CreateWxpayOrderResponse 微信实时支付返回 */
 interface CreateWxpayOrderResponse {
     /** 平台企业订单号 */
@@ -109,6 +114,7 @@ interface CreateWxpayOrderResponse {
     /** 订单金额 */
     pay: string;
 }
+
 /** GetOrderRequest 查询单笔订单信息请求 */
 interface GetOrderRequest {
     /** 平台企业订单号 */
@@ -118,6 +124,7 @@ interface GetOrderRequest {
     /** 数据类型，如果为 encryption，则对返回的 data 进行加密 */
     data_type: string;
 }
+
 /** GetOrderResponse 查询单笔订单信息返回 */
 interface GetOrderResponse {
     /** 平台企业订单号 */
@@ -181,6 +188,7 @@ interface GetOrderResponse {
     /** 系统支付费用，该字段已废弃 */
     sys_fee: string;
 }
+
 /** GetDealerVARechargeAccountRequest 查询平台企业汇款信息请求 */
 interface GetDealerVARechargeAccountRequest {
     /** 综合服务主体 ID */
@@ -188,6 +196,7 @@ interface GetDealerVARechargeAccountRequest {
     /** 平台企业 ID */
     dealer_id: string;
 }
+
 /** GetDealerVARechargeAccountResponse 查询平台企业汇款信息返回 */
 interface GetDealerVARechargeAccountResponse {
     /** 账户名称 */
@@ -199,6 +208,7 @@ interface GetDealerVARechargeAccountResponse {
     /** 付款账户 */
     dealer_acct_name: string;
 }
+
 /** CancelOrderRequest 取消待支付订单请求 */
 interface CancelOrderRequest {
     /** 平台企业 ID */
@@ -210,19 +220,23 @@ interface CancelOrderRequest {
     /** 支付路径名，银行卡（默认）、支付宝、微信 */
     channel: string;
 }
+
 /** CancelOrderResponse 取消待支付订单返回 */
 interface CancelOrderResponse {
     ok: string;
 }
+
 /** ListAccountRequest 查询平台企业余额请求 */
 interface ListAccountRequest {
     /** 平台企业 ID */
     dealer_id: string;
 }
+
 /** ListAccountResponse 查询平台企业余额返回 */
 interface ListAccountResponse {
     dealer_infos: AccountInfo[];
 }
+
 /** AccountInfo 账户信息 */
 interface AccountInfo {
     /** 综合服务主体 ID */
@@ -246,6 +260,7 @@ interface AccountInfo {
     /** 总余额 */
     total_balance: string;
 }
+
 /** GetEleReceiptFileRequest 查询电子回单请求 */
 interface GetEleReceiptFileRequest {
     /** 平台企业订单号 */
@@ -253,6 +268,7 @@ interface GetEleReceiptFileRequest {
     /** 综合服务平台流水号 */
     ref: string;
 }
+
 /** GetEleReceiptFileResponse 查询电子回单返回 */
 interface GetEleReceiptFileResponse {
     /** 链接失效时间 */
@@ -262,6 +278,7 @@ interface GetEleReceiptFileResponse {
     /** 下载链接 */
     url: string;
 }
+
 /** CreateBatchOrderRequest 批量下单请求 */
 interface CreateBatchOrderRequest {
     /** 平台企业批次号 */
@@ -283,6 +300,7 @@ interface CreateBatchOrderRequest {
     /** 订单列表 */
     order_list: BatchOrderInfo[];
 }
+
 /** BatchOrderInfo 批量下单订单信息 */
 interface BatchOrderInfo {
     /** 平台企业订单号 */
@@ -306,6 +324,7 @@ interface BatchOrderInfo {
     /** 回调地址 */
     notify_url: string;
 }
+
 /** CreateBatchOrderResponse 批量下单返回 */
 interface CreateBatchOrderResponse {
     /** 平台企业批次号 */
@@ -313,6 +332,7 @@ interface CreateBatchOrderResponse {
     /** 订单结果列表 */
     result_list: BatchOrderResult[];
 }
+
 /** BatchOrderResult 批量下单返回订单信息 */
 interface BatchOrderResult {
     /** 平台企业订单号 */
@@ -322,6 +342,7 @@ interface BatchOrderResult {
     /** 订单金额 */
     pay: string;
 }
+
 /** ConfirmBatchOrderRequest 批次确认请求 */
 interface ConfirmBatchOrderRequest {
     /** 平台企业批次号 */
@@ -333,9 +354,10 @@ interface ConfirmBatchOrderRequest {
     /** 支付路径 */
     channel: string;
 }
+
 /** ConfirmBatchOrderResponse 批次确认返回 */
-interface ConfirmBatchOrderResponse {
-}
+interface ConfirmBatchOrderResponse {}
+
 /** CancelBatchOrderRequest 批次撤销请求 */
 interface CancelBatchOrderRequest {
     /** 平台企业批次号 */
@@ -345,9 +367,10 @@ interface CancelBatchOrderRequest {
     /** 综合服务主体 ID */
     broker_id: string;
 }
+
 /** CancelBatchOrderResponse 批次撤销返回 */
-interface CancelBatchOrderResponse {
-}
+interface CancelBatchOrderResponse {}
+
 export declare class PaymentClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
@@ -356,20 +379,54 @@ export declare class PaymentClient extends YZHclient {
         des3_key: string;
         private_key: string;
         yzh_public_key: string;
-        sign_type: "rsa" | "sha256";
+        sign_type: 'rsa' | 'sha256';
         base_url?: string;
         timeout?: number;
     });
-    CreateBankpayOrder(req: CreateBankpayOrderRequest, cb?: (error: null | string, rep: CreateBankpayOrderResponse) => void): Promise<CreateBankpayOrderResponse>;
-    CreateAlipayOrder(req: CreateAlipayOrderRequest, cb?: (error: null | string, rep: CreateAlipayOrderResponse) => void): Promise<CreateAlipayOrderResponse>;
-    CreateWxpayOrder(req: CreateWxpayOrderRequest, cb?: (error: null | string, rep: CreateWxpayOrderResponse) => void): Promise<CreateWxpayOrderResponse>;
-    GetOrder(req: GetOrderRequest, cb?: (error: null | string, rep: GetOrderResponse) => void): Promise<GetOrderResponse>;
-    GetDealerVARechargeAccount(req: GetDealerVARechargeAccountRequest, cb?: (error: null | string, rep: GetDealerVARechargeAccountResponse) => void): Promise<GetDealerVARechargeAccountResponse>;
-    ListAccount(req: ListAccountRequest, cb?: (error: null | string, rep: ListAccountResponse) => void): Promise<ListAccountResponse>;
-    GetEleReceiptFile(req: GetEleReceiptFileRequest, cb?: (error: null | string, rep: GetEleReceiptFileResponse) => void): Promise<GetEleReceiptFileResponse>;
-    CancelOrder(req: CancelOrderRequest, cb?: (error: null | string, rep: CancelOrderResponse) => void): Promise<CancelOrderResponse>;
-    CreateBatchOrder(req: CreateBatchOrderRequest, cb?: (error: null | string, rep: CreateBatchOrderResponse) => void): Promise<CreateBatchOrderResponse>;
-    ConfirmBatchOrder(req: ConfirmBatchOrderRequest, cb?: (error: null | string, rep: ConfirmBatchOrderResponse) => void): Promise<ConfirmBatchOrderResponse>;
-    CancelBatchOrder(req: CancelBatchOrderRequest, cb?: (error: null | string, rep: CancelBatchOrderResponse) => void): Promise<CancelBatchOrderResponse>;
+    CreateBankpayOrder(
+        req: CreateBankpayOrderRequest,
+        cb?: (error: null | string, rep: CreateBankpayOrderResponse) => void
+    ): Promise<CreateBankpayOrderResponse>;
+    CreateAlipayOrder(
+        req: CreateAlipayOrderRequest,
+        cb?: (error: null | string, rep: CreateAlipayOrderResponse) => void
+    ): Promise<CreateAlipayOrderResponse>;
+    CreateWxpayOrder(
+        req: CreateWxpayOrderRequest,
+        cb?: (error: null | string, rep: CreateWxpayOrderResponse) => void
+    ): Promise<CreateWxpayOrderResponse>;
+    GetOrder(
+        req: GetOrderRequest,
+        cb?: (error: null | string, rep: GetOrderResponse) => void
+    ): Promise<GetOrderResponse>;
+    GetDealerVARechargeAccount(
+        req: GetDealerVARechargeAccountRequest,
+        cb?: (error: null | string, rep: GetDealerVARechargeAccountResponse) => void
+    ): Promise<GetDealerVARechargeAccountResponse>;
+    ListAccount(
+        req: ListAccountRequest,
+        cb?: (error: null | string, rep: ListAccountResponse) => void
+    ): Promise<ListAccountResponse>;
+    GetEleReceiptFile(
+        req: GetEleReceiptFileRequest,
+        cb?: (error: null | string, rep: GetEleReceiptFileResponse) => void
+    ): Promise<GetEleReceiptFileResponse>;
+    CancelOrder(
+        req: CancelOrderRequest,
+        cb?: (error: null | string, rep: CancelOrderResponse) => void
+    ): Promise<CancelOrderResponse>;
+    CreateBatchOrder(
+        req: CreateBatchOrderRequest,
+        cb?: (error: null | string, rep: CreateBatchOrderResponse) => void
+    ): Promise<CreateBatchOrderResponse>;
+    ConfirmBatchOrder(
+        req: ConfirmBatchOrderRequest,
+        cb?: (error: null | string, rep: ConfirmBatchOrderResponse) => void
+    ): Promise<ConfirmBatchOrderResponse>;
+    CancelBatchOrder(
+        req: CancelBatchOrderRequest,
+        cb?: (error: null | string, rep: CancelBatchOrderResponse) => void
+    ): Promise<CancelBatchOrderResponse>;
 }
+
 export {};

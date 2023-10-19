@@ -1,4 +1,4 @@
-import YZHclient from "../../common/client";
+import YZHclient from '../../common/client';
 /** H5PreCollectBizlicMsgRequest 工商实名信息录入请求 */
 interface H5PreCollectBizlicMsgRequest {
     /** 平台企业 ID */
@@ -24,11 +24,13 @@ interface H5PreCollectBizlicMsgRequest {
     /** 身份证有效期结束时间 */
     id_card_validity_end: string;
 }
+
 /** H5PreCollectBizlicMsgResponse 工商实名信息录入返回 */
 interface H5PreCollectBizlicMsgResponse {
     /** 平台企业端的用户 ID */
     dealer_user_id: string;
 }
+
 /** H5APIGetStartUrlRequest 预启动请求 */
 interface H5APIGetStartUrlRequest {
     /** 平台企业 ID */
@@ -48,11 +50,13 @@ interface H5APIGetStartUrlRequest {
     /** H5 页面 Title */
     customer_title: number;
 }
+
 /** H5APIGetStartUrlResponse 预启动返回 */
 interface H5APIGetStartUrlResponse {
     /** 跳转 URL */
     h5_url: string;
 }
+
 /** H5APIEcoCityAicStatusRequest 查询个体工商户状态请求 */
 interface H5APIEcoCityAicStatusRequest {
     /** 平台企业 ID */
@@ -68,6 +72,7 @@ interface H5APIEcoCityAicStatusRequest {
     /** 用户唯一标识 */
     open_id: string;
 }
+
 /** H5APIEcoCityAicStatusResponse 查询个体工商户状态返回 */
 interface H5APIEcoCityAicStatusResponse {
     /** 用户签约状态 */
@@ -89,6 +94,7 @@ interface H5APIEcoCityAicStatusResponse {
     /** 姓名 */
     real_name: string;
 }
+
 export declare class BizlicXjjH5APIServiceClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
@@ -97,12 +103,22 @@ export declare class BizlicXjjH5APIServiceClient extends YZHclient {
         des3_key: string;
         private_key: string;
         yzh_public_key: string;
-        sign_type: "rsa" | "sha256";
+        sign_type: 'rsa' | 'sha256';
         base_url?: string;
         timeout?: number;
     });
-    H5PreCollectBizlicMsg(req: H5PreCollectBizlicMsgRequest, cb?: (error: null | string, rep: H5PreCollectBizlicMsgResponse) => void): Promise<H5PreCollectBizlicMsgResponse>;
-    H5APIGetStartUrl(req: H5APIGetStartUrlRequest, cb?: (error: null | string, rep: H5APIGetStartUrlResponse) => void): Promise<H5APIGetStartUrlResponse>;
-    H5APIEcoCityAicStatus(req: H5APIEcoCityAicStatusRequest, cb?: (error: null | string, rep: H5APIEcoCityAicStatusResponse) => void): Promise<H5APIEcoCityAicStatusResponse>;
+    H5PreCollectBizlicMsg(
+        req: H5PreCollectBizlicMsgRequest,
+        cb?: (error: null | string, rep: H5PreCollectBizlicMsgResponse) => void
+    ): Promise<H5PreCollectBizlicMsgResponse>;
+    H5APIGetStartUrl(
+        req: H5APIGetStartUrlRequest,
+        cb?: (error: null | string, rep: H5APIGetStartUrlResponse) => void
+    ): Promise<H5APIGetStartUrlResponse>;
+    H5APIEcoCityAicStatus(
+        req: H5APIEcoCityAicStatusRequest,
+        cb?: (error: null | string, rep: H5APIEcoCityAicStatusResponse) => void
+    ): Promise<H5APIEcoCityAicStatusResponse>;
 }
+
 export {};

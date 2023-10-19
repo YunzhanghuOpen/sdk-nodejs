@@ -1,4 +1,4 @@
-import YZHclient from "../../common/client";
+import YZHclient from '../../common/client';
 /** GetInvoiceStatRequest 查询平台企业已开具和待开具发票金额请求 */
 interface GetInvoiceStatRequest {
     /** 综合服务主体 ID */
@@ -8,6 +8,7 @@ interface GetInvoiceStatRequest {
     /** 查询年份 */
     year: number;
 }
+
 /** GetInvoiceStatResponse 查询平台企业已开具和待开具发票金额返回 */
 interface GetInvoiceStatResponse {
     /** 平台企业 ID */
@@ -21,6 +22,7 @@ interface GetInvoiceStatResponse {
     /** 待开发票金额 */
     not_invoiced: string;
 }
+
 /** GetInvoiceAmountRequest 查询可开具发票额度和发票开具信息请求 */
 interface GetInvoiceAmountRequest {
     /** 综合服务主体 ID */
@@ -28,6 +30,7 @@ interface GetInvoiceAmountRequest {
     /** 平台企业 ID */
     dealer_id: string;
 }
+
 /** GetInvoiceAmountResponse 查询可开具发票额度和发票开具信息返回 */
 interface GetInvoiceAmountResponse {
     /** 可开票额度 */
@@ -37,6 +40,7 @@ interface GetInvoiceAmountResponse {
     /** 系统支持的货物或应税劳务、服务名称 */
     goods_services_name: GoodsServicesName[];
 }
+
 /** ApplyInvoiceRequest 发票开具申请请求 */
 interface ApplyInvoiceRequest {
     /** 发票申请编号 */
@@ -56,6 +60,7 @@ interface ApplyInvoiceRequest {
     /** 发票备注 */
     remark: string;
 }
+
 /** ApplyInvoiceResponse 发票开具申请返回 */
 interface ApplyInvoiceResponse {
     /** 发票申请单 ID */
@@ -63,6 +68,7 @@ interface ApplyInvoiceResponse {
     /** 发票张数 */
     count: string;
 }
+
 /** GetInvoiceStatusRequest 查询发票开具申请状态请求 */
 interface GetInvoiceStatusRequest {
     /** 发票申请编号 */
@@ -70,6 +76,7 @@ interface GetInvoiceStatusRequest {
     /** 发票申请单 ID */
     application_id: string;
 }
+
 /** GetInvoiceStatusResponse 查询发票开具申请状态返回 */
 interface GetInvoiceStatusResponse {
     /** 申请结果 */
@@ -101,6 +108,7 @@ interface GetInvoiceStatusResponse {
     /** 快递单号 */
     waybill_number: string[];
 }
+
 /** GetInvoiceInformationRequest 查询发票信息请求 */
 interface GetInvoiceInformationRequest {
     /** 发票申请编号 */
@@ -108,11 +116,13 @@ interface GetInvoiceInformationRequest {
     /** 发票申请单 ID */
     application_id: string;
 }
+
 /** GetInvoiceInformationResponse 查询发票信息返回 */
 interface GetInvoiceInformationResponse {
     /** 发票信息 */
     information: InformationDataInfo[];
 }
+
 /** InformationDataInfo 查询发票信息返回 */
 interface InformationDataInfo {
     /** 货物或应税劳务、服务名称 */
@@ -132,6 +142,7 @@ interface InformationDataInfo {
     /** 开票日期 */
     invoiced_date: string;
 }
+
 /** BankNameAccount 系统支持的开户行及账号 */
 interface BankNameAccount {
     /** 开户行及账号 */
@@ -139,6 +150,7 @@ interface BankNameAccount {
     /** 是否为默认值 */
     default: boolean;
 }
+
 /** GoodsServicesName 系统支持的货物或应税劳务、服务名称 */
 interface GoodsServicesName {
     /** 货物或应税劳务、服务名称 */
@@ -146,6 +158,7 @@ interface GoodsServicesName {
     /** 是否为默认值 */
     default: boolean;
 }
+
 /** GetInvoiceFileRequest 下载 PDF 版发票请求 */
 interface GetInvoiceFileRequest {
     /** 发票申请编号 */
@@ -153,6 +166,7 @@ interface GetInvoiceFileRequest {
     /** 发票申请单 ID */
     application_id: string;
 }
+
 /** GetInvoiceFileResponse 下载 PDF 版发票返回 */
 interface GetInvoiceFileResponse {
     /** 下载地址 */
@@ -160,6 +174,7 @@ interface GetInvoiceFileResponse {
     /** 文件名称 */
     name: string;
 }
+
 /** SendReminderEmailRequest 发送发票扫描件压缩包下载链接邮件请求 */
 interface SendReminderEmailRequest {
     /** 发票申请编号 */
@@ -167,9 +182,10 @@ interface SendReminderEmailRequest {
     /** 发票申请单 ID */
     application_id: string;
 }
+
 /** SendReminderEmailResponse 发送发票扫描件压缩包下载链接邮件返回 */
-interface SendReminderEmailResponse {
-}
+interface SendReminderEmailResponse {}
+
 export declare class InvoiceClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
@@ -178,16 +194,38 @@ export declare class InvoiceClient extends YZHclient {
         des3_key: string;
         private_key: string;
         yzh_public_key: string;
-        sign_type: "rsa" | "sha256";
+        sign_type: 'rsa' | 'sha256';
         base_url?: string;
         timeout?: number;
     });
-    GetInvoiceStat(req: GetInvoiceStatRequest, cb?: (error: null | string, rep: GetInvoiceStatResponse) => void): Promise<GetInvoiceStatResponse>;
-    GetInvoiceAmount(req: GetInvoiceAmountRequest, cb?: (error: null | string, rep: GetInvoiceAmountResponse) => void): Promise<GetInvoiceAmountResponse>;
-    ApplyInvoice(req: ApplyInvoiceRequest, cb?: (error: null | string, rep: ApplyInvoiceResponse) => void): Promise<ApplyInvoiceResponse>;
-    GetInvoiceStatus(req: GetInvoiceStatusRequest, cb?: (error: null | string, rep: GetInvoiceStatusResponse) => void): Promise<GetInvoiceStatusResponse>;
-    GetInvoiceInformation(req: GetInvoiceInformationRequest, cb?: (error: null | string, rep: GetInvoiceInformationResponse) => void): Promise<GetInvoiceInformationResponse>;
-    GetInvoiceFile(req: GetInvoiceFileRequest, cb?: (error: null | string, rep: GetInvoiceFileResponse) => void): Promise<GetInvoiceFileResponse>;
-    SendReminderEmail(req: SendReminderEmailRequest, cb?: (error: null | string, rep: SendReminderEmailResponse) => void): Promise<SendReminderEmailResponse>;
+    GetInvoiceStat(
+        req: GetInvoiceStatRequest,
+        cb?: (error: null | string, rep: GetInvoiceStatResponse) => void
+    ): Promise<GetInvoiceStatResponse>;
+    GetInvoiceAmount(
+        req: GetInvoiceAmountRequest,
+        cb?: (error: null | string, rep: GetInvoiceAmountResponse) => void
+    ): Promise<GetInvoiceAmountResponse>;
+    ApplyInvoice(
+        req: ApplyInvoiceRequest,
+        cb?: (error: null | string, rep: ApplyInvoiceResponse) => void
+    ): Promise<ApplyInvoiceResponse>;
+    GetInvoiceStatus(
+        req: GetInvoiceStatusRequest,
+        cb?: (error: null | string, rep: GetInvoiceStatusResponse) => void
+    ): Promise<GetInvoiceStatusResponse>;
+    GetInvoiceInformation(
+        req: GetInvoiceInformationRequest,
+        cb?: (error: null | string, rep: GetInvoiceInformationResponse) => void
+    ): Promise<GetInvoiceInformationResponse>;
+    GetInvoiceFile(
+        req: GetInvoiceFileRequest,
+        cb?: (error: null | string, rep: GetInvoiceFileResponse) => void
+    ): Promise<GetInvoiceFileResponse>;
+    SendReminderEmail(
+        req: SendReminderEmailRequest,
+        cb?: (error: null | string, rep: SendReminderEmailResponse) => void
+    ): Promise<SendReminderEmailResponse>;
 }
+
 export {};

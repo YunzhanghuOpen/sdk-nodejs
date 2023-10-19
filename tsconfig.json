@@ -16,8 +16,9 @@
     "noFallthroughCasesInSwitch": true /* 不允许 switch 的 case 语句贯穿 */,
     "allowSyntheticDefaultImports": true /* 允许从没有设置默认导出的模块中默认导入，仅用于提示，不影响编译结果 */,
     "esModuleInterop": false /* 允许编译生成文件时，在代码中注入工具类(__importDefault、__importStar)对 ESM 与 commonjs 混用情况做兼容处理 */,
-    "sourceMap": false
+    "sourceMap": false,
   },
+
   "include": [
     /* 需要编译的文件 */
     "src/**/*.ts",
