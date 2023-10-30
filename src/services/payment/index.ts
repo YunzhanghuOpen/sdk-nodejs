@@ -28,6 +28,7 @@ interface CreateBankpayOrderRequest {
 
 /** CreateBankpayOrderResponse 银行卡实时支付返回 */
 interface CreateBankpayOrderResponse {
+  /** 平台企业订单号 */
   order_id: string
   /** 综合服务平台流水号 */
   ref: string
@@ -279,72 +280,6 @@ interface GetEleReceiptFileResponse {
   url: string
 }
 
-/** NotifyOrderRequest 订单支付状态回调通知 */
-interface NotifyOrderRequest {
-  /** 通知 ID */
-  notify_id: string
-  /** 通知时间 */
-  notify_time: string
-  /** 返回数据 */
-  data: NotifyOrderData
-}
-
-/** NotifyOrderData 订单支付状态回调通知数据 */
-interface NotifyOrderData {
-  /** 平台企业订单号 */
-  order_id: string
-  /** 订单金额 */
-  pay: string
-  /** 综合服务主体 ID */
-  broker_id: string
-  /** 平台企业 ID */
-  dealer_id: string
-  /** 姓名 */
-  real_name: string
-  /** 收款人账号 */
-  card_no: string
-  /** 身份证号码 */
-  id_card: string
-  /** 手机号 */
-  phone_no: string
-  /** 订单状态码 */
-  status: string
-  /** 订单详细状态码 */
-  status_detail: string
-  /** 订单状态码描述 */
-  status_message: string
-  /** 订单详细状态码描述 */
-  status_detail_message: string
-  /** 综合服务主体支付金额 */
-  broker_amount: string
-  /** 综合服务平台流水号 */
-  ref: string
-  /** 支付交易流水号 */
-  broker_bank_bill: string
-  /** 支付路径 */
-  withdraw_platform: string
-  /** 订单接收时间，精确到秒 */
-  created_at: string
-  /** 订单完成时间，精确到秒 */
-  finished_time: string
-  /** 综合服务主体加成服务费 */
-  broker_fee: string
-  /** 余额账户支出加成服务费 */
-  broker_real_fee: string
-  /** 抵扣账户支出加成服务费 */
-  broker_deduct_fee: string
-  /** 订单备注 */
-  pay_remark: string
-  /** 用户加成服务费 */
-  user_fee: string
-  /** 银行名称 */
-  bank_name: string
-  /** 项目标识 */
-  project_id: string
-  /** 平台企业用户 ID */
-  user_id: string
-}
-
 /** CreateBatchOrderRequest 批量下单请求 */
 interface CreateBatchOrderRequest {
   /** 平台企业批次号 */
@@ -361,6 +296,8 @@ interface CreateBatchOrderRequest {
   total_pay: string
   /** 总笔数 */
   total_count: string
+  /** 支付模式 */
+  mode: string
   /** 订单列表 */
   order_list: BatchOrderInfo[]
 }
@@ -419,10 +356,24 @@ interface ConfirmBatchOrderRequest {
   channel: string
 }
 
-/** ConfirmBatchOrderResponse 批次确认响应 */
+/** ConfirmBatchOrderResponse 批次确认返回 */
 interface ConfirmBatchOrderResponse {}
 
+/** CancelBatchOrderRequest 批次撤销请求 */
+interface CancelBatchOrderRequest {
+  /** 平台企业批次号 */
+  batch_id: string
+  /** 平台企业 ID */
+  dealer_id: string
+  /** 综合服务主体 ID */
+  broker_id: string
+}
+
+/** CancelBatchOrderResponse 批次撤销返回 */
+interface CancelBatchOrderResponse {}
+
 export class PaymentClient extends YZHclient {
+  // eslint-disable-next-line no-useless-constructor
   constructor(conf: {
     dealer_id: string
     broker_id: string
@@ -432,6 +383,7 @@ export class PaymentClient extends YZHclient {
     yzh_public_key: string
     sign_type: "rsa" | "sha256"
     base_url?: string
+    timeout?: number
   }) {
     super(conf)
   }
@@ -520,5 +472,13 @@ export class PaymentClient extends YZHclient {
     cb?: (error: null | string, rep: ConfirmBatchOrderResponse) => void
   ): Promise<ConfirmBatchOrderResponse> {
     return this.request("post", "/api/payment/v1/confirm-batch", req, { encryption: false }, cb)
+  }
+
+  // CancelBatchOrder 批次撤销
+  async CancelBatchOrder(
+    req: CancelBatchOrderRequest,
+    cb?: (error: null | string, rep: CancelBatchOrderResponse) => void
+  ): Promise<CancelBatchOrderResponse> {
+    return this.request("post", "/api/payment/v1/cancel-batch", req, { encryption: false }, cb)
   }
 }

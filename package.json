@@ -1,47 +1,52 @@
 {
-  "name": "@yunzhanghu/sdk-nodejs",
-  "version": "1.0.3",
-  "description": "云账户 SDK for Node.js",
-  "main": "yzh/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "prettier": "prettier --config prettier.config.js --write 'src/**/*.{ts,js}'",
-    "lint:tsc": "tsc -p tsconfig.json --noEmit",
-    "lint:es": "eslint --ext .js,ts --cache src",
-    "prepare": "husky install"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/YunzhanghuOpen/sdk-nodejs"
-  },
-  "engines": {
-    "node": ">=12"
-  },
-  "author": "yunzhanghuapi",
-  "license": "Apache-2.0",
-  "devDependencies": {
-    "@types/crypto-js": "^4.1.1",
-    "@types/node": "^18.11.18",
-    "@types/urlencode": "^1.1.2",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@typescript-eslint/parser": "^5.50.0",
-    "eslint": "^8.33.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.1.0",
-    "prettier": "^2.8.3",
-    "typescript": "^4.9.4"
-  },
-  "dependencies": {
-    "axios": "^1.2.1",
-    "crypto-js": "^4.1.1",
-    "tslib": "^2.4.1",
-    "urlencode": "^1.1.0"
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix --ext .js,ts --cache src",
-      "git add"
-    ]
-  }
+    "name": "@yunzhanghu/sdk-nodejs",
+    "version": "1.0.3",
+    "description": "云账户 SDK for Node.js",
+    "main": "yzh/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc && node tdsformat.js && npm run format:dts",
+        "prettier": "prettier --config prettier.config.js --write 'src/**/*.{ts,js}'",
+        "lint:tsc": "tsc -p tsconfig.json --noEmit",
+        "lint:es": "eslint --ext .js,ts --cache src",
+        "format:dts": "prettier --write yzh/services/**/*.d.ts yzh/services/**/*.js",
+        "prepare": "husky install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/YunzhanghuOpen/sdk-nodejs"
+    },
+    "engines": {
+        "node": ">=12"
+    },
+    "author": "yunzhanghuapi",
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "@types/crypto-js": "^4.1.1",
+        "@types/json-bigint": "^1.0.2",
+        "@types/node": "^18.11.18",
+        "@types/urlencode": "^1.1.2",
+        "@types/vfile-message": "^2.0.0",
+        "@typescript-eslint/eslint-plugin": "^5.50.0",
+        "@typescript-eslint/parser": "^5.50.0",
+        "@yzh-devkit/eslint-config-lint": "^3.0.6",
+        "eslint": "^8.33.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.1.0",
+        "prettier": "^2.8.3",
+        "typescript": "^4.9.4"
+    },
+    "dependencies": {
+        "axios": "^1.2.1",
+        "crypto-js": "^4.1.1",
+        "json-bigint": "^1.0.0",
+        "tslib": "^2.4.1",
+        "urlencode": "^1.1.0"
+    },
+    "lint-staged": {
+        "*.{js,ts}": [
+            "eslint --fix --ext .js,ts --cache src",
+            "git add"
+        ]
+    }
 }

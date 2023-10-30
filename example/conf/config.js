@@ -26,5 +26,7 @@ QqP7lt6FdvzGxehaHwIDAQAB
   // 签名方式，登录云账户综合服务平台，选择“业务中心 > 业务管理 > 对接信息”获取
   // 签名方式为 RSA，参数固定为：rsa
   sign_type: "rsa",
+  // 请求超时时间，默认 30S
+  timeout: 30 * 1000,
 }
 module.exports = config

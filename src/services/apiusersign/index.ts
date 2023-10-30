@@ -93,6 +93,7 @@ interface ApiUserSignReleaseResponse {
 }
 
 export class ApiUserSignServiceClient extends YZHclient {
+  // eslint-disable-next-line no-useless-constructor
   constructor(conf: {
     dealer_id: string
     broker_id: string
@@ -102,6 +103,7 @@ export class ApiUserSignServiceClient extends YZHclient {
     yzh_public_key: string
     sign_type: "rsa" | "sha256"
     base_url?: string
+    timeout?: number
   }) {
     super(conf)
   }

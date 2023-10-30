@@ -187,45 +187,8 @@ interface SendReminderEmailRequest {
 /** SendReminderEmailResponse 发送发票扫描件压缩包下载链接邮件返回 */
 interface SendReminderEmailResponse {}
 
-/** NotifyInvoiceDoneRequest 发票开具完成通知 */
-interface NotifyInvoiceDoneRequest {
-  /** 发票申请单 ID */
-  application_id: string
-  /** 发票申请编号 */
-  invoice_apply_id: string
-  /** 申请结果 */
-  status: string
-  /** 发票张数 */
-  count: number
-  /** 价税合计 */
-  price_tax_amount: string
-  /** 不含税金额 */
-  price_amount: string
-  /** 税额 */
-  tax_amount: string
-  /** 发票类型 */
-  invoice_type: string
-  /** 购方名称 */
-  customer_name: string
-  /** 纳税人识别号 */
-  customer_tax_num: string
-  /** 购方地址、电话 */
-  customer_address_tel: string
-  /** 开户行及账号 */
-  bank_name_account: string
-  /** 货物或应税劳务、服务名称 */
-  goods_services_name: string
-  /** 发票备注 */
-  remark: string
-  /** 邮寄类型 */
-  post_type: string
-  /** 快递单号 */
-  waybill_number: string[]
-  /** 驳回原因 */
-  reject_reason: string
-}
-
 export class InvoiceClient extends YZHclient {
+  // eslint-disable-next-line no-useless-constructor
   constructor(conf: {
     dealer_id: string
     broker_id: string
@@ -235,6 +198,7 @@ export class InvoiceClient extends YZHclient {
     yzh_public_key: string
     sign_type: "rsa" | "sha256"
     base_url?: string
+    timeout?: number
   }) {
     super(conf)
   }

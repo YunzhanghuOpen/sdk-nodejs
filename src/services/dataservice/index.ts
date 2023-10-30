@@ -47,9 +47,9 @@ interface RechargeRecordInfo {
   /** 预付业务服务费记录 ID */
   recharge_id: string
   /** 预付业务服务费 */
-  amount: string
+  amount: number
   /** 实际到账金额 */
-  actual_amount: string
+  actual_amount: number
   /** 创建时间 */
   created_at: string
   /** 资金用途 */
@@ -243,6 +243,7 @@ interface StatementDetail {
 }
 
 export class DataServiceClient extends YZHclient {
+  // eslint-disable-next-line no-useless-constructor
   constructor(conf: {
     dealer_id: string
     broker_id: string
@@ -252,6 +253,7 @@ export class DataServiceClient extends YZHclient {
     yzh_public_key: string
     sign_type: "rsa" | "sha256"
     base_url?: string
+    timeout?: number
   }) {
     super(conf)
   }

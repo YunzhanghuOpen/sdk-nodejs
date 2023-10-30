@@ -1,8 +1,10 @@
 export default class YZHSDKHttpException extends Error {
   // 请求 ID
   request_id: string
+
   // HTTP 状态码
   httpCode?: number
+
   // 接口返回状态码
   code?: string
 
@@ -24,6 +26,7 @@ export default class YZHSDKHttpException extends Error {
       this.code && `code:${this.code}`
     }  requestId:${this.getRequestId()}  message:${this.getMessage()}`
   }
+
   toLocaleString(): string {
     return `[yzh_sdk_exception]  ${
       this.code && `code:${this.code}`

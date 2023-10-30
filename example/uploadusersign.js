@@ -1,19 +1,23 @@
 const yzhAPI = require("../yzh/index.js")
 const config = require("./conf/config.js")
 
-// 个人所得税扣缴明细表
-const tax = new yzhAPI.TaxClient(config)
+// 签约信息上传
+const uploaduserSign = new yzhAPI.UploadUserSignServiceClient(config)
 
-// 下载个人所得税扣缴明细表
-tax
-  .GetTaxFile({
+// 用户签约信息上传
+uploaduserSign
+  .UploadUserSign({
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestIdExample123456789",
     dealer_id: config.dealer_id,
-    ent_id: "accumulus_tj",
-    year_month: "2022-10",
+    broker_id: config.broker_id,
+    real_name: "张三",
+    id_card: "110121202202222222",
+    phone: "188****8888",
+    is_abroad: false,
+    notify_url: "https://www.example.com",
   })
   .then((data) => {
     if (data.code === "0000") {
@@ -29,17 +33,17 @@ tax
     console.log(err.toString())
   })
 
-// 查询纳税人是否为跨集团用户
-tax
-  .GetUserCross({
+// 获取用户签约状态
+uploaduserSign
+  .GetUploadUserSignStatus({
     // request-id：请求 ID，请求的唯一标识
     // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
     // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
     request_id: "requestIdExample123456789",
     dealer_id: config.dealer_id,
-    ent_id: "accumulus_tj",
+    broker_id: config.broker_id,
+    real_name: "张三",
     id_card: "110121202202222222",
-    year: "2022",
   })
   .then((data) => {
     if (data.code === "0000") {

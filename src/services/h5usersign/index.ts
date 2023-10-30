@@ -82,21 +82,8 @@ interface H5UserReleaseResponse {
   status: string
 }
 
-/** NotifyH5UserSignRequest 签约回调 */
-interface NotifyH5UserSignRequest {
-  /** 平台企业 ID */
-  dealer_id: string
-  /** 综合服务主体 ID */
-  broker_id: string
-  /** 姓名 */
-  real_name: string
-  /** 证件号码 */
-  id_card: string
-  /** 预签约手机号 */
-  phone: string
-}
-
 export class H5UserSignServiceClient extends YZHclient {
+  // eslint-disable-next-line no-useless-constructor
   constructor(conf: {
     dealer_id: string
     broker_id: string
@@ -106,6 +93,7 @@ export class H5UserSignServiceClient extends YZHclient {
     yzh_public_key: string
     sign_type: "rsa" | "sha256"
     base_url?: string
+    timeout?: number
   }) {
     super(conf)
   }

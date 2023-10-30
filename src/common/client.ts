@@ -1,6 +1,9 @@
-import getInstance from "../common/http"
+/* eslint-disable no-param-reassign */
 import * as crypto from "crypto"
+
+import getInstance from "../common/http"
 import YZHSDKHttpException from "./exception/yzhSDKHttpException"
+
 const clearEncoding = "utf8"
 const cipherEncoding = "base64"
 
@@ -10,13 +13,22 @@ type ResponseData = any
 
 export class YZHClient {
   public dealer_id: string
+
   public broker_id: string
+
   public app_key: string
+
   public des3_key: string
+
   public private_key: string
+
   public yzh_public_key: string
+
   public sign_type: "rsa" | "sha256"
+
   public base_url?: string
+
+  public timeout?: number
 
   /**
    * 构造函数参数
@@ -28,6 +40,7 @@ export class YZHClient {
    * @param {string} yzh_public_key 云账户公钥
    * @param {string} sign_type 签名算法，支持 RSA、HMAC，枚举分别为 rsa、sha256
    * @param {string} base_url 可选，默认为 https://api-service.yunzhanghu.com/
+   * @param {number} timeout  请求超时时间。可选，默认30*1000ms。0为永不超时。
    */
   constructor(conf: {
     dealer_id: string
@@ -38,6 +51,7 @@ export class YZHClient {
     yzh_public_key: string
     sign_type: "rsa" | "sha256"
     base_url?: string
+    timeout?: number
   }) {
     const { dealer_id, broker_id, app_key, des3_key, private_key, yzh_public_key, sign_type } =
       conf || {}
@@ -59,6 +73,7 @@ export class YZHClient {
       this.yzh_public_key = conf.yzh_public_key
       this.sign_type = conf.sign_type
       this.base_url = conf?.base_url
+      this.timeout = conf?.timeout
     } else {
       throw new YZHSDKHttpException(
         `实例初始化失败，请检查以下配置是否缺失：\ndealer_id、broker_id、app_key、des3_key、private_key、yzh_public_key、sign_type`
@@ -76,9 +91,11 @@ export class YZHClient {
       request_id: request_id ?? this.mess(),
       dealer_id: this.dealer_id,
       base_url: this.base_url,
+      timeout: this.timeout,
     })
+
     // 返回请求实例
-    const baseInstanceConf = { method: method, url: action }
+    const baseInstanceConf = { method, url: action }
     let instanceConf
     if (method === "get") {
       instanceConf = { ...baseInstanceConf, params: encryptParams }
@@ -206,6 +223,7 @@ export class YZHClient {
   }
 
   // 自定义随机字符串
+  // eslint-disable-next-line class-methods-use-this
   private mess = () => {
     const buf = crypto.randomBytes(16)
     const token = buf.toString("hex")
@@ -233,6 +251,7 @@ export class YZHClient {
   }
 
   // 返回处理结果
+  // eslint-disable-next-line @typescript-eslint/require-await
   private async parseResponse(result: ResponseData, encryption?: boolean) {
     if (result.status !== 200) {
       const yzhError = new YZHSDKHttpException(result.statusText)

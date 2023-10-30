@@ -9,6 +9,7 @@ export declare class YZHClient {
     yzh_public_key: string;
     sign_type: "rsa" | "sha256";
     base_url?: string;
+    timeout?: number;
     /**
      * 构造函数参数
      * @param {string} dealer_id 平台企业 ID
@@ -19,6 +20,7 @@ export declare class YZHClient {
      * @param {string} yzh_public_key 云账户公钥
      * @param {string} sign_type 签名算法，支持 RSA、HMAC，枚举分别为 rsa、sha256
      * @param {string} base_url 可选，默认为 https://api-service.yunzhanghu.com/
+     * @param {number} timeout  请求超时时间。可选，默认30*1000ms。0为永不超时。
      */
     constructor(conf: {
         dealer_id: string;
@@ -29,6 +31,7 @@ export declare class YZHClient {
         yzh_public_key: string;
         sign_type: "rsa" | "sha256";
         base_url?: string;
+        timeout?: number;
     });
     private doRequest;
     request(method: string, action: string, req?: any, options?: {
