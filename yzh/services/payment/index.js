@@ -53,6 +53,10 @@ class PaymentClient extends client_1.default {
     async ConfirmBatchOrder(req, cb) {
         return this.request('post', '/api/payment/v1/confirm-batch', req, { encryption: false }, cb);
     }
+    // QueryBatchOrder 查询批次订单信息
+    async QueryBatchOrder(req, cb) {
+        return this.request('get', '/api/payment/v1/query-batch', req, { encryption: false }, cb);
+    }
     // CancelBatchOrder 批次撤销
     async CancelBatchOrder(req, cb) {
         return this.request('post', '/api/payment/v1/cancel-batch', req, { encryption: false }, cb);

@@ -279,7 +279,7 @@ interface GetEleReceiptFileResponse {
     url: string;
 }
 
-/** CreateBatchOrderRequest 批量下单请求 */
+/** CreateBatchOrderRequest 批次下单请求 */
 interface CreateBatchOrderRequest {
     /** 平台企业批次号 */
     batch_id: string;
@@ -301,7 +301,7 @@ interface CreateBatchOrderRequest {
     order_list: BatchOrderInfo[];
 }
 
-/** BatchOrderInfo 批量下单订单信息 */
+/** BatchOrderInfo 批次下单订单信息 */
 interface BatchOrderInfo {
     /** 平台企业订单号 */
     order_id: string;
@@ -325,7 +325,7 @@ interface BatchOrderInfo {
     notify_url: string;
 }
 
-/** CreateBatchOrderResponse 批量下单返回 */
+/** CreateBatchOrderResponse 批次下单返回 */
 interface CreateBatchOrderResponse {
     /** 平台企业批次号 */
     batch_id: string;
@@ -333,7 +333,7 @@ interface CreateBatchOrderResponse {
     result_list: BatchOrderResult[];
 }
 
-/** BatchOrderResult 批量下单返回订单信息 */
+/** BatchOrderResult 批次下单返回订单信息 */
 interface BatchOrderResult {
     /** 平台企业订单号 */
     order_id: string;
@@ -341,6 +341,18 @@ interface BatchOrderResult {
     ref: string;
     /** 订单金额 */
     pay: string;
+    /** 下单状态 */
+    status: string;
+    /** 下单失败原因 */
+    error_reasons: BatchOrderErrorReasons[];
+}
+
+/** BatchOrderErrorReasons 下单失败原因信息 */
+interface BatchOrderErrorReasons {
+    /** 不允许下单原因码 */
+    error_code: string;
+    /** 不允许下单原因描述 */
+    error_message: string;
 }
 
 /** ConfirmBatchOrderRequest 批次确认请求 */
@@ -357,6 +369,92 @@ interface ConfirmBatchOrderRequest {
 
 /** ConfirmBatchOrderResponse 批次确认返回 */
 interface ConfirmBatchOrderResponse {}
+
+/** QueryBatchOrderRequest 查询批次订单信息请求 */
+interface QueryBatchOrderRequest {
+    /** 平台企业批次号 */
+    batch_id: string;
+    /** 平台企业 ID */
+    dealer_id: string;
+}
+
+/** QueryBatchOrderResponse 查询批次订单信息返回 */
+interface QueryBatchOrderResponse {
+    /** 综合服务主体 ID */
+    broker_id: string;
+    /** 平台企业 ID */
+    dealer_id: string;
+    /** 平台企业批次号 */
+    batch_id: string;
+    /** 总笔数 */
+    total_count: string;
+    /** 订单总金额 */
+    total_pay: string;
+    /** 支付路径 */
+    channel: string;
+    /** 批次状态码 */
+    batch_status: string;
+    /** 批次状态码描述 */
+    batch_status_message: string;
+    /** 批次接收时间 */
+    batch_received_time: string;
+    /** 批次订单列表 */
+    order_list: QueryBatchOrderInfo[];
+}
+
+/** QueryBatchOrderInfo 查询批次订单信息订单详情 */
+interface QueryBatchOrderInfo {
+    /** 平台企业订单号 */
+    order_id: string;
+    /** 订单金额 */
+    pay: string;
+    /** 综合服务主体 ID */
+    broker_id: string;
+    /** 平台企业 ID */
+    dealer_id: string;
+    /** 姓名 */
+    real_name: string;
+    /** 收款人账号 */
+    card_no: string;
+    /** 身份证号码 */
+    id_card: string;
+    /** 手机号 */
+    phone_no: string;
+    /** 订单状态码 */
+    status: string;
+    /** 订单详情状态码 */
+    status_detail: string;
+    /** 订单状态码描述 */
+    status_message: string;
+    /** 订单详情状态码描述 */
+    status_detail_message: string;
+    /** 综合服务主体支付金额 */
+    broker_amount: string;
+    /** 综合服务平台流水号 */
+    ref: string;
+    /** 支付交易流水号 */
+    broker_bank_bill: string;
+    /** 支付路径 */
+    withdraw_platform: string;
+    /** 订单接收时间 */
+    created_at: string;
+    /** 订单完成时间 */
+    finished_time: string;
+    /** 综合服务主体加成服务费 */
+    broker_fee: string;
+    /** 余额账户支出加成服务费 */
+    broker_real_fee: string;
+    /** 加成服务费抵扣金额 */
+    broker_deduct_fee: string;
+    /** 订单备注 */
+    pay_remark: string;
+    /** 用户加成服务费 */
+    user_fee: string;
+    /** 银行名称 */
+    bank_name: string;
+    /** 业务线标识 */
+    project_id: string;
+}
 
 /** CancelBatchOrderRequest 批次撤销请求 */
 interface CancelBatchOrderRequest {
@@ -423,6 +521,10 @@ export declare class PaymentClient extends YZHclient {
         req: ConfirmBatchOrderRequest,
         cb?: (error: null | string, rep: ConfirmBatchOrderResponse) => void
     ): Promise<ConfirmBatchOrderResponse>;
+    QueryBatchOrder(
+        req: QueryBatchOrderRequest,
+        cb?: (error: null | string, rep: QueryBatchOrderResponse) => void
+    ): Promise<QueryBatchOrderResponse>;
     CancelBatchOrder(
         req: CancelBatchOrderRequest,
         cb?: (error: null | string, rep: CancelBatchOrderResponse) => void

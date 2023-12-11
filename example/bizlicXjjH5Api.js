@@ -10,9 +10,12 @@ const bizlicxjjh5api = new yzhAPI.BizlicXjjH5APIServiceClient({
 // 工商实名信息录入
 bizlicxjjh5api
   .H5PreCollectBizlicMsg({
-    // request-id：请求 ID，请求的唯一标识
-    // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+    
+    /**
+      * @param {string} request-id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      */
     request_id: "requestIdExample123456789",
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
@@ -43,9 +46,12 @@ bizlicxjjh5api
 // 预启动
 bizlicxjjh5api
   .H5APIGetStartUrl({
-    // request-id：请求 ID，请求的唯一标识
-    // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+    
+    /**
+      * @param {string} request-id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      */
     request_id: "requestIdExample123456789",
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
@@ -73,9 +79,12 @@ bizlicxjjh5api
 // 查询个体工商户状态
 bizlicxjjh5api
   .H5APIEcoCityAicStatus({
-    // request-id：请求 ID，请求的唯一标识
-    // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+    
+    /**
+      * @param {string} request-id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      */
     request_id: "requestIdExample123456789",
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,

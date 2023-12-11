@@ -1,35 +1,35 @@
 export default class YZHSDKHttpException extends Error {
-  // 请求 ID
-  request_id: string
+    // 请求 ID
+    request_id: string;
 
-  // HTTP 状态码
-  httpCode?: number
+    // HTTP 状态码
+    httpCode?: number;
 
-  // 接口返回状态码
-  code?: string
+    // 接口返回状态码
+    code?: string;
 
-  constructor(error: string, request_id = "") {
-    super(error)
-    this.request_id = request_id || ""
-  }
+    constructor(error: string, request_id = '') {
+        super(error);
+        this.request_id = request_id || '';
+    }
 
-  getMessage(): string {
-    return this.message
-  }
+    getMessage(): string {
+        return this.message;
+    }
 
-  getRequestId(): string {
-    return this.request_id
-  }
+    getRequestId(): string {
+        return this.request_id;
+    }
 
-  toString(): string {
-    return `[yzh_sdk_exception]  ${
-      this.code && `code:${this.code}`
-    }  requestId:${this.getRequestId()}  message:${this.getMessage()}`
-  }
+    toString(): string {
+        return `[yzh_sdk_exception]  ${
+            this.code && `code:${this.code}`
+        }  requestId:${this.getRequestId()}  message:${this.getMessage()}`;
+    }
 
-  toLocaleString(): string {
-    return `[yzh_sdk_exception]  ${
-      this.code && `code:${this.code}`
-    }  requestId:${this.getRequestId()}  message:${this.getMessage()}`
-  }
+    toLocaleString(): string {
+        return `[yzh_sdk_exception]  ${
+            this.code && `code:${this.code}`
+        }  requestId:${this.getRequestId()}  message:${this.getMessage()}`;
+    }
 }

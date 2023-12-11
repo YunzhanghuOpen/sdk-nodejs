@@ -9,9 +9,12 @@ const authentication = new yzhAPI.AuthenticationClient(config)
 // 银行卡四要素鉴权请求（下发短信验证码）
 authentication
   .BankCardFourAuthVerify({
-    // request-id：请求 ID，请求的唯一标识
-    // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+    
+    /**
+      * @param {string} request-id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      */
     request_id: "requestIdExample123456789",
     real_name: "张三",
     card_no: "8888888888888888888",
@@ -35,9 +38,12 @@ authentication
 // 银行卡四要素确认请求（上传短信验证码）
 authentication
   .BankCardFourAuthConfirm({
-    // request-id：请求 ID，请求的唯一标识
-    // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+    
+    /**
+      * @param {string} request-id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      */
     request_id: "requestIdExample123456789",
     real_name: "张三",
     card_no: "8888888888888888888",
@@ -63,9 +69,12 @@ authentication
 // 银行卡四要素验证
 authentication
   .BankCardFourVerify({
-    // request-id：请求 ID，请求的唯一标识
-    // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+    
+    /**
+      * @param {string} request-id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      */
     request_id: "requestIdExample123456789",
     real_name: "张三",
     card_no: "8888888888888888888",
@@ -89,9 +98,12 @@ authentication
 // 银行卡三要素验证
 authentication
   .BankCardThreeVerify({
-    // request-id：请求 ID，请求的唯一标识
-    // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+    
+    /**
+      * @param {string} request-id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      */
     request_id: "requestIdExample123456789",
     real_name: "张三",
     card_no: "8888888888888888888",
@@ -114,9 +126,12 @@ authentication
 // 身份证实名验证
 authentication
   .IDCardVerify({
-    // request-id：请求 ID，请求的唯一标识
-    // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+    
+    /**
+      * @param {string} request-id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      */
     request_id: "requestIdExample123456789",
     real_name: "张三",
     id_card: "110121202202222222",
@@ -138,9 +153,12 @@ authentication
 // 银行卡信息查询
 authentication
   .GetBankCardInfo({
-    // request-id：请求 ID，请求的唯一标识
-    // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+    
+    /**
+      * @param {string} request-id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      */
     request_id: "requestIdExample123456789",
     card_no: "8888888888888888888",
     bank_name: "招商银行",
@@ -173,9 +191,12 @@ function parse(file) {
 // 上传免验证用户名单信息
 authentication
   .UserExemptedInfo({
-    // request-id：请求 ID，请求的唯一标识
-    // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+    
+    /**
+      * @param {string} request-id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      */
     request_id: "requestIdExample123456789",
     id_card: "parssport0001",
     card_type: "passport",
@@ -207,9 +228,12 @@ authentication
 // 查看免验证用户名单是否存在
 authentication
   .UserWhiteCheck({
-    // request-id：请求 ID，请求的唯一标识
-    // 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-    // 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+    
+    /**
+      * @param {string} request-id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      */
     request_id: "requestIdExample123456789",
     id_card: "110121202202222222",
     real_name: "测试",

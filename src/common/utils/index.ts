@@ -1,20 +1,20 @@
-import YZHclient from "../client"
+import YZHclient from '../client';
 
 export class Util extends YZHclient {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(conf: {
-    dealer_id: string
-    broker_id: string
-    app_key: string
-    des3_key: string
-    private_key: string
-    yzh_public_key: string
-    sign_type: "rsa" | "sha256"
-    base_url?: string
-    timeout?: number
-  }) {
-    super(conf)
-  }
+    // eslint-disable-next-line no-useless-constructor
+    constructor(conf: {
+        dealer_id: string;
+        broker_id: string;
+        app_key: string;
+        des3_key: string;
+        private_key: string;
+        yzh_public_key: string;
+        sign_type: 'rsa' | 'sha256';
+        base_url?: string;
+        timeout?: number;
+    }) {
+        super(conf);
+    }
 }
 
-export default Util
+export default Util;
