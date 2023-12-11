@@ -1,12 +1,12 @@
 {
     "name": "@yunzhanghu/sdk-nodejs",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "云账户 SDK for Node.js",
     "main": "yzh/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "tsc && node tdsformat.js && npm run format:dts",
-        "prettier": "prettier --config prettier.config.js --write 'src/**/*.{ts,js}'",
+        "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json}\"",
         "lint:tsc": "tsc -p tsconfig.json --noEmit",
         "lint:es": "eslint --ext .js,ts --cache src",
         "format:dts": "prettier --write yzh/services/**/*.d.ts yzh/services/**/*.js",
