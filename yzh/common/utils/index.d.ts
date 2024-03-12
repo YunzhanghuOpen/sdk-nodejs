@@ -1,4 +1,4 @@
-import YZHclient from "../client";
+import YZHclient from '../client';
 export declare class Util extends YZHclient {
     constructor(conf: {
         dealer_id: string;
@@ -7,7 +7,7 @@ export declare class Util extends YZHclient {
         des3_key: string;
         private_key: string;
         yzh_public_key: string;
-        sign_type: "rsa" | "sha256";
+        sign_type: 'rsa' | 'sha256';
         base_url?: string;
         timeout?: number;
     });

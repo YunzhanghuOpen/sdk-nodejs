@@ -3,6 +3,7 @@ export { ApiUserSignServiceClient } from './apiusersign';
 export { AuthenticationClient } from './authentication';
 export { BizlicXjjH5ServiceClient } from './bizlicxjjh5';
 export { BizlicXjjH5APIServiceClient } from './bizlicxjjh5api';
+export { CustomClient } from './custom';
 export { DataServiceClient } from './dataservice';
 export { H5UserSignServiceClient } from './h5usersign';
 export { InvoiceClient } from './invoice';

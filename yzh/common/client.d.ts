@@ -7,7 +7,7 @@ export declare class YZHClient {
     des3_key: string;
     private_key: string;
     yzh_public_key: string;
-    sign_type: "rsa" | "sha256";
+    sign_type: 'rsa' | 'sha256';
     base_url?: string;
     timeout?: number;
     /**
@@ -29,11 +29,11 @@ export declare class YZHClient {
         des3_key: string;
         private_key: string;
         yzh_public_key: string;
-        sign_type: "rsa" | "sha256";
+        sign_type: 'rsa' | 'sha256';
         base_url?: string;
         timeout?: number;
     });
-    private doRequest;
+    private doBaseRequest;
     request(method: string, action: string, req?: any, options?: {
         encryption: boolean;
     }, cb?: ResponseCallback): Promise<ResponseData>;
