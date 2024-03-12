@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class YZHSDKHttpException extends Error {
-    constructor(error, request_id = "") {
+    constructor(error, request_id = '') {
         super(error);
-        this.request_id = request_id || "";
+        this.request_id = request_id || '';
     }
     getMessage() {
         return this.message;

@@ -72,7 +72,7 @@ export class YZHClient {
     }
 
     // 基础请求：进行请求实例生成 Header，动态设置、请求体包装等偏底层操作
-    private doRequest(method: string, action: string, req: any): Promise<ResponseData> {
+    private doBaseRequest(method: string, action: string, req: any): Promise<ResponseData> {
         const { request_id, ...resReq } = req;
         // 请求参数加密
         const encryptParams = this.generatorRequestParams(resReq);
@@ -108,7 +108,7 @@ export class YZHClient {
             options = {} as any;
         }
         try {
-            const result = await this.doRequest(method, action, req ?? {});
+            const result = await this.doBaseRequest(method, action, req ?? {});
             // 错误码处理 > 验签 > 解密
             const responseData = await this.parseResponse(result, options?.encryption);
             cb && cb(null, responseData);

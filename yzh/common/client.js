@@ -5,8 +5,8 @@ exports.YZHClient = void 0;
 const crypto = require("crypto");
 const http_1 = require("../common/http");
 const yzhSDKHttpException_1 = require("./exception/yzhSDKHttpException");
-const clearEncoding = "utf8";
-const cipherEncoding = "base64";
+const clearEncoding = 'utf8';
+const cipherEncoding = 'base64';
 class YZHClient {
     /**
      * 构造函数参数
@@ -31,7 +31,7 @@ class YZHClient {
         this.signRSASHA256 = (data, mess, timestamp) => {
             try {
                 const plaintext = `data=${data}&mess=${mess}&timestamp=${timestamp}&key=${this.app_key}`;
-                const sign = crypto.createSign("RSA-SHA256");
+                const sign = crypto.createSign('RSA-SHA256');
                 sign.update(plaintext);
                 sign.end();
                 return sign.sign(this.private_key, cipherEncoding);
@@ -50,9 +50,9 @@ class YZHClient {
         this.signHmacSHA256 = (data, mess, timestamp) => {
             try {
                 const plaintext = `data=${data}&mess=${mess}&timestamp=${timestamp}&key=${this.app_key}`;
-                const hmac = crypto.createHmac("sha256", this.app_key);
+                const hmac = crypto.createHmac('sha256', this.app_key);
                 hmac.update(plaintext);
-                return hmac.digest("hex");
+                return hmac.digest('hex');
             }
             catch (err) {
                 throw new yzhSDKHttpException_1.default(`${err}`);
@@ -69,10 +69,10 @@ class YZHClient {
         this.sign = (data, mess, timestamp) => {
             try {
                 switch (this.sign_type) {
-                    case "rsa": {
+                    case 'rsa': {
                         return this.signRSASHA256(data, mess, timestamp);
                     }
-                    case "sha256": {
+                    case 'sha256': {
                         return this.signHmacSHA256(data, mess, timestamp);
                     }
                     default:
@@ -87,7 +87,7 @@ class YZHClient {
         // eslint-disable-next-line class-methods-use-this
         this.mess = () => {
             const buf = crypto.randomBytes(16);
-            const token = buf.toString("hex");
+            const token = buf.toString('hex');
             return token.toString();
         };
         /**
@@ -99,11 +99,11 @@ class YZHClient {
             try {
                 const iv = this.des3_key.slice(0, 8);
                 const cipherChunks = [];
-                const cipher = crypto.createCipheriv("des-ede3-cbc", this.des3_key, iv);
+                const cipher = crypto.createCipheriv('des-ede3-cbc', this.des3_key, iv);
                 cipher.setAutoPadding(true);
                 cipherChunks.push(cipher.update(plaintext, clearEncoding, cipherEncoding));
                 cipherChunks.push(cipher.final(cipherEncoding));
-                return cipherChunks.join("");
+                return cipherChunks.join('');
             }
             catch (err) {
                 throw new yzhSDKHttpException_1.default(`${err}`);
@@ -118,11 +118,11 @@ class YZHClient {
             try {
                 const iv = this.des3_key.slice(0, 8);
                 const cipherChunks = [];
-                const decipher = crypto.createDecipheriv("des-ede3-cbc", this.des3_key, iv);
+                const decipher = crypto.createDecipheriv('des-ede3-cbc', this.des3_key, iv);
                 decipher.setAutoPadding(true);
                 cipherChunks.push(decipher.update(ciphertext, cipherEncoding, clearEncoding));
                 cipherChunks.push(decipher.final(clearEncoding));
-                return JSON.parse(cipherChunks.join(""));
+                return JSON.parse(cipherChunks.join(''));
             }
             catch (err) {
                 throw new yzhSDKHttpException_1.default(`${err}`);
@@ -139,7 +139,7 @@ class YZHClient {
         this.verifyRSASHA256 = (data, mess, timestamp, sign) => {
             try {
                 const plaintext = `data=${data}&mess=${mess}&timestamp=${timestamp}&key=${this.app_key}`;
-                const verify = crypto.createVerify("RSA-SHA256");
+                const verify = crypto.createVerify('RSA-SHA256');
                 verify.update(plaintext);
                 return verify.verify(this.yzh_public_key, sign, cipherEncoding);
             }
@@ -150,9 +150,9 @@ class YZHClient {
         this.verifyHmacSHA256 = (data, mess, timestamp, sign) => {
             try {
                 const plaintext = `data=${data}&mess=${mess}&timestamp=${timestamp}&key=${this.app_key}`;
-                const hmac = crypto.createHmac("sha256", this.app_key);
+                const hmac = crypto.createHmac('sha256', this.app_key);
                 hmac.update(plaintext);
-                return hmac.digest("hex") === sign;
+                return hmac.digest('hex') === sign;
             }
             catch (err) {
                 throw new yzhSDKHttpException_1.default(`${err}`);
@@ -165,12 +165,12 @@ class YZHClient {
          */
         this.filePassWordDecryption = (ciphertextbase64) => {
             try {
-                const buff = Buffer.from(ciphertextbase64, "base64");
+                const buff = Buffer.from(ciphertextbase64, 'base64');
                 const decrypted = crypto.privateDecrypt({
                     key: this.private_key,
                     padding: crypto.constants.RSA_PKCS1_PADDING,
                 }, buff);
-                return decrypted.toString("utf8");
+                return decrypted.toString('utf8');
             }
             catch (err) {
                 throw new yzhSDKHttpException_1.default(`${err}`);
@@ -181,7 +181,7 @@ class YZHClient {
          * @param responseData 回调返回对象
          * @returns
          */
-        this.notifyDecoder = (responseData) => {
+        this.notifyDecoder = responseData => {
             const notifyDecoderResult = (data, mess, timestamp, sign) => {
                 const verifyMap = {
                     rsa: this.verifyRSASHA256,
@@ -202,17 +202,10 @@ class YZHClient {
             if (data && mess && timestamp && sign) {
                 return notifyDecoderResult(data, mess, timestamp, sign);
             }
-            return { result: false, plaintext: "" };
+            return { result: false, plaintext: '' };
         };
         const { dealer_id, broker_id, app_key, des3_key, private_key, yzh_public_key, sign_type } = conf || {};
-        if (conf &&
-            dealer_id &&
-            broker_id &&
-            app_key &&
-            des3_key &&
-            private_key &&
-            yzh_public_key &&
-            sign_type) {
+        if (conf && dealer_id && broker_id && app_key && des3_key && private_key && yzh_public_key && sign_type) {
             this.dealer_id = conf.dealer_id;
             this.broker_id = conf.broker_id;
             this.app_key = conf.app_key;
@@ -228,7 +221,7 @@ class YZHClient {
         }
     }
     // 基础请求：进行请求实例生成 Header，动态设置、请求体包装等偏底层操作
-    doRequest(method, action, req) {
+    doBaseRequest(method, action, req) {
         const { request_id, ...resReq } = req;
         // 请求参数加密
         const encryptParams = this.generatorRequestParams(resReq);
@@ -242,7 +235,7 @@ class YZHClient {
         // 返回请求实例
         const baseInstanceConf = { method, url: action };
         let instanceConf;
-        if (method === "get") {
+        if (method === 'get') {
             instanceConf = { ...baseInstanceConf, params: encryptParams };
         }
         else {
@@ -252,12 +245,12 @@ class YZHClient {
     }
     // 公共请求：调用封装好的基础请求方法 doRequest，进行发送请求与响应内容处理
     async request(method, action, req, options, cb) {
-        if (typeof options === "function") {
+        if (typeof options === 'function') {
             cb = options;
             options = {};
         }
         try {
-            const result = await this.doRequest(method, action, req !== null && req !== void 0 ? req : {});
+            const result = await this.doBaseRequest(method, action, req !== null && req !== void 0 ? req : {});
             // 错误码处理 > 验签 > 解密
             const responseData = await this.parseResponse(result, options === null || options === void 0 ? void 0 : options.encryption);
             cb && cb(null, responseData);
