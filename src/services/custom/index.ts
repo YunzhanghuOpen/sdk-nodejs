@@ -30,6 +30,7 @@ export class CustomClient extends YZHClient {
         method: string,
         cb?: (error: null | string, rep: CustomResponse) => void
     ): Promise<CustomResponse> {
-        return this.request(method, url, req, { encryption: false }, cb);
+        const lower_method = method.toLowerCase();
+        return this.request(lower_method, url, req, { encryption: false }, cb);
     }
 }
