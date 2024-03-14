@@ -16,7 +16,8 @@ class CustomClient extends client_1.default {
      * @returns
      */
     async doRequest(req, url, method, cb) {
-        return this.request(method, url, req, { encryption: false }, cb);
+        const lower_method = method.toLowerCase();
+        return this.request(lower_method, url, req, { encryption: false }, cb);
     }
 }
 exports.CustomClient = CustomClient;
