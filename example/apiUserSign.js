@@ -44,7 +44,7 @@ apiusersign
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
     real_name: "张三",
-    id_card: "110121202202222222",
+    id_card: "11010519491231002X",
     user_id: "userId00001",
     card_type: "idcard",
   })
@@ -75,7 +75,7 @@ apiusersign
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
     real_name: " 张三",
-    id_card: "110121202202222222",
+    id_card: "11010519491231002X",
     user_id: "userId00001",
   })
   .then((data) => {
@@ -105,7 +105,7 @@ apiusersign
     dealer_id: this.dealer_id,
     broker_id: this.broker_id,
     real_name: "张三",
-    id_card: "110121202202222222",
+    id_card: "11010519491231002X",
     user_id: "userId00001",
     card_type: "idcard",
   })

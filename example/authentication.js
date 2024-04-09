@@ -17,8 +17,8 @@ authentication
       */
     request_id: "requestIdExample123456789",
     real_name: "张三",
-    card_no: "8888888888888888888",
-    id_card: "110121202202222222",
+    card_no: "6228888888888888888",
+    id_card: "11010519491231002X",
     mobile: "188****8888",
   })
   .then((data) => {
@@ -46,8 +46,8 @@ authentication
       */
     request_id: "requestIdExample123456789",
     real_name: "张三",
-    card_no: "8888888888888888888",
-    id_card: "110121202202222222",
+    card_no: "6228888888888888888",
+    id_card: "11010519491231002X",
     mobile: "188****8888",
     ref: "MTY3NDA0Mzc4NTg1MTY4NjUzNy0xMDYuMTIwLjQwLjU4",
     captcha: "502373",
@@ -77,8 +77,8 @@ authentication
       */
     request_id: "requestIdExample123456789",
     real_name: "张三",
-    card_no: "8888888888888888888",
-    id_card: "110121202202222222",
+    card_no: "6228888888888888888",
+    id_card: "11010519491231002X",
     mobile: "188****8888",
   })
   .then((data) => {
@@ -106,8 +106,8 @@ authentication
       */
     request_id: "requestIdExample123456789",
     real_name: "张三",
-    card_no: "8888888888888888888",
-    id_card: "110121202202222222",
+    card_no: "6228888888888888888",
+    id_card: "11010519491231002X",
   })
   .then((data) => {
     if (data.code === "0000") {
@@ -134,7 +134,7 @@ authentication
       */
     request_id: "requestIdExample123456789",
     real_name: "张三",
-    id_card: "110121202202222222",
+    id_card: "11010519491231002X",
   })
   .then((data) => {
     if (data.code === "0000") {
@@ -160,7 +160,7 @@ authentication
       * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
       */
     request_id: "requestIdExample123456789",
-    card_no: "8888888888888888888",
+    card_no: "6228888888888888888",
     bank_name: "招商银行",
   })
   .then((data) => {
@@ -235,7 +235,7 @@ authentication
       * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
       */
     request_id: "requestIdExample123456789",
-    id_card: "110121202202222222",
+    id_card: "11010519491231002X",
     real_name: "测试",
   })
   .then((data) => {

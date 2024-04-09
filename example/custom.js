@@ -17,7 +17,7 @@ const req = {
     broker_id: config.broker_id,
     real_name: '张三',
     card_no: '6228888888888888888',
-    id_card: '11010519891231002X',
+    id_card: '11010519491231002X',
     pay: '100.00',
     pay_remark: '',
     notify_url: 'https://www.example.com',

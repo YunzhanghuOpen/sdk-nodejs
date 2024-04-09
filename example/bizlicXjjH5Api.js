@@ -22,7 +22,7 @@ bizlicxjjh5api
     dealer_user_id: "test000",
     phone_no: "188****8888",
     real_name: "张三",
-    id_card: "110121202202222222",
+    id_card: "11010519491231002X",
     id_card_address: "",
     id_card_agency: "",
     id_card_nation: "20",
@@ -91,7 +91,7 @@ bizlicxjjh5api
     open_id: "",
     dealer_user_id: "test000",
     real_name: "张三",
-    id_card: "110121202202222222",
+    id_card: "11010519491231002X",
   })
   .then((data) => {
     if (data.code === "0000") {
