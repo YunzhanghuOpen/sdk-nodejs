@@ -17,7 +17,7 @@ uploaduserSign
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
     real_name: "张三",
-    id_card: "110121202202222222",
+    id_card: "11010519491231002X",
     phone: "188****8888",
     is_abroad: false,
     notify_url: "https://www.example.com",
@@ -49,7 +49,7 @@ uploaduserSign
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
     real_name: "张三",
-    id_card: "110121202202222222",
+    id_card: "11010519491231002X",
   })
   .then((data) => {
     if (data.code === "0000") {

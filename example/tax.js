@@ -44,7 +44,7 @@ tax
     request_id: "requestIdExample123456789",
     dealer_id: config.dealer_id,
     ent_id: "accumulus_tj",
-    id_card: "110121202202222222",
+    id_card: "11010519491231002X",
     year: "2022",
   })
   .then((data) => {
