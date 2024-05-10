@@ -1,12 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UploadUserSignServiceClient = exports.TaxClient = exports.PaymentClient = exports.InvoiceClient = exports.H5UserSignServiceClient = exports.DataServiceClient = exports.CustomClient = exports.BizlicXjjH5APIServiceClient = exports.BizlicXjjH5ServiceClient = exports.AuthenticationClient = exports.ApiUserSignServiceClient = exports.Util = void 0;
+exports.UploadUserSignServiceClient = exports.TaxClient = exports.PaymentClient = exports.InvoiceClient = exports.H5UserSignServiceClient = exports.DataServiceClient = exports.CustomClient = exports.BizlicXjjH5APIServiceClient = exports.BizlicXjjH5ServiceClient = exports.BizlicGxV2H5APIServiceClient = exports.BizlicGxV2H5ServiceClient = exports.AuthenticationClient = exports.ApiUserSignServiceClient = exports.Util = void 0;
 var utils_1 = require("../common/utils");
 Object.defineProperty(exports, "Util", { enumerable: true, get: function () { return utils_1.Util; } });
 var apiusersign_1 = require("./apiusersign");
 Object.defineProperty(exports, "ApiUserSignServiceClient", { enumerable: true, get: function () { return apiusersign_1.ApiUserSignServiceClient; } });
 var authentication_1 = require("./authentication");
 Object.defineProperty(exports, "AuthenticationClient", { enumerable: true, get: function () { return authentication_1.AuthenticationClient; } });
+var bizlicgxv2h5_1 = require("./bizlicgxv2h5");
+Object.defineProperty(exports, "BizlicGxV2H5ServiceClient", { enumerable: true, get: function () { return bizlicgxv2h5_1.BizlicGxV2H5ServiceClient; } });
+var bizlicgxv2h5api_1 = require("./bizlicgxv2h5api");
+Object.defineProperty(exports, "BizlicGxV2H5APIServiceClient", { enumerable: true, get: function () { return bizlicgxv2h5api_1.BizlicGxV2H5APIServiceClient; } });
 var bizlicxjjh5_1 = require("./bizlicxjjh5");
 Object.defineProperty(exports, "BizlicXjjH5ServiceClient", { enumerable: true, get: function () { return bizlicxjjh5_1.BizlicXjjH5ServiceClient; } });
 var bizlicxjjh5api_1 = require("./bizlicxjjh5api");
