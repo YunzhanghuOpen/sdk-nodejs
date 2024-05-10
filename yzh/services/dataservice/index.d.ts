@@ -111,6 +111,8 @@ interface DealerOrderInfo {
     status_detail: string;
     /** 订单详细状态码描述 */
     status_detail_message: string;
+    /** 订单状态补充信息 */
+    supplemental_detail_message: string;
     /** 短周期授信账单号 */
     statement_id: string;
     /** 服务费账单号 */
