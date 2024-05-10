@@ -70,7 +70,9 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
    - [签约信息上传](./example/uploadusersign.js)
 - 个体工商户注册
    - [云账户新经济 H5](./example/bizlicXjjH5.js)
-   - [云账户新经济 H5](./example/bizlicXjjH5.js) 
+   - [云账户新经济 H5+API](./example/bizlicXjjH5Api.js) 
+   - [云账户共享大额 H5](./example/bizlicGxV2H5.js)
+   - [云账户共享大额 H5+API](./example/bizlicGxV2H5Api.js) 
 - [实时支付](./example/payment.js)
 - [异步通知](./example/notify.js)
 - [对账文件获取](./example/dataService.js)

@@ -1,6 +1,8 @@
 export { Util } from '../common/utils';
 export { ApiUserSignServiceClient } from './apiusersign';
 export { AuthenticationClient } from './authentication';
+export { BizlicGxV2H5ServiceClient } from './bizlicgxv2h5';
+export { BizlicGxV2H5APIServiceClient } from './bizlicgxv2h5api';
 export { BizlicXjjH5ServiceClient } from './bizlicxjjh5';
 export { BizlicXjjH5APIServiceClient } from './bizlicxjjh5api';
 export { CustomClient } from './custom';
