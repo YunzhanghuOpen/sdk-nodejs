@@ -26,6 +26,13 @@ QqP7lt6FdvzGxehaHwIDAQAB
   // 签名方式，登录云账户综合服务平台，选择“业务中心 > 业务管理 > 对接信息”获取
   // 签名方式为 RSA，参数固定为：rsa
   sign_type: "rsa",
+  // 请求域名
+  // 生产环境请求域名
+  base_url: "https://api-service.yunzhanghu.com",
+  // 沙箱环境请求域名
+  // base_url: "https://api-service.yunzhanghu.com/sandbox",
+  // 个体工商户注册请求域名
+  // base_url: "https://api-aic.yunzhanghu.com",
   // 请求超时时间，默认 30S
   timeout: 30 * 1000,
 }
