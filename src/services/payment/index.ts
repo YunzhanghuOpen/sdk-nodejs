@@ -152,6 +152,8 @@ interface GetOrderResponse {
     status_message: string;
     /** 订单详细状态码描述 */
     status_detail_message: string;
+    /** 订单状态补充信息 */
+    supplemental_detail_message: string;
     /** 综合服务主体支付金额 */
     broker_amount: string;
     /** 综合服务平台流水号 */
@@ -429,6 +431,8 @@ interface QueryBatchOrderInfo {
     status_message: string;
     /** 订单详情状态码描述 */
     status_detail_message: string;
+    /** 订单状态补充信息 */
+    supplemental_detail_message: string;
     /** 综合服务主体支付金额 */
     broker_amount: string;
     /** 综合服务平台流水号 */
