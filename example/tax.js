@@ -1,5 +1,5 @@
-const yzhAPI = require("../yzh/index.js")
-const config = require("./conf/config.js")
+const yzhAPI = require('../yzh/index.js')
+const config = require('./conf/config.js')
 
 // 个人所得税扣缴明细表
 const tax = new yzhAPI.TaxClient(config)
@@ -13,18 +13,18 @@ tax
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
       * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
       */
-    request_id: "requestIdExample123456789",
+    request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
-    ent_id: "accumulus_tj",
-    year_month: "2022-10",
+    ent_id: 'accumulus_tj',
+    year_month: '2022-10',
   })
   .then((data) => {
-    if (data.code === "0000") {
+    if (data.code === '0000') {
       // 操作成功
-      console.log("操作成功 ", data.data)
+      console.log('操作成功 ', data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
+      console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
     } 
   })
   .catch((err) => {
@@ -41,19 +41,19 @@ tax
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
       * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
       */
-    request_id: "requestIdExample123456789",
+    request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
-    ent_id: "accumulus_tj",
-    id_card: "11010519491231002X",
-    year: "2022",
+    ent_id: 'accumulus_tj',
+    id_card: '11010519491231002X',
+    year: '2022',
   })
   .then((data) => {
-    if (data.code === "0000") {
+    if (data.code === '0000') {
       // 操作成功
-      console.log("操作成功 ", data.data)
+      console.log('操作成功 ', data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
+      console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
     } 
   })
   .catch((err) => {

@@ -81,7 +81,7 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 ### 示例
 
 ```
-const yunzhanghu = require("@yunzhanghu/sdk-nodejs")
+const yunzhanghu = require('@yunzhanghu/sdk-nodejs')
 
 // 实例化要请求的 client 对象(以 InvoiceClient 为例)
 const client = new yunzhanghu.InvoiceClient({
@@ -106,7 +106,7 @@ const client = new yunzhanghu.InvoiceClient({
 })
 
 // 通过 client 对象调用想要访问的接口（Action），需要传入请求对象（Params）以及响应回调函数
-// 即：client.Action(Params)..then((data) => { console.log("data", data)}).catch((err) => {console.error("error", err)})
+// 即：client.Action(Params)..then((data) => { console.log('data', data)}).catch((err) => {console.error('error', err)})
 // 如：GetInvoiceAmount 查询可开具发票额度和发票开具信息
 client
   .GetInvoiceAmount({
@@ -116,17 +116,17 @@ client
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
       * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
       */
-    request_id: "requestIdExample123456789",
+    request_id: 'requestIdExample123456789',
     dealer_id: process.env.DEALER_ID,
     broker_id: process.env.BROKER_ID,
   })
   .then((data) => {
-    if (data.code === "0000") {
+    if (data.code === '0000') {
       // 操作成功
-      console.log("操作成功 ", data.data)
+      console.log('操作成功 ', data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
+      console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
     } 
   })
   .catch((err) => {

@@ -1,5 +1,5 @@
-const yzhAPI = require("../yzh/index.js")
-const config = require("./conf/config.js")
+const yzhAPI = require('../yzh/index.js')
+const config = require('./conf/config.js')
 
 // 发票开具
 const invoice = new yzhAPI.InvoiceClient(config)
@@ -13,18 +13,18 @@ invoice
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
       * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
       */
-    request_id: "requestIdExample123456789",
+    request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
     year: 2023,
   })
   .then((data) => {
-    if (data.code === "0000") {
+    if (data.code === '0000') {
       // 操作成功
-      console.log("操作成功 ", data.data)
+      console.log('操作成功 ', data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
+      console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
     } 
   })
   .catch((err) => {
@@ -41,17 +41,17 @@ invoice
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
       * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
       */
-    request_id: "requestIdExample123456789",
+    request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
   })
   .then((data) => {
-    if (data.code === "0000") {
+    if (data.code === '0000') {
       // 操作成功
-      console.log("操作成功 ", data.data)
+      console.log('操作成功 ', data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
+      console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
     } 
   })
   .catch((err) => {
@@ -68,23 +68,23 @@ invoice
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
       * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
       */
-    request_id: "requestIdExample123456789",
+    request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
-    invoice_apply_id: "test1234567890",
-    amount: "1.00",
-    invoice_type: "2",
-    bank_name_account: "交通银行北京东大桥支行 12343456654321",
-    goods_services_name: "*测试分类*test测试内容",
-    remark: "",
+    invoice_apply_id: 'test1234567890',
+    amount: '1.00',
+    invoice_type: '2',
+    bank_name_account: '交通银行北京东大桥支行 12343456654321',
+    goods_services_name: '*测试分类*test测试内容',
+    remark: '',
   })
   .then((data) => {
-    if (data.code === "0000") {
+    if (data.code === '0000') {
       // 操作成功
-      console.log("操作成功 ", data.data)
+      console.log('操作成功 ', data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
+      console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
     } 
   })
   .catch((err) => {
@@ -101,17 +101,17 @@ invoice
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
       * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
       */
-    request_id: "requestIdExample123456789",
-    invoice_apply_id: "test1234567890",
-    application_id: "417481",
+    request_id: 'requestIdExample123456789',
+    invoice_apply_id: 'test1234567890',
+    application_id: '417481',
   })
   .then((data) => {
-    if (data.code === "0000") {
+    if (data.code === '0000') {
       // 操作成功
-      console.log("操作成功 ", data.data)
+      console.log('操作成功 ', data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
+      console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
     } 
   })
   .catch((err) => {
@@ -128,17 +128,17 @@ invoice
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
       * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
       */
-    request_id: "requestIdExample123456789",
-    invoice_apply_id: "test1234567890",
-    application_id: "417481",
+    request_id: 'requestIdExample123456789',
+    invoice_apply_id: 'test1234567890',
+    application_id: '417481',
   })
   .then((data) => {
-    if (data.code === "0000") {
+    if (data.code === '0000') {
       // 操作成功
-      console.log("操作成功 ", data.data)
+      console.log('操作成功 ', data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
+      console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
     } 
   })
   .catch((err) => {
@@ -155,17 +155,17 @@ invoice
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
       * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
       */
-    request_id: "requestIdExample123456789",
-    invoice_apply_id: "test1234567890",
-    application_id: "416286",
+    request_id: 'requestIdExample123456789',
+    invoice_apply_id: 'test1234567890',
+    application_id: '416286',
   })
   .then((data) => {
-    if (data.code === "0000") {
+    if (data.code === '0000') {
       // 操作成功
-      console.log("操作成功 ", data.data)
+      console.log('操作成功 ', data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
+      console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
     } 
   })
   .catch((err) => {
@@ -182,17 +182,17 @@ invoice
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
       * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
       */
-    request_id: "requestIdExample123456789",
-    invoice_apply_id: "test1234567890",
-    application_id: "423721",
+    request_id: 'requestIdExample123456789',
+    invoice_apply_id: 'test1234567890',
+    application_id: '423721',
   })
   .then((data) => {
-    if (data.code === "0000") {
+    if (data.code === '0000') {
       // 操作成功
-      console.log("操作成功 ", data.data)
+      console.log('操作成功 ', data.data)
     } else {
       // 失败返回
-      console.log("失败返回 ", "code：" + data.code + " message：" + data.message + " request_id：" + data.request_id)
+      console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
     } 
   })
   .catch((err) => {
