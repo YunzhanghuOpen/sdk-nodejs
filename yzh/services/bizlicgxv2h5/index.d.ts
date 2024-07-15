@@ -43,7 +43,7 @@ interface GxV2H5GetAicStatusRequest {
 
 /** GxV2H5GetAicStatusResponse 查询个体工商户状态返回 */
 interface GxV2H5GetAicStatusResponse {
-    /** 用户签约状态 */
+    /** 用户注册状态 */
     status: number;
     /** 注册状态描述 */
     status_message: string;

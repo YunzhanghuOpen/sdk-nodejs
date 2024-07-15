@@ -1,4 +1,4 @@
-const yunzhanghu = require("../yzh/index.js")
+const yunzhanghu = require('../yzh/index.js')
 
 // 异步通知
 const util = new yunzhanghu.Util({
@@ -14,19 +14,19 @@ const util = new yunzhanghu.Util({
 // 回调函数
 Promise.resolve({
   // 返回的数据
-  data: "xxxx",
+  data: 'xxxx',
   // 返回的随机字符串
-  mess: "xxxx",
+  mess: 'xxxx',
   // 返回的时间戳
-  timestamp: "xxxx",
+  timestamp: 'xxxx',
   // 返回的签名
-  sign: "xxxx",
+  sign: 'xxxx',
 }).then((res) => {
   // 接口返回结果
   const result = util.notifyDecoder(res)
   // 验签成功
   if (result.result) {
-    console.log("解密后数据内容", result.plaintext)
+    console.log('解密后数据内容', result.plaintext)
     // TODO：业务逻辑处理
   } else {
     // 验签失败
