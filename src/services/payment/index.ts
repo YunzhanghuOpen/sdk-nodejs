@@ -229,6 +229,24 @@ interface CancelOrderResponse {
     ok: string;
 }
 
+/** RetryOrderRequest 重试挂起状态订单请求 */
+interface RetryOrderRequest {
+    /** 平台企业 ID */
+    dealer_id: string;
+    /** 平台企业订单号 */
+    order_id: string;
+    /** 综合服务平台流水号 */
+    ref: string;
+    /** 支付路径名 */
+    channel: string;
+}
+
+/** RetryOrderResponse 重试挂起状态订单返回 */
+interface RetryOrderResponse {
+    /** 请求标识 */
+    ok: string;
+}
+
 /** ListAccountRequest 查询平台企业余额请求 */
 interface ListAccountRequest {
     /** 平台企业 ID */
@@ -558,6 +576,14 @@ export class PaymentClient extends YZHclient {
         cb?: (error: null | string, rep: CancelOrderResponse) => void
     ): Promise<CancelOrderResponse> {
         return this.request('post', '/api/payment/v1/order/fail', req, { encryption: false }, cb);
+    }
+
+    // RetryOrder 重试挂起状态订单
+    async RetryOrder(
+        req: RetryOrderRequest,
+        cb?: (error: null | string, rep: RetryOrderResponse) => void
+    ): Promise<RetryOrderResponse> {
+        return this.request('post', '/api/payment/v1/order/retry', req, { encryption: false }, cb);
     }
 
     // CreateBatchOrder 批次下单
