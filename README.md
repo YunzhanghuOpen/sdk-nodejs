@@ -77,6 +77,7 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 - [异步通知](./example/notify.js)
 - [对账文件获取](./example/dataService.js)
 - [发票开具](./example/invoice.js)
+- [个人所得税扣缴明细表](./example/tax.js)
 
 ### 示例
 

@@ -7,7 +7,7 @@ class TaxClient extends client_1.default {
     constructor(conf) {
         super(conf);
     }
-    // GetTaxFile 下载个人所得税扣缴明细表
+    // GetTaxFile 下载个人所得税申报明细表
     async GetTaxFile(req, cb) {
         return this.request('post', '/api/tax/v1/taxfile/download', req, { encryption: false }, cb);
     }
