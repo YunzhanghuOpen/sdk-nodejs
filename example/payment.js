@@ -212,6 +212,28 @@ payment
     console.log('@@@@@@', err.toString())
   })
 
+// 重试挂起状态订单
+payment
+  .RetryOrder({
+    
+    /**
+      * @param {string} request-id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      */
+    request_id: 'requestIdExample123456789',
+    dealer_id: config.dealer_id,
+    order_id: '202009010016562012987',
+    ref: '176826728298982',
+    channel: 'bankpay',
+  })
+  .then((data) => {
+    console.log('响应内容：', data)
+  })
+  .catch((err) => {
+    console.log('@@@@@@', err.toString())
+  })
+
 // 查询平台企业汇款信息
 payment
   .GetDealerVARechargeAccount({
