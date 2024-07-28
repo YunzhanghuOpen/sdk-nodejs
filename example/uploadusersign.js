@@ -19,7 +19,6 @@ uploaduserSign
     real_name: '张三',
     id_card: '11010519491231002X',
     phone: '188****8888',
-    is_abroad: false,
     notify_url: 'https://www.example.com',
   })
   .then((data) => {
