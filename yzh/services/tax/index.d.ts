@@ -1,5 +1,5 @@
 import YZHclient from '../../common/client';
-/** GetTaxFileRequest 下载个人所得税扣缴明细表请求 */
+/** GetTaxFileRequest 下载个人所得税申报明细表请求 */
 interface GetTaxFileRequest {
     /** 平台企业 ID */
     dealer_id: string;
@@ -9,7 +9,7 @@ interface GetTaxFileRequest {
     year_month: string;
 }
 
-/** GetTaxFileResponse 下载个人所得税扣缴明细表返回 */
+/** GetTaxFileResponse 下载个人所得税申报明细表返回 */
 interface GetTaxFileResponse {
     /** 文件详情 */
     file_info: FileInfo[];

@@ -75,7 +75,7 @@ interface IDCardVerifyRequest {
 /** IDCardVerifyResponse 身份证实名验证返回 */
 interface IDCardVerifyResponse {}
 
-/** UserExemptedInfoRequest 上传免验证用户名单信息请求 */
+/** UserExemptedInfoRequest 上传非居民身份证验证名单信息请求 */
 interface UserExemptedInfoRequest {
     /** 证件类型码 */
     card_type: string;
@@ -103,13 +103,13 @@ interface UserExemptedInfoRequest {
     ref: string;
 }
 
-/** UserExemptedInfoResponse 上传免验证用户名单信息返回 */
+/** UserExemptedInfoResponse 上传非居民身份证验证名单信息返回 */
 interface UserExemptedInfoResponse {
     /** 是否上传成功 */
     ok: string;
 }
 
-/** UserWhiteCheckRequest 查看免验证用户名单是否存在请求 */
+/** UserWhiteCheckRequest 查看用户是否在非居民身份证验证名单中请求 */
 interface UserWhiteCheckRequest {
     /** 证件号码 */
     id_card: string;
@@ -117,7 +117,7 @@ interface UserWhiteCheckRequest {
     real_name: string;
 }
 
-/** UserWhiteCheckResponse 查看免验证用户名单是否存在返回 */
+/** UserWhiteCheckResponse 查看用户是否在非居民身份证验证名单中返回 */
 interface UserWhiteCheckResponse {
     ok: boolean;
 }
