@@ -274,7 +274,7 @@ payment
     broker_id: config.broker_id,
     real_name: '张三',
     id_card: '11010519491231002X',
-    amount: '1000.00',
+    amount: '10000.00',
   })
   .then((data) => {
     if (data.code === '0000') {
