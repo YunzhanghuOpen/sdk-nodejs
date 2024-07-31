@@ -61,5 +61,9 @@ class PaymentClient extends client_1.default {
     async CancelBatchOrder(req, cb) {
         return this.request('post', '/api/payment/v1/cancel-batch', req, { encryption: false }, cb);
     }
+    // CheckUserAmount 用户结算金额校验
+    async CheckUserAmount(req, cb) {
+        return this.request('post', '/api/payment/v1/risk-check/amount', req, { encryption: false }, cb);
+    }
 }
 exports.PaymentClient = PaymentClient;
