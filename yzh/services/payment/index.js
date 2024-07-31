@@ -45,6 +45,10 @@ class PaymentClient extends client_1.default {
     async CancelOrder(req, cb) {
         return this.request('post', '/api/payment/v1/order/fail', req, { encryption: false }, cb);
     }
+    // RetryOrder 重试挂起状态订单
+    async RetryOrder(req, cb) {
+        return this.request('post', '/api/payment/v1/order/retry', req, { encryption: false }, cb);
+    }
     // CreateBatchOrder 批次下单
     async CreateBatchOrder(req, cb) {
         return this.request('post', '/api/payment/v1/order-batch', req, { encryption: false }, cb);
@@ -60,6 +64,10 @@ class PaymentClient extends client_1.default {
     // CancelBatchOrder 批次撤销
     async CancelBatchOrder(req, cb) {
         return this.request('post', '/api/payment/v1/cancel-batch', req, { encryption: false }, cb);
+    }
+    // CheckUserAmount 用户结算金额校验
+    async CheckUserAmount(req, cb) {
+        return this.request('post', '/api/payment/v1/risk-check/amount', req, { encryption: false }, cb);
     }
 }
 exports.PaymentClient = PaymentClient;
