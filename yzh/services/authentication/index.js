@@ -27,11 +27,11 @@ class AuthenticationClient extends client_1.default {
     async IDCardVerify(req, cb) {
         return this.request('post', '/authentication/verify-id', req, { encryption: false }, cb);
     }
-    // UserExemptedInfo 上传免验证用户名单信息
+    // UserExemptedInfo 上传非居民身份证验证名单信息
     async UserExemptedInfo(req, cb) {
         return this.request('post', '/api/payment/v1/user/exempted/info', req, { encryption: false }, cb);
     }
-    // UserWhiteCheck 查看免验证用户名单是否存在
+    // UserWhiteCheck 查看用户是否在非居民身份证验证名单中
     async UserWhiteCheck(req, cb) {
         return this.request('post', '/api/payment/v1/user/white/check', req, { encryption: false }, cb);
     }

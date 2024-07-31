@@ -228,6 +228,24 @@ interface CancelOrderResponse {
     ok: string;
 }
 
+/** RetryOrderRequest 重试挂起状态订单请求 */
+interface RetryOrderRequest {
+    /** 平台企业 ID */
+    dealer_id: string;
+    /** 平台企业订单号 */
+    order_id: string;
+    /** 综合服务平台流水号 */
+    ref: string;
+    /** 支付路径名 */
+    channel: string;
+}
+
+/** RetryOrderResponse 重试挂起状态订单返回 */
+interface RetryOrderResponse {
+    /** 请求标识 */
+    ok: string;
+}
+
 /** ListAccountRequest 查询平台企业余额请求 */
 interface ListAccountRequest {
     /** 平台企业 ID */
@@ -473,6 +491,26 @@ interface CancelBatchOrderRequest {
 /** CancelBatchOrderResponse 批次撤销返回 */
 interface CancelBatchOrderResponse {}
 
+/** CheckUserAmountRequest 用户结算金额校验请求 */
+interface CheckUserAmountRequest {
+    /** 综合服务主体 ID */
+    broker_id: string;
+    /** 姓名 */
+    real_name: string;
+    /** 身份证号码 */
+    id_card: string;
+    /** 校验金额 */
+    amount: string;
+}
+
+/** CheckUserAmountResponse 用户结算金额校验返回 */
+interface CheckUserAmountResponse {
+    /** 是否超过月限额 */
+    is_over_whole_user_month_quota: boolean;
+    /** 是否超过年限额 */
+    is_over_whole_user_year_quota: boolean;
+}
+
 export declare class PaymentClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
@@ -517,6 +555,10 @@ export declare class PaymentClient extends YZHclient {
         req: CancelOrderRequest,
         cb?: (error: null | string, rep: CancelOrderResponse) => void
     ): Promise<CancelOrderResponse>;
+    RetryOrder(
+        req: RetryOrderRequest,
+        cb?: (error: null | string, rep: RetryOrderResponse) => void
+    ): Promise<RetryOrderResponse>;
     CreateBatchOrder(
         req: CreateBatchOrderRequest,
         cb?: (error: null | string, rep: CreateBatchOrderResponse) => void
@@ -533,6 +575,10 @@ export declare class PaymentClient extends YZHclient {
         req: CancelBatchOrderRequest,
         cb?: (error: null | string, rep: CancelBatchOrderResponse) => void
     ): Promise<CancelBatchOrderResponse>;
+    CheckUserAmount(
+        req: CheckUserAmountRequest,
+        cb?: (error: null | string, rep: CheckUserAmountResponse) => void
+    ): Promise<CheckUserAmountResponse>;
 }
 
 export {};
