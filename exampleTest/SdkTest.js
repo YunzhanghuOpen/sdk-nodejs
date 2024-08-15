@@ -62,8 +62,9 @@ async function SdkTest() {
     const p14 = await uploadusersignTest1.Example()
 
     const params = [...p1,...p2,...p3,...p4,...p5,...p6,...p7,...p8,...p9,...p10,...p11,...p12,...p13,...p14]
+    run_id = 'NodejsSdkTest-' + Date.now().toString()
     params.forEach(item => {
-        item.run_id = 'NodejsSdkTest-' + Date.now().toString();
+        item.run_id = run_id
         item.create_user = 'Nodejs-sdk'
         item.execute_user = 'Nodejs-sdk'
         item.tag = 'Nodejs-sdk'
