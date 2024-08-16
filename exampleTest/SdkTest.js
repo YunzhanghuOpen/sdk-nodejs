@@ -78,7 +78,7 @@ async function getYaml() {
       const url = 'http://bugmirror.jiesuan.zz/new/sdk/get_dealer_info';
 
       const data = {
-        key: 'sdk'
+        key: 'Nodejs'
       };
 
       const config = {
