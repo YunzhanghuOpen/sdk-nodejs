@@ -252,7 +252,7 @@ export class YZHClient {
             const { data: axiosData } = result;
             let response = axiosData;
             // 需解密
-            if (encryption) {
+            if (encryption && response?.data) {
                 response = { ...response, data: this.decrypt(response.data) };
             }
             return response;
