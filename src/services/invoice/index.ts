@@ -142,6 +142,8 @@ interface InformationDataInfo {
     price_tax_amount: string;
     /** 开票日期 */
     invoiced_date: string;
+    /** 发票状态 */
+    status: string;
 }
 
 /** BankNameAccount 系统支持的开户行及账号 */
