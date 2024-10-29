@@ -31,7 +31,7 @@ class InvoiceClient extends client_1.default {
     async GetInvoiceFile(req, cb) {
         return this.request('post', '/api/invoice/v2/invoice/invoice-pdf', req, { encryption: false }, cb);
     }
-    // SendReminderEmail 发送发票扫描件压缩包下载链接邮件
+    // SendReminderEmail 发送发票开具成功通知邮件
     async SendReminderEmail(req, cb) {
         return this.request('post', '/api/invoice/v2/invoice/reminder/email', req, { encryption: false }, cb);
     }
