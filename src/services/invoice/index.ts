@@ -61,7 +61,7 @@ interface ApplyInvoiceRequest {
     /** 发票备注 */
     remark: string;
     /** 发票接收邮箱 */
-    receive_emails: string;
+    receive_emails: string[];
     /** 发票介质 */
     invoice_media: string;
 }
