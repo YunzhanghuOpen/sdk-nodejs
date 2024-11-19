@@ -143,9 +143,9 @@ interface ListDailyOrderV2Request {
 
 /** ListDailyOrderV2Response 查询日订单数据（支付和退款订单）返回 */
 interface ListDailyOrderV2Response {
-    /** 总数目 */
+    /** 总条数 */
     total_num: number;
-    /** 条目信息 */
+    /** 条目明细 */
     list: DealerOrderInfoV2[];
 }
 
