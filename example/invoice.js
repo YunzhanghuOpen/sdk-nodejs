@@ -77,6 +77,8 @@ invoice
     bank_name_account: '交通银行北京东大桥支行 12343456654321',
     goods_services_name: '*测试分类*test测试内容',
     remark: '',
+    receive_emails: ['username1@example.com'],
+    invoice_media: '1',
   })
   .then((data) => {
     if (data.code === '0000') {
