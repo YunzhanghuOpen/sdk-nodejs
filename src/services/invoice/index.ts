@@ -186,7 +186,7 @@ interface GetInvoiceFileResponse {
     name: string;
 }
 
-/** SendReminderEmailRequest 发送发票扫描件压缩包下载链接邮件请求 */
+/** SendReminderEmailRequest 发送发票开具成功通知邮件请求 */
 interface SendReminderEmailRequest {
     /** 发票申请编号 */
     invoice_apply_id: string;
@@ -194,7 +194,7 @@ interface SendReminderEmailRequest {
     application_id: string;
 }
 
-/** SendReminderEmailResponse 发送发票扫描件压缩包下载链接邮件返回 */
+/** SendReminderEmailResponse 发送发票开具成功通知邮件返回 */
 interface SendReminderEmailResponse {}
 
 export class InvoiceClient extends YZHclient {
@@ -261,7 +261,7 @@ export class InvoiceClient extends YZHclient {
         return this.request('post', '/api/invoice/v2/invoice/invoice-pdf', req, { encryption: false }, cb);
     }
 
-    // SendReminderEmail 发送发票扫描件压缩包下载链接邮件
+    // SendReminderEmail 发送发票开具成功通知邮件
     async SendReminderEmail(
         req: SendReminderEmailRequest,
         cb?: (error: null | string, rep: SendReminderEmailResponse) => void
