@@ -59,6 +59,10 @@ interface ApplyInvoiceRequest {
     goods_services_name: string;
     /** 发票备注 */
     remark: string;
+    /** 发票接收邮箱 */
+    receive_emails: string[];
+    /** 发票介质 */
+    invoice_media: string;
 }
 
 /** ApplyInvoiceResponse 发票开具申请返回 */
@@ -107,6 +111,10 @@ interface GetInvoiceStatusResponse {
     post_type: string;
     /** 快递单号 */
     waybill_number: string[];
+    /** 驳回原因 */
+    reject_reason: string;
+    /** 发票介质 */
+    invoice_media: string;
 }
 
 /** GetInvoiceInformationRequest 查询发票信息请求 */
@@ -141,6 +149,8 @@ interface InformationDataInfo {
     price_tax_amount: string;
     /** 开票日期 */
     invoiced_date: string;
+    /** 发票状态 */
+    status: string;
 }
 
 /** BankNameAccount 系统支持的开户行及账号 */
@@ -175,7 +185,7 @@ interface GetInvoiceFileResponse {
     name: string;
 }
 
-/** SendReminderEmailRequest 发送发票扫描件压缩包下载链接邮件请求 */
+/** SendReminderEmailRequest 发送发票开具成功通知邮件请求 */
 interface SendReminderEmailRequest {
     /** 发票申请编号 */
     invoice_apply_id: string;
@@ -183,7 +193,7 @@ interface SendReminderEmailRequest {
     application_id: string;
 }
 
-/** SendReminderEmailResponse 发送发票扫描件压缩包下载链接邮件返回 */
+/** SendReminderEmailResponse 发送发票开具成功通知邮件返回 */
 interface SendReminderEmailResponse {}
 
 export declare class InvoiceClient extends YZHclient {
