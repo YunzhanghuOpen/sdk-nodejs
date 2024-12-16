@@ -17,6 +17,16 @@ class DataServiceClient extends client_1.default {
             cb
         );
     }
+    // ListDailyOrderV2 查询日订单数据（支付和退款订单）
+    async ListDailyOrderV2(req, cb) {
+        return this.request(
+            'get',
+            '/api/dataservice/v2/orders',
+            req,
+            { encryption: (req === null || req === void 0 ? void 0 : req.data_type) === 'encryption' },
+            cb
+        );
+    }
     // GetDailyOrderFile 查询日订单文件
     async GetDailyOrderFile(req, cb) {
         return this.request('get', '/api/dataservice/v1/order/downloadurl', req, { encryption: false }, cb);
