@@ -318,6 +318,102 @@ interface StatementDetail {
     project_name: string;
 }
 
+/** ListDailyOrderSummaryRequest 查询日订单汇总数据请求 */
+interface ListDailyOrderSummaryRequest {
+    /** 综合服务主体 ID */
+    broker_id: string;
+    /** 平台企业 ID */
+    dealer_id: string;
+    /** 支付路径，银行卡、支付宝、微信 */
+    channel: string;
+    /** 订单查询开始日期，格式：yyyy-MM-dd */
+    begin_at: string;
+    /** 订单查询结束日期，格式：yyyy-MM-dd */
+    end_at: string;
+    /** 筛选类型，apply：按订单创建时间汇总 complete：按订单完成时间汇总 */
+    filter_type: string;
+}
+
+/** ListDailyOrderSummaryResponse 查询日订单汇总数据返回 */
+interface ListDailyOrderSummaryResponse {
+    /** 汇总数据列表 */
+    summary_list: ListDailyOrderSummary[];
+}
+
+/** ListDailyOrderSummary 日订单汇总数据详情 */
+interface ListDailyOrderSummary {
+    /** 订单查询日期，格式：yyyy-MM-dd */
+    date: string;
+    /** 成功订单汇总 */
+    success: DailyOrderSummary;
+    /** 处理中订单汇总 */
+    processing: DailyOrderSummary;
+    /** 失败订单汇总 */
+    failed: DailyOrderSummary;
+}
+
+/** DailyOrderSummary 日订单汇总详情 */
+interface DailyOrderSummary {
+    /** 订单数量 */
+    order_num: number;
+    /** 订单金额 */
+    pay: string;
+    /** 加成服务费金额 */
+    broker_fee: string;
+    /** 加成服务费实收金额 */
+    broker_real_fee: string;
+    /** 已抵扣加成服务费金额 */
+    broker_rebate_fee: string;
+    /** 用户加成服务费金额 */
+    user_fee: string;
+}
+
+/** ListMonthlyOrderSummaryRequest 查询月订单汇总数据请求 */
+interface ListMonthlyOrderSummaryRequest {
+    /** 综合服务主体 ID */
+    broker_id: string;
+    /** 平台企业 ID */
+    dealer_id: string;
+    /** 支付路径，银行卡、支付宝、微信 */
+    channel: string;
+    /** 汇总月份，格式：yyyy-MM */
+    month: string;
+    /** 筛选类型，apply：按订单创建时间汇总 complete：按订单完成时间汇总 */
+    filter_type: string;
+}
+
+/** ListMonthlyOrderSummaryResponse 查询月订单汇总数据返回 */
+interface ListMonthlyOrderSummaryResponse {
+    /** 汇总数据列表 */
+    summary: ListMonthlyOrderSummary;
+}
+
+/** ListMonthlyOrderSummary 月订单汇总数据详情 */
+interface ListMonthlyOrderSummary {
+    /** 成功订单汇总 */
+    success: MonthlyOrderSummary;
+    /** 处理中订单汇总 */
+    processing: MonthlyOrderSummary;
+    /** 失败订单汇总 */
+    failed: MonthlyOrderSummary;
+}
+
+/** MonthlyOrderSummary 月订单汇总详情 */
+interface MonthlyOrderSummary {
+    /** 订单数量 */
+    order_num: number;
+    /** 订单金额 */
+    pay: string;
+    /** 加成服务费金额 */
+    broker_fee: string;
+    /** 加成服务费实收金额 */
+    broker_real_fee: string;
+    /** 已抵扣加成服务费金额 */
+    broker_rebate_fee: string;
+    /** 用户加成服务费金额 */
+    user_fee: string;
+}
+
 export class DataServiceClient extends YZHclient {
     // eslint-disable-next-line no-useless-constructor
     constructor(conf: {
@@ -414,5 +510,21 @@ export class DataServiceClient extends YZHclient {
         cb?: (error: null | string, rep: ListBalanceDailyStatementResponse) => void
     ): Promise<ListBalanceDailyStatementResponse> {
         return this.request('get', '/api/dataservice/v1/statements-daily', req, { encryption: false }, cb);
+    }
+
+    // ListDailyOrderSummary 查询日订单汇总数据
+    async ListDailyOrderSummary(
+        req: ListDailyOrderSummaryRequest,
+        cb?: (error: null | string, rep: ListDailyOrderSummaryResponse) => void
+    ): Promise<ListDailyOrderSummaryResponse> {
+        return this.request('get', '/api/dataservice/v2/order/daily-summary', req, { encryption: false }, cb);
+    }
+
+    // ListMonthlyOrderSummary 查询月订单汇总数据
+    async ListMonthlyOrderSummary(
+        req: ListMonthlyOrderSummaryRequest,
+        cb?: (error: null | string, rep: ListMonthlyOrderSummaryResponse) => void
+    ): Promise<ListMonthlyOrderSummaryResponse> {
+        return this.request('get', '/api/dataservice/v2/order/monthly-summary', req, { encryption: false }, cb);
     }
 }
