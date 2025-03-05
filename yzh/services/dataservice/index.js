@@ -57,5 +57,13 @@ class DataServiceClient extends client_1.default {
     async ListBalanceDailyStatement(req, cb) {
         return this.request('get', '/api/dataservice/v1/statements-daily', req, { encryption: false }, cb);
     }
+    // ListDailyOrderSummary 查询日订单汇总数据
+    async ListDailyOrderSummary(req, cb) {
+        return this.request('get', '/api/dataservice/v2/order/daily-summary', req, { encryption: false }, cb);
+    }
+    // ListMonthlyOrderSummary 查询月订单汇总数据
+    async ListMonthlyOrderSummary(req, cb) {
+        return this.request('get', '/api/dataservice/v2/order/monthly-summary', req, { encryption: false }, cb);
+    }
 }
 exports.DataServiceClient = DataServiceClient;
