@@ -17,6 +17,16 @@ class DataServiceClient extends client_1.default {
             cb
         );
     }
+    // ListDailyOrderV2 查询日订单数据（支付和退款订单）
+    async ListDailyOrderV2(req, cb) {
+        return this.request(
+            'get',
+            '/api/dataservice/v2/orders',
+            req,
+            { encryption: (req === null || req === void 0 ? void 0 : req.data_type) === 'encryption' },
+            cb
+        );
+    }
     // GetDailyOrderFile 查询日订单文件
     async GetDailyOrderFile(req, cb) {
         return this.request('get', '/api/dataservice/v1/order/downloadurl', req, { encryption: false }, cb);
@@ -46,6 +56,14 @@ class DataServiceClient extends client_1.default {
     // ListBalanceDailyStatement 查询余额日账单数据
     async ListBalanceDailyStatement(req, cb) {
         return this.request('get', '/api/dataservice/v1/statements-daily', req, { encryption: false }, cb);
+    }
+    // ListDailyOrderSummary 查询日订单汇总数据
+    async ListDailyOrderSummary(req, cb) {
+        return this.request('get', '/api/dataservice/v2/order/daily-summary', req, { encryption: false }, cb);
+    }
+    // ListMonthlyOrderSummary 查询月订单汇总数据
+    async ListMonthlyOrderSummary(req, cb) {
+        return this.request('get', '/api/dataservice/v2/order/monthly-summary', req, { encryption: false }, cb);
     }
 }
 exports.DataServiceClient = DataServiceClient;

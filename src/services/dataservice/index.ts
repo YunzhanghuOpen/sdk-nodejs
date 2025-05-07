@@ -128,6 +128,80 @@ interface DealerOrderInfo {
     finished_time: string;
 }
 
+/** ListDailyOrderV2Request 查询日订单数据（支付和退款订单）请求 */
+interface ListDailyOrderV2Request {
+    /** 订单查询日期, yyyy-MM-dd 格式 */
+    order_date: string;
+    /** 偏移量 */
+    offset: number;
+    /** 每页返回条数 */
+    length: number;
+    /** 支付路径名，bankpay：银行卡 alipay：支付宝 wxpay：微信 */
+    channel: string;
+    /** 当且仅当参数值为 encryption 时，对返回的 data 进行加密 */
+    data_type: string;
+}
+
+/** ListDailyOrderV2Response 查询日订单数据（支付和退款订单）返回 */
+interface ListDailyOrderV2Response {
+    /** 总条数 */
+    total_num: number;
+    /** 条目明细 */
+    list: DealerOrderInfoV2[];
+}
+
+/** DealerOrderInfoV2 平台企业支付订单信息（支付和退款订单） */
+interface DealerOrderInfoV2 {
+    /** 综合服务主体 ID */
+    broker_id: string;
+    /** 平台企业 ID */
+    dealer_id: string;
+    /** 订单类型 */
+    order_type: string;
+    /** 平台企业订单号 */
+    order_id: string;
+    /** 综合服务平台流水号 */
+    ref: string;
+    /** 批次号 */
+    batch_id: string;
+    /** 姓名 */
+    real_name: string;
+    /** 收款账号 */
+    card_no: string;
+    /** 综合服务主体订单金额 */
+    broker_amount: string;
+    /** 综合服务主体加成服务费 */
+    broker_fee: string;
+    /** 支付路径流水号 */
+    bill: string;
+    /** 订单状态码 */
+    status: string;
+    /** 订单状态码描述 */
+    status_message: string;
+    /** 订单详情状态码 */
+    status_detail: string;
+    /** 订单详细状态码描述 */
+    status_detail_message: string;
+    /** 订单状态补充信息 */
+    supplemental_detail_message: string;
+    /** 短周期授信账单号 */
+    statement_id: string;
+    /** 加成服务费账单号 */
+    fee_statement_id: string;
+    /** 余额账单号 */
+    bal_statement_id: string;
+    /** 支付路径 */
+    channel: string;
+    /** 订单接收时间 */
+    created_at: string;
+    /** 订单完成时间 */
+    finished_time: string;
+    /** 退款类型 */
+    refund_type: string;
+    /** 原支付流水号 */
+    pay_ref: string;
+}
+
 /** ListDailyBillRequest 查询日流水数据请求 */
 interface ListDailyBillRequest {
     /** 流水查询日期 */
@@ -244,6 +318,102 @@ interface StatementDetail {
     project_name: string;
 }
 
+/** ListDailyOrderSummaryRequest 查询日订单汇总数据请求 */
+interface ListDailyOrderSummaryRequest {
+    /** 综合服务主体 ID */
+    broker_id: string;
+    /** 平台企业 ID */
+    dealer_id: string;
+    /** 支付路径，银行卡、支付宝、微信 */
+    channel: string;
+    /** 订单查询开始日期，格式：yyyy-MM-dd */
+    begin_at: string;
+    /** 订单查询结束日期，格式：yyyy-MM-dd */
+    end_at: string;
+    /** 筛选类型，apply：按订单创建时间汇总 complete：按订单完成时间汇总 */
+    filter_type: string;
+}
+
+/** ListDailyOrderSummaryResponse 查询日订单汇总数据返回 */
+interface ListDailyOrderSummaryResponse {
+    /** 汇总数据列表 */
+    summary_list: ListDailyOrderSummary[];
+}
+
+/** ListDailyOrderSummary 日订单汇总数据详情 */
+interface ListDailyOrderSummary {
+    /** 订单查询日期，格式：yyyy-MM-dd */
+    date: string;
+    /** 成功订单汇总 */
+    success: DailyOrderSummary;
+    /** 处理中订单汇总 */
+    processing: DailyOrderSummary;
+    /** 失败订单汇总 */
+    failed: DailyOrderSummary;
+}
+
+/** DailyOrderSummary 日订单汇总详情 */
+interface DailyOrderSummary {
+    /** 订单数量 */
+    order_num: number;
+    /** 订单金额 */
+    pay: string;
+    /** 加成服务费金额 */
+    broker_fee: string;
+    /** 加成服务费实收金额 */
+    broker_real_fee: string;
+    /** 已抵扣加成服务费金额 */
+    broker_rebate_fee: string;
+    /** 用户加成服务费金额 */
+    user_fee: string;
+}
+
+/** ListMonthlyOrderSummaryRequest 查询月订单汇总数据请求 */
+interface ListMonthlyOrderSummaryRequest {
+    /** 综合服务主体 ID */
+    broker_id: string;
+    /** 平台企业 ID */
+    dealer_id: string;
+    /** 支付路径，银行卡、支付宝、微信 */
+    channel: string;
+    /** 汇总月份，格式：yyyy-MM */
+    month: string;
+    /** 筛选类型，apply：按订单创建时间汇总 complete：按订单完成时间汇总 */
+    filter_type: string;
+}
+
+/** ListMonthlyOrderSummaryResponse 查询月订单汇总数据返回 */
+interface ListMonthlyOrderSummaryResponse {
+    /** 汇总数据列表 */
+    summary: ListMonthlyOrderSummary;
+}
+
+/** ListMonthlyOrderSummary 月订单汇总数据详情 */
+interface ListMonthlyOrderSummary {
+    /** 成功订单汇总 */
+    success: MonthlyOrderSummary;
+    /** 处理中订单汇总 */
+    processing: MonthlyOrderSummary;
+    /** 失败订单汇总 */
+    failed: MonthlyOrderSummary;
+}
+
+/** MonthlyOrderSummary 月订单汇总详情 */
+interface MonthlyOrderSummary {
+    /** 订单数量 */
+    order_num: number;
+    /** 订单金额 */
+    pay: string;
+    /** 加成服务费金额 */
+    broker_fee: string;
+    /** 加成服务费实收金额 */
+    broker_real_fee: string;
+    /** 已抵扣加成服务费金额 */
+    broker_rebate_fee: string;
+    /** 用户加成服务费金额 */
+    user_fee: string;
+}
+
 export class DataServiceClient extends YZHclient {
     // eslint-disable-next-line no-useless-constructor
     constructor(conf: {
@@ -268,6 +438,20 @@ export class DataServiceClient extends YZHclient {
         return this.request(
             'get',
             '/api/dataservice/v1/orders',
+            req,
+            { encryption: req?.data_type === 'encryption' },
+            cb
+        );
+    }
+
+    // ListDailyOrderV2 查询日订单数据（支付和退款订单）
+    async ListDailyOrderV2(
+        req: ListDailyOrderV2Request,
+        cb?: (error: null | string, rep: ListDailyOrderV2Response) => void
+    ): Promise<ListDailyOrderV2Response> {
+        return this.request(
+            'get',
+            '/api/dataservice/v2/orders',
             req,
             { encryption: req?.data_type === 'encryption' },
             cb
@@ -326,5 +510,21 @@ export class DataServiceClient extends YZHclient {
         cb?: (error: null | string, rep: ListBalanceDailyStatementResponse) => void
     ): Promise<ListBalanceDailyStatementResponse> {
         return this.request('get', '/api/dataservice/v1/statements-daily', req, { encryption: false }, cb);
+    }
+
+    // ListDailyOrderSummary 查询日订单汇总数据
+    async ListDailyOrderSummary(
+        req: ListDailyOrderSummaryRequest,
+        cb?: (error: null | string, rep: ListDailyOrderSummaryResponse) => void
+    ): Promise<ListDailyOrderSummaryResponse> {
+        return this.request('get', '/api/dataservice/v2/order/daily-summary', req, { encryption: false }, cb);
+    }
+
+    // ListMonthlyOrderSummary 查询月订单汇总数据
+    async ListMonthlyOrderSummary(
+        req: ListMonthlyOrderSummaryRequest,
+        cb?: (error: null | string, rep: ListMonthlyOrderSummaryResponse) => void
+    ): Promise<ListMonthlyOrderSummaryResponse> {
+        return this.request('get', '/api/dataservice/v2/order/monthly-summary', req, { encryption: false }, cb);
     }
 }
