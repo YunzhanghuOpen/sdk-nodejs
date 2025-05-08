@@ -205,7 +205,7 @@ authentication
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
     user_images: [parse(file)],
-    image_urls: ['https://www.example.com/imange01.png'],
+    image_urls: ['https://www.example.com/image01.png'],
     country: 'CHN',
     birthday: '20200101',
     gender: '男',
