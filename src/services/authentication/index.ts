@@ -102,6 +102,8 @@ interface UserExemptedInfoRequest {
     notify_url: string;
     /** 请求流水号 */
     ref: string;
+    /** 证件照片 URL 地址 */
+    image_urls: string[];
 }
 
 /** UserExemptedInfoResponse 上传非居民身份证验证名单信息返回 */
