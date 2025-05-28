@@ -27,7 +27,7 @@ OpenSSL-> genrsa -out private_key.pem 2048   // 建议密钥⻓度⾄少为 2048
 
 OpenSSL-> pkcs8 -topk8 -inform PEM -in private_key.pem -outform PEM -nocrypt -out private_key_pkcs8.pem    // 将私钥转为 PKCS8 格式
 
-② ⽣成公钥 pubkey.pem 
+② ⽣成公钥 pubkey.pem
 
 OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 ```
