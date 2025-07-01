@@ -99,9 +99,9 @@ interface DealerOrderInfo {
     card_no: string;
     /** 综合服务主体订单金额 */
     broker_amount: string;
-    /** 应收综合服务主体加成服务费 */
+    /** 应收综合服务主体加成服务费金额 */
     broker_fee: string;
-    /** 实收综合服务主体加成服务费 */
+    /** 实收综合服务主体加成服务费金额 */
     received_broker_fee: string;
     /** 支付路径流水号 */
     bill: string;
@@ -171,9 +171,9 @@ interface DealerOrderInfoV2 {
     card_no: string;
     /** 综合服务主体订单金额 */
     broker_amount: string;
-    /** 应收综合服务主体加成服务费 */
+    /** 应收综合服务主体加成服务费金额 */
     broker_fee: string;
-    /** 实收综合服务主体加成服务费 */
+    /** 实收综合服务主体加成服务费金额 */
     received_broker_fee: string;
     /** 支付路径流水号 */
     bill: string;
@@ -305,7 +305,7 @@ interface StatementDetail {
     amount: string;
     /** 退汇金额 */
     reex_amount: string;
-    /** 实收综合服务主体加成服务费 */
+    /** 实收综合服务主体加成服务费金额 */
     fee_amount: string;
     /** 实收加成服务费抵扣金额 */
     deduct_rebate_fee_amount: string;
@@ -361,21 +361,21 @@ interface DailyOrderSummary {
     order_num: number;
     /** 订单金额 */
     pay: string;
-    /** 应收综合服务主体加成服务费 */
+    /** 应收综合服务主体加成服务费金额 */
     broker_fee: string;
-    /** 应收余额账户支出加成服务费 */
+    /** 应收余额账户支出加成服务费金额 */
     broker_real_fee: string;
     /** 应收加成服务费抵扣金额 */
     broker_rebate_fee: string;
-    /** 应收用户加成服务费 */
+    /** 应收用户加成服务费金额 */
     user_fee: string;
-    /** 实收综合服务主体加成服务费 */
+    /** 实收综合服务主体加成服务费金额 */
     received_broker_fee: string;
-    /** 实收余额账户支出加成服务费 */
+    /** 实收余额账户支出加成服务费金额 */
     received_broker_real_fee: string;
     /** 实收加成服务费抵扣金额 */
     received_broker_deduct_fee: string;
-    /** 实收用户加成服务费 */
+    /** 实收用户加成服务费金额 */
     received_user_fee: string;
 }
 
@@ -415,21 +415,21 @@ interface MonthlyOrderSummary {
     order_num: number;
     /** 订单金额 */
     pay: string;
-    /** 应收综合服务主体加成服务费 */
+    /** 应收综合服务主体加成服务费金额 */
     broker_fee: string;
-    /** 应收余额账户支出加成服务费 */
+    /** 应收余额账户支出加成服务费金额 */
     broker_real_fee: string;
     /** 应收加成服务费抵扣金额 */
     broker_rebate_fee: string;
-    /** 应收用户加成服务费 */
+    /** 应收用户加成服务费金额 */
     user_fee: string;
-    /** 实收综合服务主体加成服务费 */
+    /** 实收综合服务主体加成服务费金额 */
     received_broker_fee: string;
-    /** 实收余额账户支出加成服务费 */
+    /** 实收余额账户支出加成服务费金额 */
     received_broker_real_fee: string;
     /** 实收加成服务费抵扣金额 */
     received_broker_deduct_fee: string;
-    /** 实收用户加成服务费 */
+    /** 实收用户加成服务费金额 */
     received_user_fee: string;
 }
 
