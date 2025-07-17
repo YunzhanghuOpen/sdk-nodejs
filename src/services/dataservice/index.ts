@@ -100,8 +100,10 @@ interface DealerOrderInfo {
     card_no: string;
     /** 综合服务主体订单金额 */
     broker_amount: string;
-    /** 综合服务主体加成服务费 */
+    /** 应收综合服务主体加成服务费金额 */
     broker_fee: string;
+    /** 实收综合服务主体加成服务费金额 */
+    received_broker_fee: string;
     /** 支付路径流水号 */
     bill: string;
     /** 订单状态 */
@@ -170,8 +172,10 @@ interface DealerOrderInfoV2 {
     card_no: string;
     /** 综合服务主体订单金额 */
     broker_amount: string;
-    /** 综合服务主体加成服务费 */
+    /** 应收综合服务主体加成服务费金额 */
     broker_fee: string;
+    /** 实收综合服务主体加成服务费金额 */
+    received_broker_fee: string;
     /** 支付路径流水号 */
     bill: string;
     /** 订单状态码 */
@@ -302,9 +306,9 @@ interface StatementDetail {
     amount: string;
     /** 退汇金额 */
     reex_amount: string;
-    /** 加成服务费金额 */
+    /** 实收综合服务主体加成服务费金额 */
     fee_amount: string;
-    /** 加成服务费抵扣金额 */
+    /** 实收加成服务费抵扣金额 */
     deduct_rebate_fee_amount: string;
     /** 冲补金额 */
     money_adjust: string;
@@ -358,14 +362,22 @@ interface DailyOrderSummary {
     order_num: number;
     /** 订单金额 */
     pay: string;
-    /** 加成服务费金额 */
+    /** 应收综合服务主体加成服务费金额 */
     broker_fee: string;
-    /** 加成服务费实收金额 */
+    /** 应收余额账户支出加成服务费金额 */
     broker_real_fee: string;
-    /** 已抵扣加成服务费金额 */
+    /** 应收加成服务费抵扣金额 */
     broker_rebate_fee: string;
-    /** 用户加成服务费金额 */
+    /** 应收用户加成服务费金额 */
     user_fee: string;
+    /** 实收综合服务主体加成服务费金额 */
+    received_broker_fee: string;
+    /** 实收余额账户支出加成服务费金额 */
+    received_broker_real_fee: string;
+    /** 实收加成服务费抵扣金额 */
+    received_broker_deduct_fee: string;
+    /** 实收用户加成服务费金额 */
+    received_user_fee: string;
 }
 
 /** ListMonthlyOrderSummaryRequest 查询月订单汇总数据请求 */
@@ -404,14 +416,22 @@ interface MonthlyOrderSummary {
     order_num: number;
     /** 订单金额 */
     pay: string;
-    /** 加成服务费金额 */
+    /** 应收综合服务主体加成服务费金额 */
     broker_fee: string;
-    /** 加成服务费实收金额 */
+    /** 应收余额账户支出加成服务费金额 */
     broker_real_fee: string;
-    /** 已抵扣加成服务费金额 */
+    /** 应收加成服务费抵扣金额 */
     broker_rebate_fee: string;
-    /** 用户加成服务费金额 */
+    /** 应收用户加成服务费金额 */
     user_fee: string;
+    /** 实收综合服务主体加成服务费金额 */
+    received_broker_fee: string;
+    /** 实收余额账户支出加成服务费金额 */
+    received_broker_real_fee: string;
+    /** 实收加成服务费抵扣金额 */
+    received_broker_deduct_fee: string;
+    /** 实收用户加成服务费金额 */
+    received_user_fee: string;
 }
 
 export class DataServiceClient extends YZHclient {

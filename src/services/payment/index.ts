@@ -166,16 +166,24 @@ interface GetOrderResponse {
     created_at: string;
     /** 订单完成时间，精确到秒 */
     finished_time: string;
-    /** 综合服务主体加成服务费 */
+    /** 应收综合服务主体加成服务费金额 */
     broker_fee: string;
-    /** 余额账户支出加成服务费 */
+    /** 应收余额账户支出加成服务费金额 */
     broker_real_fee: string;
-    /** 抵扣账户支出加成服务费 */
+    /** 应收加成服务费抵扣金额 */
     broker_deduct_fee: string;
+    /** 应收用户加成服务费金额 */
+    user_fee: string;
+    /** 实收综合服务主体加成服务费金额 */
+    received_broker_fee: string;
+    /** 实收余额账户支出加成服务费金额 */
+    received_broker_real_fee: string;
+    /** 实收加成服务费抵扣金额 */
+    received_broker_deduct_fee: string;
+    /** 实收用户加成服务费金额 */
+    received_user_fee: string;
     /** 订单备注 */
     pay_remark: string;
-    /** 用户加成服务费 */
-    user_fee: string;
     /** 银行名称 */
     bank_name: string;
     /** 项目标识 */
@@ -463,16 +471,24 @@ interface QueryBatchOrderInfo {
     created_at: string;
     /** 订单完成时间 */
     finished_time: string;
-    /** 综合服务主体加成服务费 */
+    /** 应收综合服务主体加成服务费金额 */
     broker_fee: string;
-    /** 余额账户支出加成服务费 */
+    /** 应收余额账户支出加成服务费金额 */
     broker_real_fee: string;
-    /** 加成服务费抵扣金额 */
+    /** 应收加成服务费抵扣金额 */
     broker_deduct_fee: string;
+    /** 应收用户加成服务费金额 */
+    user_fee: string;
+    /** 实收综合服务主体加成服务费金额 */
+    received_broker_fee: string;
+    /** 实收余额账户支出加成服务费金额 */
+    received_broker_real_fee: string;
+    /** 实收加成服务费抵扣金额 */
+    received_broker_deduct_fee: string;
+    /** 实收用户加成服务费金额 */
+    received_user_fee: string;
     /** 订单备注 */
     pay_remark: string;
-    /** 用户加成服务费 */
-    user_fee: string;
     /** 银行名称 */
     bank_name: string;
     /** 业务线标识 */
