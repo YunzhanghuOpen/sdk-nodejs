@@ -11,8 +11,8 @@ class UserCollectServiceClient extends client_1.default {
     async GetUserCollectPhoneStatus(req, cb) {
         return this.request('get', '/api/user/v1/collect/phone/status', req, { encryption: false }, cb);
     }
-    // GetUserCollectPhoneURL 获取收集手机号码页面
-    async GetUserCollectPhoneURL(req, cb) {
+    // GetUserCollectPhoneUrl 获取收集手机号码页面
+    async GetUserCollectPhoneUrl(req, cb) {
         return this.request('get', '/api/user/v1/collect/phone/url', req, { encryption: false }, cb);
     }
 }

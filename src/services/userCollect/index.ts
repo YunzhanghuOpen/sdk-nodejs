@@ -21,11 +21,11 @@ interface GetUserCollectPhoneStatusResponse {
     /** 手机号码收集 Token */
     token: string;
     /** 绑定状态 */
-    status: number;
+    status: string;
 }
 
-/** GetUserCollectPhoneURLRequest 获取收集手机号码页面请求 */
-interface GetUserCollectPhoneURLRequest {
+/** GetUserCollectPhoneUrlRequest 获取收集手机号码页面请求 */
+interface GetUserCollectPhoneUrlRequest {
     /** 手机号码收集 Token */
     token: string;
     /** 主题颜色 */
@@ -36,8 +36,8 @@ interface GetUserCollectPhoneURLRequest {
     redirect_url: string;
 }
 
-/** GetUserCollectPhoneURLResponse 获取收集手机号码页面返回 */
-interface GetUserCollectPhoneURLResponse {
+/** GetUserCollectPhoneUrlResponse 获取收集手机号码页面返回 */
+interface GetUserCollectPhoneUrlResponse {
     /** 收集手机号码页面 URL */
     url: string;
 }
@@ -66,11 +66,11 @@ export class UserCollectServiceClient extends YZHclient {
         return this.request('get', '/api/user/v1/collect/phone/status', req, { encryption: false }, cb);
     }
 
-    // GetUserCollectPhoneURL 获取收集手机号码页面
-    async GetUserCollectPhoneURL(
-        req: GetUserCollectPhoneURLRequest,
-        cb?: (error: null | string, rep: GetUserCollectPhoneURLResponse) => void
-    ): Promise<GetUserCollectPhoneURLResponse> {
+    // GetUserCollectPhoneUrl 获取收集手机号码页面
+    async GetUserCollectPhoneUrl(
+        req: GetUserCollectPhoneUrlRequest,
+        cb?: (error: null | string, rep: GetUserCollectPhoneUrlResponse) => void
+    ): Promise<GetUserCollectPhoneUrlResponse> {
         return this.request('get', '/api/user/v1/collect/phone/url', req, { encryption: false }, cb);
     }
 }

@@ -38,7 +38,7 @@ userCollect
 
 // 获取收集手机号码页面
 userCollect
-.GetUserCollectPhoneURL({
+.GetUserCollectPhoneUrl({
 
   /**
     * @param {string} request-id：请求 ID，请求的唯一标识
