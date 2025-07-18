@@ -21,7 +21,7 @@ interface GetUserCollectPhoneStatusResponse {
     /** 手机号码收集 Token */
     token: string;
     /** 绑定状态 */
-    status: string;
+    status: number;
 }
 
 /** GetUserCollectPhoneUrlRequest 获取收集手机号码页面请求 */
