@@ -29,5 +29,5 @@ var tax_1 = require("./tax");
 Object.defineProperty(exports, "TaxClient", { enumerable: true, get: function () { return tax_1.TaxClient; } });
 var uploadusersign_1 = require("./uploadusersign");
 Object.defineProperty(exports, "UploadUserSignServiceClient", { enumerable: true, get: function () { return uploadusersign_1.UploadUserSignServiceClient; } });
-var usercollect1_1 = require("./usercollect1");
-Object.defineProperty(exports, "UserCollectServiceClient", { enumerable: true, get: function () { return usercollect1_1.UserCollectServiceClient; } });
+var usercollect_1 = require("./usercollect");
+Object.defineProperty(exports, "UserCollectServiceClient", { enumerable: true, get: function () { return usercollect_1.UserCollectServiceClient; } });
