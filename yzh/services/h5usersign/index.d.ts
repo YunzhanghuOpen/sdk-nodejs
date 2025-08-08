@@ -11,6 +11,8 @@ interface H5UserPresignRequest {
     id_card: string;
     /** 证件类型 0：身份证 2：港澳居民来往内地通行证 3：护照 5：台湾居民来往大陆通行证 9：港澳居民居住证 10：台湾居民居住证 11：外国人永久居留身份证 12：外国人工作许可证 */
     certificate_type: number;
+    /** 是否收集手机号码 0：不收集（默认） 1：收集手机号码 */
+    collect_phone_no: number;
 }
 
 /** H5UserPresignResponse 预申请签约返回 */
