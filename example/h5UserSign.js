@@ -19,6 +19,7 @@ h5usersign
     real_name: '张三',
     id_card: '11010519491231002X',
     certificate_type: 0,
+    collect_phone_no: 0,
   })
   .then((data) => {
     if (data.code === '0000') {
