@@ -1,8 +1,8 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.CaculatorLaborServiceClient = void 0;
+exports.CalculateLaborServiceClient = void 0;
 const client_1 = require('../../common/client');
-class CaculatorLaborServiceClient extends client_1.default {
+class CalculateLaborServiceClient extends client_1.default {
     // eslint-disable-next-line no-useless-constructor
     constructor(conf) {
         super(conf);
@@ -16,4 +16,4 @@ class CaculatorLaborServiceClient extends client_1.default {
         return this.request('post', '/api/payment/v1/calc-tax', req, { encryption: false }, cb);
     }
 }
-exports.CaculatorLaborServiceClient = CaculatorLaborServiceClient;
+exports.CalculateLaborServiceClient = CalculateLaborServiceClient;

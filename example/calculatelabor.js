@@ -2,7 +2,7 @@ const yzhAPI = require('../yzh/index.js')
 const config = require('./conf/config.js')
 
 // 连续劳务税费试算
-const caculatorLabor = new yzhAPI.CaculatorLaborServiceClient(config)
+const caculatorLabor = new yzhAPI.CalculateLaborServiceClient(config)
 
 // LaborCaculator连续劳务税费试算（计算器）
 caculatorLabor

@@ -5,7 +5,7 @@ export { BizlicGxV2H5ServiceClient } from './bizlicgxv2h5';
 export { BizlicGxV2H5APIServiceClient } from './bizlicgxv2h5api';
 export { BizlicXjjH5ServiceClient } from './bizlicxjjh5';
 export { BizlicXjjH5APIServiceClient } from './bizlicxjjh5api';
-export { CaculatorLaborServiceClient } from './caculatorlabor';
+export { CalculateLaborServiceClient } from './calculatelabor';
 export { CustomClient } from './custom';
 export { DataServiceClient } from './dataservice';
 export { H5UserSignServiceClient } from './h5usersign';

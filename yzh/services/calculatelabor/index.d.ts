@@ -1,5 +1,4 @@
 import YZHclient from '../../common/client';
-
 /** LaborCaculatorRequest 连续劳务税费试算（计算器）请求 */
 interface LaborCaculatorRequest {
     /** 平台企业 ID */
@@ -102,8 +101,7 @@ interface CalcTaxDetail {
     additional_tax: string;
 }
 
-export class CaculatorLaborServiceClient extends YZHclient {
-    // eslint-disable-next-line no-useless-constructor
+export declare class CalculateLaborServiceClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
         broker_id: string;
@@ -114,23 +112,12 @@ export class CaculatorLaborServiceClient extends YZHclient {
         sign_type: 'rsa' | 'sha256';
         base_url?: string;
         timeout?: number;
-    }) {
-        super(conf);
-    }
-
-    // LaborCaculator 连续劳务税费试算（计算器）
-    async LaborCaculator(
+    });
+    LaborCaculator(
         req: LaborCaculatorRequest,
         cb?: (error: null | string, rep: LaborCaculatorResponse) => void
-    ): Promise<LaborCaculatorResponse> {
-        return this.request('post', '/api/tax/v1/labor-caculator', req, { encryption: false }, cb);
-    }
-
-    // CalcTax 订单税费试算
-    async CalcTax(
-        req: CalcTaxRequest,
-        cb?: (error: null | string, rep: CalcTaxResponse) => void
-    ): Promise<CalcTaxResponse> {
-        return this.request('post', '/api/payment/v1/calc-tax', req, { encryption: false }, cb);
-    }
+    ): Promise<LaborCaculatorResponse>;
+    CalcTax(req: CalcTaxRequest, cb?: (error: null | string, rep: CalcTaxResponse) => void): Promise<CalcTaxResponse>;
 }
+
+export {};
