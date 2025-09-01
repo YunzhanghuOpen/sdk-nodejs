@@ -69,5 +69,15 @@ class PaymentClient extends client_1.default {
     async CheckUserAmount(req, cb) {
         return this.request('post', '/api/payment/v1/risk-check/amount', req, { encryption: false }, cb);
     }
+    // GetOrderLxlw 查询劳务模式单笔订单信息
+    async GetOrderLxlw(req, cb) {
+        return this.request(
+            'get',
+            '/api/payment/v1/query-order',
+            req,
+            { encryption: (req === null || req === void 0 ? void 0 : req.data_type) === 'encryption' },
+            cb
+        );
+    }
 }
 exports.PaymentClient = PaymentClient;
