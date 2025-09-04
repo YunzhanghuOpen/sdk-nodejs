@@ -1,8 +1,4 @@
-// import * as crypto from 'crypto';
-
 import YZHclient from '../client';
-
-// const cipherEncoding = 'base64';
 
 interface Config {
     sign_type: 'rsa' | 'sha256';
@@ -26,37 +22,6 @@ export class Util extends YZHclient {
         super(conf);
     }
 
-    // 自定义随机字符串
-    // eslint-disable-next-line class-methods-use-this
-    // private umess = () => {
-    //     const buf = crypto.randomBytes(16);
-    //     const token = buf.toString('hex');
-    //     return token.toString();
-    // };
-
-    // private usignRSASHA256 = (data: string, mess: string, timestamp: string, appkey: string) => {
-    //     try {
-    //         const plaintext = `data=${data}&mess=${mess}&timestamp=${timestamp}&key=${appkey}`;
-    //         const sign = crypto.createSign('RSA-SHA256');
-    //         sign.update(plaintext);
-    //         sign.end();
-    //         return sign.sign(this.private_key, cipherEncoding);
-    //     } catch (err) {
-    //         throw new Error(`${err}`);
-    //     }
-    // };
-
-    // private usignHmacSHA256 = (data: string, mess: string, timestamp: string, appkey: string) => {
-    //     try {
-    //         const plaintext = `data=${data}&mess=${mess}&timestamp=${timestamp}&key=${appkey}`;
-    //         const hmac = crypto.createHmac('sha256', this.app_key);
-    //         hmac.update(plaintext);
-    //         return hmac.digest('hex');
-    //     } catch (err) {
-    //         throw new Error(`${err}`);
-    //     }
-    // };
-
     /**
      * 生成最终客服链接
      * @param {Config} config 商户配置
@@ -66,8 +31,7 @@ export class Util extends YZHclient {
      */
     getCustomerLink = (config: Config, baseUrl: string, memberId: string): string => {
         try {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const { sign_type, app_key, private_key } = config;
+            const { sign_type, private_key } = config;
             const m = this.mess();
             const t = Date.now().toString();
 
