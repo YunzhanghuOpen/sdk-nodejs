@@ -157,7 +157,7 @@ export class YZHClient {
      * @param {string} timestamp 时间戳，精确到秒
      * @returns {string} 签名内容
      */
-    private signRSASHA256 = (data: string, mess: string, timestamp: string) => {
+    protected signRSASHA256 = (data: string, mess: string, timestamp: string) => {
         try {
             const plaintext = `data=${data}&mess=${mess}&timestamp=${timestamp}&key=${this.app_key}`;
             const sign = crypto.createSign('RSA-SHA256');
@@ -176,7 +176,7 @@ export class YZHClient {
      * @param {string} timestamp 时间戳，精确到秒
      * @returns {string} 签名内容
      */
-    private signHmacSHA256 = (data: string, mess: string, timestamp: string) => {
+    protected signHmacSHA256 = (data: string, mess: string, timestamp: string) => {
         try {
             const plaintext = `data=${data}&mess=${mess}&timestamp=${timestamp}&key=${this.app_key}`;
             const hmac = crypto.createHmac('sha256', this.app_key);
@@ -214,7 +214,7 @@ export class YZHClient {
 
     // 自定义随机字符串
     // eslint-disable-next-line class-methods-use-this
-    private mess = () => {
+    protected mess = () => {
         const buf = crypto.randomBytes(16);
         const token = buf.toString('hex');
         return token.toString();

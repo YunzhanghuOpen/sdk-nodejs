@@ -50,7 +50,7 @@ export declare class YZHClient {
      * @param {string} timestamp 时间戳，精确到秒
      * @returns {string} 签名内容
      */
-    private signRSASHA256;
+    protected signRSASHA256: (data: string, mess: string, timestamp: string) => string;
     /**
      * 生成签名（HMAC 签名算法）
      * @param {string} data 经过加密后的具体数据
@@ -58,7 +58,7 @@ export declare class YZHClient {
      * @param {string} timestamp 时间戳，精确到秒
      * @returns {string} 签名内容
      */
-    private signHmacSHA256;
+    protected signHmacSHA256: (data: string, mess: string, timestamp: string) => string;
     /**
      * 生成签名
      * @param {string} data 经过加密后的具体数据
@@ -68,7 +68,7 @@ export declare class YZHClient {
      * @returns {string} 签名内容
      */
     private sign;
-    private mess;
+    protected mess: () => string;
     /**
      * 3DES 加密数据
      * @param plaintext
