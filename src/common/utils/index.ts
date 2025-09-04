@@ -34,7 +34,7 @@ export class Util extends YZHclient {
             const { sign_type } = config;
             const m = this.mess();
             const t = Date.now().toString();
-            const data = `memberid=${memberId}`;
+            const data = `member_id=${memberId}`;
 
             let sign = '';
             if (sign_type === 'rsa') {
@@ -48,7 +48,7 @@ export class Util extends YZHclient {
             const params = [
                 `sign_type=${sign_type}`,
                 `sign=${encodeURIComponent(sign)}`,
-                `memberId=${memberId}`,
+                `member_id=${memberId}`,
                 `mess=${m}`,
                 `timestamp=${t}`,
             ].join('&');

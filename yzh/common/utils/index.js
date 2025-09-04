@@ -18,7 +18,7 @@ class Util extends client_1.default {
                 const { sign_type } = config;
                 const m = this.mess();
                 const t = Date.now().toString();
-                const data = `memberid=${memberId}`;
+                const data = `member_id=${memberId}`;
                 let sign = '';
                 if (sign_type === 'rsa') {
                     sign = this.signRSASHA256(data, m, t);
@@ -32,7 +32,7 @@ class Util extends client_1.default {
                 const params = [
                     `sign_type=${sign_type}`,
                     `sign=${encodeURIComponent(sign)}`,
-                    `memberId=${memberId}`,
+                    `member_id=${memberId}`,
                     `mess=${m}`,
                     `timestamp=${t}`,
                 ].join('&');
