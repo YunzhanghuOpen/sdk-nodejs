@@ -31,25 +31,26 @@ export class Util extends YZHclient {
      */
     getCustomerLink = (config: Config, baseUrl: string, memberId: string): string => {
         try {
-            const { sign_type, private_key } = config;
+            const { sign_type } = config;
             const m = this.mess();
             const t = Date.now().toString();
+            const data = `memberid=${memberId}`;
 
             let sign = '';
             if (sign_type === 'rsa') {
-                sign = this.signRSASHA256(private_key, m, t);
+                sign = this.signRSASHA256(data, m, t);
             } else if (sign_type === 'sha256') {
-                sign = this.signHmacSHA256(private_key, m, t);
+                sign = this.signHmacSHA256(data, m, t);
             } else {
                 throw new Error(`Unsupported sign_type: ${sign_type}`);
             }
 
             const params = [
-                `sign_type=${encodeURIComponent(sign_type)}`,
+                `sign_type=${sign_type}`,
                 `sign=${encodeURIComponent(sign)}`,
-                `memberId=${encodeURIComponent(memberId)}`,
-                `mess=${encodeURIComponent(m)}`,
-                `timestamp=${encodeURIComponent(t)}`,
+                `memberId=${memberId}`,
+                `mess=${m}`,
+                `timestamp=${t}`,
             ].join('&');
 
             const separator = baseUrl.includes('?') ? '&' : '?';
