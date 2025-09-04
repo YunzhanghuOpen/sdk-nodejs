@@ -6,7 +6,7 @@ const config = {
   // 平台企业 App Key，登录云账户综合服务平台，选择“业务中心 > 业务管理 > 对接信息”获取
   app_key: 'ZIv9Pa46bW92qF80X4q81yCz4aRa7uzW',
   // 平台企业 3DES Key，登录云账户综合服务平台，选择“业务中心 > 业务管理 > 对接信息”获取
-  des3_key: 'Y54w5g***x9jv',
+  des3_key: 'l8ZgMZIuZzNguKgx1FW150IV',
   // 平台企业私钥，自行生成 RSA 公私钥，私钥请妥善保存，谨防泄露。平台企业公钥请登录云账户综合服务平台配置，选择“业务中心 > 业务管理 > 对接信息”，单击页面右上角的“编辑”，完成平台企业公钥配置
   private_key: `-----BEGIN PRIVATE KEY-----
 MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCEeSjHEyKrOLI1
