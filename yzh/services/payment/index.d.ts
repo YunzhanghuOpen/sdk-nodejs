@@ -1,28 +1,34 @@
 import YZHclient from '../../common/client';
 /** CreateBankpayOrderRequest 银行卡实时支付请求 */
 interface CreateBankpayOrderRequest {
-    /** 平台企业订单号 */
-    order_id: string;
-    /** 平台企业 ID */
-    dealer_id: string;
-    /** 综合服务主体 ID */
-    broker_id: string;
-    /** 姓名 */
-    real_name: string;
-    /** 银行卡号 */
-    card_no: string;
-    /** 身份证号码 */
-    id_card: string;
-    /** 手机号 */
-    phone_no: string;
-    /** 订单金额 */
-    pay: string;
-    /** 订单备注 */
-    pay_remark: string;
-    /** 回调地址 */
-    notify_url: string;
-    /** 项目标识 */
-    project_id: string;
+  /** 平台企业订单号 */
+  order_id: string;
+  /** 平台企业 ID */
+  dealer_id: string;
+  /** 综合服务主体 ID */
+  broker_id: string;
+  /** 姓名 */
+  real_name: string;
+  /** 银行卡号 */
+  card_no: string;
+  /** 身份证号码 */
+  id_card: string;
+  /** 手机号 */
+  phone_no: string;
+  /** 订单金额 */
+  pay: string;
+  /** 订单备注 */
+  pay_remark: string;
+  /** 回调地址 */
+  notify_url: string;
+  /** 业务线标识 */
+  project_id: string;
+  /** 互联网平台名称 */
+  dealer_platform_name: string;
+  /** 用户名称/昵称 */
+  dealer_user_nickname: string;
+  /** 用户唯一标识码 */
+  dealer_user_id: string;
 }
 
 /** CreateBankpayOrderResponse 银行卡实时支付返回 */
@@ -37,30 +43,36 @@ interface CreateBankpayOrderResponse {
 
 /** CreateAlipayOrderRequest 支付宝实时支付请求 */
 interface CreateAlipayOrderRequest {
-    /** 平台企业订单号 */
-    order_id: string;
-    /** 平台企业 ID */
-    dealer_id: string;
-    /** 综合服务主体 ID */
-    broker_id: string;
-    /** 姓名 */
-    real_name: string;
-    /** 支付宝账户 */
-    card_no: string;
-    /** 身份证号码 */
-    id_card: string;
-    /** 手机号 */
-    phone_no: string;
-    /** 订单金额 */
-    pay: string;
-    /** 订单备注 */
-    pay_remark: string;
-    /** 回调地址 */
-    notify_url: string;
-    /** 项目标识 */
-    project_id: string;
-    /** 校验支付宝账户姓名，固定值：Check */
-    check_name: string;
+  /** 平台企业订单号 */
+  order_id: string;
+  /** 平台企业 ID */
+  dealer_id: string;
+  /** 综合服务主体 ID */
+  broker_id: string;
+  /** 姓名 */
+  real_name: string;
+  /** 支付宝账户 */
+  card_no: string;
+  /** 身份证号码 */
+  id_card: string;
+  /** 手机号 */
+  phone_no: string;
+  /** 订单金额 */
+  pay: string;
+  /** 订单备注 */
+  pay_remark: string;
+  /** 回调地址 */
+  notify_url: string;
+  /** 业务线标识 */
+  project_id: string;
+  /** 校验支付宝账户姓名，固定值：Check */
+  check_name: string;
+  /** 互联网平台名称 */
+  dealer_platform_name: string;
+  /** 用户名称/昵称 */
+  dealer_user_nickname: string;
+  /** 用户唯一标识码 */
+  dealer_user_id: string;
 }
 
 /** CreateAlipayOrderResponse 支付宝实时支付返回 */
@@ -75,34 +87,40 @@ interface CreateAlipayOrderResponse {
 
 /** CreateWxpayOrderRequest 微信实时支付请求 */
 interface CreateWxpayOrderRequest {
-    /** 平台企业订单号 */
-    order_id: string;
-    /** 平台企业 ID */
-    dealer_id: string;
-    /** 综合服务主体 ID */
-    broker_id: string;
-    /** 姓名 */
-    real_name: string;
-    /** 微信用户 openid */
-    openid: string;
-    /** 身份证号码 */
-    id_card: string;
-    /** 手机号 */
-    phone_no: string;
-    /** 订单金额 */
-    pay: string;
-    /** 订单备注 */
-    pay_remark: string;
-    /** 回调地址 */
-    notify_url: string;
-    /** 平台企业微信 AppID */
-    wx_app_id: string;
-    /** 微信支付模式，固定值：transfer */
-    wxpay_mode: string;
-    /** 项目标识 */
-    project_id: string;
-    /** 描述信息，该字段已废弃 */
-    notes: string;
+  /** 平台企业订单号 */
+  order_id: string;
+  /** 平台企业 ID */
+  dealer_id: string;
+  /** 综合服务主体 ID */
+  broker_id: string;
+  /** 姓名 */
+  real_name: string;
+  /** 微信用户 openid */
+  openid: string;
+  /** 身份证号码 */
+  id_card: string;
+  /** 手机号 */
+  phone_no: string;
+  /** 订单金额 */
+  pay: string;
+  /** 订单备注 */
+  pay_remark: string;
+  /** 回调地址 */
+  notify_url: string;
+  /** 平台企业微信 AppID */
+  wx_app_id: string;
+  /** 微信支付模式，固定值：transfer */
+  wxpay_mode: string;
+  /** 业务线标识 */
+  project_id: string;
+  /** 描述信息，该字段已废弃 */
+  notes: string;
+  /** 互联网平台名称 */
+  dealer_platform_name: string;
+  /** 用户名称/昵称 */
+  dealer_user_nickname: string;
+  /** 用户唯一标识码 */
+  dealer_user_id: string;
 }
 
 /** CreateWxpayOrderResponse 微信实时支付返回 */
@@ -331,26 +349,32 @@ interface CreateBatchOrderRequest {
 
 /** BatchOrderInfo 批次下单订单信息 */
 interface BatchOrderInfo {
-    /** 平台企业订单号 */
-    order_id: string;
-    /** 姓名 */
-    real_name: string;
-    /** 身份证号码 */
-    id_card: string;
-    /** 收款账号 */
-    card_no: string;
-    /** 微信用户 openid */
-    openid: string;
-    /** 手机号 */
-    phone_no: string;
-    /** 项目标识 */
-    project_id: string;
-    /** 订单金额 */
-    pay: string;
-    /** 订单备注 */
-    pay_remark: string;
-    /** 回调地址 */
-    notify_url: string;
+  /** 平台企业订单号 */
+  order_id: string;
+  /** 姓名 */
+  real_name: string;
+  /** 身份证号码 */
+  id_card: string;
+  /** 收款账号 */
+  card_no: string;
+  /** 微信用户 openid */
+  openid: string;
+  /** 手机号 */
+  phone_no: string;
+  /** 业务线标识 */
+  project_id: string;
+  /** 订单金额 */
+  pay: string;
+  /** 订单备注 */
+  pay_remark: string;
+  /** 回调地址 */
+  notify_url: string;
+  /** 互联网平台名称 */
+  dealer_platform_name: string;
+  /** 用户名称/昵称 */
+  dealer_user_nickname: string;
+  /** 用户唯一标识码 */
+  dealer_user_id: string;
 }
 
 /** CreateBatchOrderResponse 批次下单返回 */
@@ -617,18 +641,42 @@ interface GetOrderLxlwResponse {
 
 /** TaxDetail 缴税明细 */
 interface TaxDetail {
-    /** 应纳个税 */
-    personal_tax: string;
-    /** 应纳增值税 */
-    value_added_tax: string;
-    /** 应纳附加税费 */
-    additional_tax: string;
-    /** 实纳个税 */
-    received_personal_tax: string;
-    /** 实纳增值税 */
-    received_value_added_tax: string;
-    /** 实纳附加税费 */
-    received_additional_tax: string;
+  /** 预扣个税 */
+  personal_tax: string;
+  /** 预扣增值税 */
+  value_added_tax: string;
+  /** 预扣附加税费 */
+  additional_tax: string;
+  /** 实缴个税 */
+  received_personal_tax: string;
+  /** 实缴增值税 */
+  received_value_added_tax: string;
+  /** 实缴附加税费 */
+  received_additional_tax: string;
+  /** 用户预扣个税 */
+  user_personal_tax: string;
+  /** 平台企业预扣个税 */
+  dealer_personal_tax: string;
+  /** 用户预扣增值税 */
+  user_value_added_tax: string;
+  /** 平台企业预扣增值税 */
+  dealer_value_added_tax: string;
+  /** 用户预扣附加税费 */
+  user_additional_tax: string;
+  /** 平台企业预扣附加税费 */
+  dealer_additional_tax: string;
+  /** 用户实缴个税 */
+  user_received_personal_tax: string;
+  /** 平台企业实缴个税 */
+  dealer_received_personal_tax: string;
+  /** 用户实缴增值税 */
+  user_received_value_added_tax: string;
+  /** 平台企业实缴增值税 */
+  dealer_received_value_added_tax: string;
+  /** 用户实缴附加税费 */
+  user_received_additional_tax: string;
+  /** 平台企业实缴附加税费 */
+  dealer_received_additional_tax: string;
 }
 
 export declare class PaymentClient extends YZHclient {
