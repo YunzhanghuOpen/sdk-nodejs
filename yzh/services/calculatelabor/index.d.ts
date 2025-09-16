@@ -67,38 +67,80 @@ interface MontTax {
 
 /** CalcTaxRequest 订单税费试算请求 */
 interface CalcTaxRequest {
-    /** 平台企业 ID */
-    dealer_id: string;
-    /** 综合服务主体 ID */
-    broker_id: string;
-    /** 姓名 */
-    real_name: string;
-    /** 证件号 */
-    id_card: string;
-    /** 订单金额 */
-    pay: string;
+  /** 平台企业 ID */
+  dealer_id: string;
+  /** 综合服务主体 ID */
+  broker_id: string;
+  /** 姓名 */
+  real_name: string;
+  /** 证件号 */
+  id_card: string;
+  /** 测算金额 */
+  pay: string;
+  /** 测算类型 */
+  tax_type: string;
 }
 
 /** CalcTaxResponse 订单税费试算返回 */
 interface CalcTaxResponse {
-    /** 订单金额 */
-    pay: string;
-    /** 税费总额 */
-    tax: string;
-    /** 税后金额 */
-    after_tax_amount: string;
-    /** 税费明细 */
-    tax_detail: CalcTaxDetail;
+  /** 测算金额 */
+  pay: string;
+  /** 税费总额 */
+  tax: string;
+  /** 税后结算金额 */
+  after_tax_amount: string;
+  /** 缴税明细 */
+  tax_detail: CalcTaxDetail;
+  /** 税前订单金额 */
+  before_tax_amount: string;
+  /** 用户税费总额 */
+  user_tax: string;
+  /** 平台企业税费总额 */
+  dealer_tax: string;
+  /** 云账户税费总额 */
+  broker_tax: string;
+  /** 用户服务费 */
+  user_fee: string;
+  /** 结果 */
+  status: string;
+  /** 结果详细状态码 */
+  status_detail: string;
+  /** 结果说明 */
+  status_message: string;
+  /** 结果详细状态码描述 */
+  status_detail_message: string;
 }
 
 /** CalcTaxDetail 税费明细 */
 interface CalcTaxDetail {
-    /** 应纳个税 */
-    personal_tax: string;
-    /** 应纳增值税 */
-    value_added_tax: string;
-    /** 应纳附加税费 */
-    additional_tax: string;
+  /** 预扣个税 */
+  personal_tax: string;
+  /** 预扣增值税 */
+  value_added_tax: string;
+  /** 预扣附加税费 */
+  additional_tax: string;
+  /** 用户预扣个税 */
+  user_personal_tax: string;
+  /** 平台企业预扣个税 */
+  dealer_personal_tax: string;
+  /** 云账户预扣个税 */
+  broker_personal_tax: string;
+  /** 用户预扣增值税 */
+  user_value_added_tax: string;
+  /** 平台企业预扣增值税 */
+  dealer_value_added_tax: string;
+  /** 云账户预扣增值税 */
+  broker_value_added_tax: string;
+  /** 用户预扣附加税费 */
+  user_additional_tax: string;
+  /** 平台企业预扣附加税费 */
+  dealer_additional_tax: string;
+  /** 云账户预扣附加税费 */
+  broker_additional_tax: string;
+  /** 预扣个税税率 */
+  personal_tax_rate: string;
+  /** 预扣个税速算扣除数 */
+  deduct_tax: string;
 }
 
 export declare class CalculateLaborServiceClient extends YZHclient {
