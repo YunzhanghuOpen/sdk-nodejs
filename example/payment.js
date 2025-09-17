@@ -25,9 +25,9 @@ payment
     pay_remark: 'test',
     notify_url: 'https://www.example.com',
     project_id: '',
-    dealer_platform_name: '',
-    dealer_user_nickname: '',
-    dealer_user_id: '',
+    dealer_platform_name: '互联网平台名称test',
+    dealer_user_nickname: 'usernickname',
+    dealer_user_id: 'userId1234567890',
   })
   .then((data) => {
     if (data.code === '0000') {
@@ -65,9 +65,9 @@ payment
     pay_remark: 'test',
     notify_url: 'https://www.example.com',
     project_id: '',
-    dealer_platform_name: '',
-    dealer_user_nickname: '',
-    dealer_user_id: '',
+    dealer_platform_name: '互联网平台名称test',
+    dealer_user_nickname: 'usernickname',
+    dealer_user_id: 'userId1234567890',
   })
   .then((data) => {
     if (data.code === '0000') {
@@ -105,9 +105,9 @@ payment
     pay_remark: 'test',
     notify_url: 'https://www.example.com',
     project_id: '',
-    dealer_platform_name: '',
-    dealer_user_nickname: '',
-    dealer_user_id: '',
+    dealer_platform_name: '互联网平台名称test',
+    dealer_user_nickname: 'usernickname',
+    dealer_user_id: 'userId1234567890',
   })
   .then((data) => {
     if (data.code === '0000') {
@@ -328,9 +328,9 @@ payment
         pay: '0.01',
         pay_remark: '测试订单1',
         notify_url: 'https://www.example.com',
-        dealer_platform_name: '',
-        dealer_user_nickname: '',
-        dealer_user_id: '',
+        dealer_platform_name: '互联网平台名称test',
+        dealer_user_nickname: 'usernickname',
+        dealer_user_id: 'userId1234567890',
       },
       {
         order_id: '2013011802111',
@@ -341,9 +341,9 @@ payment
         pay: '0.01',
         pay_remark: '测试订单2',
         notify_url: 'https://www.example.com',
-        dealer_platform_name: '',
-        dealer_user_nickname: '',
-        dealer_user_id: '',
+        dealer_platform_name: '互联网平台名称test',
+        dealer_user_nickname: 'usernickname',
+        dealer_user_id: 'userId1234567890',
       },
     ],
   })
