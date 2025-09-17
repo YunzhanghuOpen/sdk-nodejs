@@ -3,10 +3,3 @@
 node_modules
 npm-debug.log
 
-.idea/.gitignore
-.idea/misc.xml
-.gitignore
-.idea/modules.xml
-.idea/sdk-nodejs.iml
-.gitignore
-.idea/vcs.xml
