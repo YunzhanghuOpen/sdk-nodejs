@@ -1,9 +1,9 @@
-const config = require('./conf/config.js');
+const config = require('./conf/config.js')
 
-const yunzhanghu = require('../yzh/index.js');
+const yunzhanghu = require('../yzh/index.js')
 
-const util = new yunzhanghu.Util(config);
+const util = new yunzhanghu.Util(config)
 
-const url = util.getCustomerLink('https://www.example.com', 'testmemberid');
+const url = util.getCustomerLink('https://www.example.com', 'testmemberid')
 
-console.log('生成最终客服链接：', url);
+console.log('生成最终客服链接：', url)
