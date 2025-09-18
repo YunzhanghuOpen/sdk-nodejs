@@ -32,7 +32,7 @@ caculatorLabor
     } else {
         // 失败返回
         console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
 })
 .catch((err) => {
     // 发生异常
@@ -54,6 +54,7 @@ caculatorLabor
     real_name: "张三",
     id_card:   "11010519491231002X",
     pay:      "99",
+    tax_type:      "before_tax",
 })
 .then((data) => {
   if (data.code === '0000') {
@@ -62,7 +63,7 @@ caculatorLabor
   } else {
     // 失败返回
     console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-  } 
+  }
 })
 .catch((err) => {
   // 发生异常
