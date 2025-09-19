@@ -7,7 +7,7 @@ const payment = new yzhAPI.PaymentClient(config)
 // 银行卡实时支付
 payment
   .CreateBankpayOrder({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -25,6 +25,9 @@ payment
     pay_remark: 'test',
     notify_url: 'https://www.example.com',
     project_id: '',
+    dealer_platform_name: '互联网平台名称test',
+    dealer_user_nickname: 'usernickname',
+    dealer_user_id: 'userId1234567890',
   })
   .then((data) => {
     if (data.code === '0000') {
@@ -33,7 +36,7 @@ payment
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -43,7 +46,7 @@ payment
 // 支付宝实时支付
 payment
   .CreateAlipayOrder({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -62,6 +65,9 @@ payment
     pay_remark: 'test',
     notify_url: 'https://www.example.com',
     project_id: '',
+    dealer_platform_name: '互联网平台名称test',
+    dealer_user_nickname: 'usernickname',
+    dealer_user_id: 'userId1234567890',
   })
   .then((data) => {
     if (data.code === '0000') {
@@ -70,7 +76,7 @@ payment
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -80,7 +86,7 @@ payment
 // 微信实时支付
 payment
   .CreateWxpayOrder({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -99,6 +105,9 @@ payment
     pay_remark: 'test',
     notify_url: 'https://www.example.com',
     project_id: '',
+    dealer_platform_name: '互联网平台名称test',
+    dealer_user_nickname: 'usernickname',
+    dealer_user_id: 'userId1234567890',
   })
   .then((data) => {
     if (data.code === '0000') {
@@ -107,7 +116,7 @@ payment
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -117,7 +126,7 @@ payment
 // 查询单笔订单信息
 payment
   .GetOrder({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -135,7 +144,7 @@ payment
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -145,7 +154,7 @@ payment
 // 查询平台企业余额
 payment
   .ListAccount({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -161,7 +170,7 @@ payment
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -171,7 +180,7 @@ payment
 // 查询电子回单
 payment
   .GetEleReceiptFile({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -188,7 +197,7 @@ payment
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -198,7 +207,7 @@ payment
 // 取消待支付订单
 payment
   .CancelOrder({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -218,7 +227,7 @@ payment
 // 重试挂起状态订单
 payment
   .RetryOrder({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -240,7 +249,7 @@ payment
 // 查询平台企业汇款信息
 payment
   .GetDealerVARechargeAccount({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -257,7 +266,7 @@ payment
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -267,7 +276,7 @@ payment
 // 用户结算金额校验
 payment
   .CheckUserAmount({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -286,7 +295,7 @@ payment
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -296,7 +305,7 @@ payment
 // 批次下单
 payment
   .CreateBatchOrder({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -319,6 +328,9 @@ payment
         pay: '0.01',
         pay_remark: '测试订单1',
         notify_url: 'https://www.example.com',
+        dealer_platform_name: '互联网平台名称test',
+        dealer_user_nickname: 'usernickname',
+        dealer_user_id: 'userId1234567890',
       },
       {
         order_id: '2013011802111',
@@ -329,6 +341,9 @@ payment
         pay: '0.01',
         pay_remark: '测试订单2',
         notify_url: 'https://www.example.com',
+        dealer_platform_name: '互联网平台名称test',
+        dealer_user_nickname: 'usernickname',
+        dealer_user_id: 'userId1234567890',
       },
     ],
   })
@@ -342,7 +357,7 @@ payment
 // 批次确认
 payment
   .ConfirmBatchOrder({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -361,7 +376,7 @@ payment
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -371,7 +386,7 @@ payment
 // 查询批次订单信息
 payment
   .QueryBatchOrder({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -388,7 +403,7 @@ payment
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -398,7 +413,7 @@ payment
 // 批次撤销
 payment
   .CancelBatchOrder({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -416,7 +431,7 @@ payment
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -427,7 +442,7 @@ payment
 // 查询劳务模式单笔订单信息
 payment
 .GetOrderLxlw({
-  
+
     /**
         * @param {string} request-id：请求 ID，请求的唯一标识
         * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -445,7 +460,7 @@ payment
   } else {
     // 失败返回
     console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-  } 
+  }
 })
 .catch((err) => {
   // 发生异常
