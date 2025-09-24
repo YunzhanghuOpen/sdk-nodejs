@@ -14,3 +14,4 @@ export { PaymentClient } from './payment';
 export { TaxClient } from './tax';
 export { UploadUserSignServiceClient } from './uploadusersign';
 export { UserCollectServiceClient } from './usercollect';
+export { RealNameServiceClient } from './realname';

@@ -15,5 +15,13 @@ class CalculateLaborServiceClient extends client_1.default {
     async CalcTax(req, cb) {
         return this.request('post', '/api/payment/v1/calc-tax', req, { encryption: false }, cb);
     }
+    // CalculationYearH5Url 连续劳务年度税费测算-H5
+    async CalculationYearH5Url(req, cb) {
+        return this.request('get', '/api/labor/service/calculation/year/h5url', req, { encryption: false }, cb);
+    }
+    // CalculationH5Url 连续劳务单笔结算税费测算-H5
+    async CalculationH5Url(req, cb) {
+        return this.request('get', '/api/labor/service/calculation/h5url', req, { encryption: false }, cb);
+    }
 }
 exports.CalculateLaborServiceClient = CalculateLaborServiceClient;
