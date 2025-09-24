@@ -203,15 +203,15 @@ export class CalculateLaborServiceClient extends YZHclient {
   }) {
     super(conf);
   }
- 
+
   // LaborCaculator 连续劳务税费试算（计算器）
   async LaborCaculator(
-    req: LaborCaculatorRequest, 
+    req: LaborCaculatorRequest,
     cb?: (error: null | string,rep: LaborCaculatorResponse)=>void
   ): Promise<LaborCaculatorResponse> {
     return this.request(
-      'post', 
-      '/api/tax/v1/labor-caculator', 
+      'post',
+      '/api/tax/v1/labor-caculator',
       req,
       {encryption: false },
       cb
@@ -220,12 +220,12 @@ export class CalculateLaborServiceClient extends YZHclient {
 
   // CalcTax 订单税费试算
   async CalcTax(
-    req: CalcTaxRequest, 
+    req: CalcTaxRequest,
     cb?: (error: null | string,rep: CalcTaxResponse)=>void
   ): Promise<CalcTaxResponse> {
     return this.request(
-      'post', 
-      '/api/payment/v1/calc-tax', 
+      'post',
+      '/api/payment/v1/calc-tax',
       req,
       {encryption: false },
       cb
@@ -234,12 +234,12 @@ export class CalculateLaborServiceClient extends YZHclient {
 
   // CalculationYearH5Url 连续劳务年度税费测算-H5
   async CalculationYearH5Url(
-    req: CalculationYearH5UrlRequest, 
+    req: CalculationYearH5UrlRequest,
     cb?: (error: null | string,rep: CalculationYearH5UrlResponse)=>void
   ): Promise<CalculationYearH5UrlResponse> {
     return this.request(
-      'get', 
-      '/api/labor/service/calculation/year/h5url', 
+      'get',
+      '/api/labor/service/calculation/year/h5url',
       req,
       {encryption: false },
       cb
@@ -248,12 +248,12 @@ export class CalculateLaborServiceClient extends YZHclient {
 
   // CalculationH5Url 连续劳务单笔结算税费测算-H5
   async CalculationH5Url(
-    req: CalculationH5UrlRequest, 
+    req: CalculationH5UrlRequest,
     cb?: (error: null | string,rep: CalculationH5UrlResponse)=>void
   ): Promise<CalculationH5UrlResponse> {
     return this.request(
-      'get', 
-      '/api/labor/service/calculation/h5url', 
+      'get',
+      '/api/labor/service/calculation/h5url',
       req,
       {encryption: false },
       cb

@@ -268,7 +268,7 @@ interface CancelOrderRequest {
 
 /** CancelOrderResponse 取消待支付订单返回 */
 interface CancelOrderResponse {
-  
+
   ok: string;
 }
 
@@ -298,7 +298,7 @@ interface ListAccountRequest {
 
 /** ListAccountResponse 查询平台企业余额返回 */
 interface ListAccountResponse {
-  
+
   dealer_infos: AccountInfo[];
 }
 

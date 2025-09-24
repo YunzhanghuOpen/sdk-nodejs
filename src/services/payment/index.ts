@@ -268,7 +268,7 @@ interface CancelOrderRequest {
 
 /** CancelOrderResponse 取消待支付订单返回 */
 interface CancelOrderResponse {
-  
+
   ok: string;
 }
 
@@ -298,7 +298,7 @@ interface ListAccountRequest {
 
 /** ListAccountResponse 查询平台企业余额返回 */
 interface ListAccountResponse {
-  
+
   dealer_infos: AccountInfo[];
 }
 
@@ -741,15 +741,15 @@ export class PaymentClient extends YZHclient {
   }) {
     super(conf);
   }
- 
+
   // CreateBankpayOrder 银行卡实时支付
   async CreateBankpayOrder(
-    req: CreateBankpayOrderRequest, 
+    req: CreateBankpayOrderRequest,
     cb?: (error: null | string,rep: CreateBankpayOrderResponse)=>void
   ): Promise<CreateBankpayOrderResponse> {
     return this.request(
-      'post', 
-      '/api/payment/v1/order-bankpay', 
+      'post',
+      '/api/payment/v1/order-bankpay',
       req,
       {encryption: false },
       cb
@@ -758,12 +758,12 @@ export class PaymentClient extends YZHclient {
 
   // CreateAlipayOrder 支付宝实时支付
   async CreateAlipayOrder(
-    req: CreateAlipayOrderRequest, 
+    req: CreateAlipayOrderRequest,
     cb?: (error: null | string,rep: CreateAlipayOrderResponse)=>void
   ): Promise<CreateAlipayOrderResponse> {
     return this.request(
-      'post', 
-      '/api/payment/v1/order-alipay', 
+      'post',
+      '/api/payment/v1/order-alipay',
       req,
       {encryption: false },
       cb
@@ -772,12 +772,12 @@ export class PaymentClient extends YZHclient {
 
   // CreateWxpayOrder 微信实时支付
   async CreateWxpayOrder(
-    req: CreateWxpayOrderRequest, 
+    req: CreateWxpayOrderRequest,
     cb?: (error: null | string,rep: CreateWxpayOrderResponse)=>void
   ): Promise<CreateWxpayOrderResponse> {
     return this.request(
-      'post', 
-      '/api/payment/v1/order-wxpay', 
+      'post',
+      '/api/payment/v1/order-wxpay',
       req,
       {encryption: false },
       cb
@@ -786,12 +786,12 @@ export class PaymentClient extends YZHclient {
 
   // GetOrder 查询单笔订单信息
   async GetOrder(
-    req: GetOrderRequest, 
+    req: GetOrderRequest,
     cb?: (error: null | string,rep: GetOrderResponse)=>void
   ): Promise<GetOrderResponse> {
     return this.request(
-      'get', 
-      '/api/payment/v1/query-order', 
+      'get',
+      '/api/payment/v1/query-order',
       req,
       {encryption: req?.data_type === 'encryption' },
       cb
@@ -800,12 +800,12 @@ export class PaymentClient extends YZHclient {
 
   // GetDealerVARechargeAccount 查询平台企业汇款信息
   async GetDealerVARechargeAccount(
-    req: GetDealerVARechargeAccountRequest, 
+    req: GetDealerVARechargeAccountRequest,
     cb?: (error: null | string,rep: GetDealerVARechargeAccountResponse)=>void
   ): Promise<GetDealerVARechargeAccountResponse> {
     return this.request(
-      'get', 
-      '/api/payment/v1/va-account', 
+      'get',
+      '/api/payment/v1/va-account',
       req,
       {encryption: false },
       cb
@@ -814,12 +814,12 @@ export class PaymentClient extends YZHclient {
 
   // ListAccount 查询平台企业余额
   async ListAccount(
-    req: ListAccountRequest, 
+    req: ListAccountRequest,
     cb?: (error: null | string,rep: ListAccountResponse)=>void
   ): Promise<ListAccountResponse> {
     return this.request(
-      'get', 
-      '/api/payment/v1/query-accounts', 
+      'get',
+      '/api/payment/v1/query-accounts',
       req,
       {encryption: false },
       cb
@@ -828,12 +828,12 @@ export class PaymentClient extends YZHclient {
 
   // GetEleReceiptFile 查询电子回单
   async GetEleReceiptFile(
-    req: GetEleReceiptFileRequest, 
+    req: GetEleReceiptFileRequest,
     cb?: (error: null | string,rep: GetEleReceiptFileResponse)=>void
   ): Promise<GetEleReceiptFileResponse> {
     return this.request(
-      'get', 
-      '/api/payment/v1/receipt/file', 
+      'get',
+      '/api/payment/v1/receipt/file',
       req,
       {encryption: false },
       cb
@@ -842,12 +842,12 @@ export class PaymentClient extends YZHclient {
 
   // CancelOrder 取消待支付订单
   async CancelOrder(
-    req: CancelOrderRequest, 
+    req: CancelOrderRequest,
     cb?: (error: null | string,rep: CancelOrderResponse)=>void
   ): Promise<CancelOrderResponse> {
     return this.request(
-      'post', 
-      '/api/payment/v1/order/fail', 
+      'post',
+      '/api/payment/v1/order/fail',
       req,
       {encryption: false },
       cb
@@ -856,12 +856,12 @@ export class PaymentClient extends YZHclient {
 
   // RetryOrder 重试挂起状态订单
   async RetryOrder(
-    req: RetryOrderRequest, 
+    req: RetryOrderRequest,
     cb?: (error: null | string,rep: RetryOrderResponse)=>void
   ): Promise<RetryOrderResponse> {
     return this.request(
-      'post', 
-      '/api/payment/v1/order/retry', 
+      'post',
+      '/api/payment/v1/order/retry',
       req,
       {encryption: false },
       cb
@@ -870,12 +870,12 @@ export class PaymentClient extends YZHclient {
 
   // CreateBatchOrder 批次下单
   async CreateBatchOrder(
-    req: CreateBatchOrderRequest, 
+    req: CreateBatchOrderRequest,
     cb?: (error: null | string,rep: CreateBatchOrderResponse)=>void
   ): Promise<CreateBatchOrderResponse> {
     return this.request(
-      'post', 
-      '/api/payment/v1/order-batch', 
+      'post',
+      '/api/payment/v1/order-batch',
       req,
       {encryption: false },
       cb
@@ -884,12 +884,12 @@ export class PaymentClient extends YZHclient {
 
   // ConfirmBatchOrder 批次确认
   async ConfirmBatchOrder(
-    req: ConfirmBatchOrderRequest, 
+    req: ConfirmBatchOrderRequest,
     cb?: (error: null | string,rep: ConfirmBatchOrderResponse)=>void
   ): Promise<ConfirmBatchOrderResponse> {
     return this.request(
-      'post', 
-      '/api/payment/v1/confirm-batch', 
+      'post',
+      '/api/payment/v1/confirm-batch',
       req,
       {encryption: false },
       cb
@@ -898,12 +898,12 @@ export class PaymentClient extends YZHclient {
 
   // QueryBatchOrder 查询批次订单信息
   async QueryBatchOrder(
-    req: QueryBatchOrderRequest, 
+    req: QueryBatchOrderRequest,
     cb?: (error: null | string,rep: QueryBatchOrderResponse)=>void
   ): Promise<QueryBatchOrderResponse> {
     return this.request(
-      'get', 
-      '/api/payment/v1/query-batch', 
+      'get',
+      '/api/payment/v1/query-batch',
       req,
       {encryption: false },
       cb
@@ -912,12 +912,12 @@ export class PaymentClient extends YZHclient {
 
   // CancelBatchOrder 批次撤销
   async CancelBatchOrder(
-    req: CancelBatchOrderRequest, 
+    req: CancelBatchOrderRequest,
     cb?: (error: null | string,rep: CancelBatchOrderResponse)=>void
   ): Promise<CancelBatchOrderResponse> {
     return this.request(
-      'post', 
-      '/api/payment/v1/cancel-batch', 
+      'post',
+      '/api/payment/v1/cancel-batch',
       req,
       {encryption: false },
       cb
@@ -926,12 +926,12 @@ export class PaymentClient extends YZHclient {
 
   // CheckUserAmount 用户结算金额校验
   async CheckUserAmount(
-    req: CheckUserAmountRequest, 
+    req: CheckUserAmountRequest,
     cb?: (error: null | string,rep: CheckUserAmountResponse)=>void
   ): Promise<CheckUserAmountResponse> {
     return this.request(
-      'post', 
-      '/api/payment/v1/risk-check/amount', 
+      'post',
+      '/api/payment/v1/risk-check/amount',
       req,
       {encryption: false },
       cb
@@ -940,12 +940,12 @@ export class PaymentClient extends YZHclient {
 
   // GetOrderLxlw 查询劳务模式单笔订单信息
   async GetOrderLxlw(
-    req: GetOrderLxlwRequest, 
+    req: GetOrderLxlwRequest,
     cb?: (error: null | string,rep: GetOrderLxlwResponse)=>void
   ): Promise<GetOrderLxlwResponse> {
     return this.request(
-      'get', 
-      '/api/payment/v1/query-order', 
+      'get',
+      '/api/payment/v1/query-order',
       req,
       {encryption: req?.data_type === 'encryption' },
       cb
