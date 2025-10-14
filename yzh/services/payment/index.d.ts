@@ -168,7 +168,7 @@ interface GetOrderResponse {
   status_detail: string;
   /** 订单状态码描述 */
   status_message: string;
-  /** 订单详细状态码描述 */
+  /** 订单详情状态码描述 */
   status_detail_message: string;
   /** 订单状态补充信息 */
   supplemental_detail_message: string;
@@ -204,7 +204,7 @@ interface GetOrderResponse {
   pay_remark: string;
   /** 银行名称 */
   bank_name: string;
-  /** 项目标识 */
+  /** 业务线标识 */
   project_id: string;
   /** 新就业形态劳动者 ID，该字段已废弃 */
   anchor_id: string;
@@ -212,7 +212,7 @@ interface GetOrderResponse {
   notes: string;
   /** 系统支付金额，该字段已废弃 */
   sys_amount: string;
-  /** 税费，该字段已废弃 */
+  /** 预扣税费总额 */
   tax: string;
   /** 系统支付费用，该字段已废弃 */
   sys_fee: string;
@@ -232,6 +232,10 @@ interface GetOrderResponse {
   user_real_excluding_vat_amount: string;
   /** 已追缴增附税（本笔订单） */
   user_recover_tax_amount: string;
+  /** 预扣个税税率 */
+  personal_tax_rate: string;
+  /** 预扣个税速算扣除数 */
+  deduct_tax: string;
 }
 
 /** GetDealerVARechargeAccountRequest 查询平台企业汇款信息请求 */
@@ -546,6 +550,14 @@ interface QueryBatchOrderInfo {
   personal_tax_rate: string;
   /** 预扣个税速算扣除数 */
   deduct_tax: string;
+  /** 实缴税费总额 */
+  received_tax_amount: string;
+  /** 用户实收金额 */
+  user_real_amount: string;
+  /** 预扣税费总额 */
+  tax: string;
+  /** 缴税明细 */
+  tax_detail: TaxDetail;
 }
 
 /** CancelBatchOrderRequest 批次撤销请求 */
@@ -660,7 +672,7 @@ interface GetOrderLxlwResponse {
   notes: string;
   /** 系统支付金额，该字段已废弃 */
   sys_amount: string;
-  /** 税费，该字段已废弃 */
+  /** 预扣税费总额 */
   tax: string;
   /** 系统支付费用，该字段已废弃 */
   sys_fee: string;
@@ -680,6 +692,10 @@ interface GetOrderLxlwResponse {
   user_real_excluding_vat_amount: string;
   /** 已追缴增附税（本笔订单） */
   user_recover_tax_amount: string;
+  /** 预扣个税税率 */
+  personal_tax_rate: string;
+  /** 预扣个税速算扣除数 */
+  deduct_tax: string;
 }
 
 /** TaxDetail 缴税明细 */
@@ -720,10 +736,6 @@ interface TaxDetail {
   user_received_additional_tax: string;
   /** 平台企业实缴附加税费 */
   dealer_received_additional_tax: string;
-  /** 预扣个税税率 */
-  personal_tax_rate: string;
-  /** 预扣个税速算扣除数 */
-  deduct_tax: string;
 }
 
 export declare class PaymentClient extends YZHclient {
