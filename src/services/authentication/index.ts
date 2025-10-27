@@ -104,6 +104,8 @@ interface UserExemptedInfoRequest {
     ref: string;
     /** 证件照片 URL 地址 */
     image_urls: string[];
+    /** 外籍人员类型 */
+    resident_type: string;
 }
 
 /** UserExemptedInfoResponse 上传非居民身份证验证名单信息返回 */

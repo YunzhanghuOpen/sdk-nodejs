@@ -42,7 +42,7 @@ interface ApiUserSignRequest {
     real_name: string;
     /** 证件号码 */
     id_card: string;
-    /** 证件类型 idcard：身份证 passport：护照 mtphkm：港澳居民来往内地通行证  mtpt：台湾居民往来大陆通行证 rphkm：中华人民共和国港澳居民居住证 rpt：中华人民共和国台湾居民居住证 fpr：外国人永久居留身份证 ffwp：中华人民共和国外国人就业许可证书 */
+    /** 证件类型 idcard：身份证 passport：护照 mtphkm：港澳居民来往内地通行证 mtpt：台湾居民来往大陆通行证（台胞证） rphkm：中华人民共和国港澳居民居住证 rpt：中华人民共和国台湾居民居住证 fpr：外国人永久居留身份证（外国人永久居留证） fwpa：中华人民共和国外国人工作许可证（A类） fwpb：中华人民共和国外国人工作许可证（B类） fwpc：中华人民共和国外国人工作许可证（C类） mtphkmnc：港澳居民来往内地通行证（非中国国籍） */
     card_type: string;
 }
 
@@ -82,7 +82,7 @@ interface ApiUserSignReleaseRequest {
     real_name: string;
     /** 证件号码 */
     id_card: string;
-    /** 证件类型 idcard：身份证 passport：护照 mtphkm：港澳居民来往内地通行证  mtpt：台湾居民往来大陆通行证 rphkm：中华人民共和国港澳居民居住证 rpt：中华人民共和国台湾居民居住证 fpr：外国人永久居留身份证 ffwp：中华人民共和国外国人就业许可证书 */
+    /** 证件类型 idcard：身份证 passport：护照 mtphkm：港澳居民来往内地通行证 mtpt：台湾居民来往大陆通行证（台胞证） rphkm：中华人民共和国港澳居民居住证 rpt：中华人民共和国台湾居民居住证 fpr：外国人永久居留身份证（外国人永久居留证） fwpa：中华人民共和国外国人工作许可证（A类） fwpb：中华人民共和国外国人工作许可证（B类） fwpc：中华人民共和国外国人工作许可证（C类） mtphkmnc：港澳居民来往内地通行证（非中国国籍） */
     card_type: string;
 }
 
