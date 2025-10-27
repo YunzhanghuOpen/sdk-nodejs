@@ -9,7 +9,7 @@ const authentication = new yzhAPI.AuthenticationClient(config)
 // 银行卡四要素鉴权请求（下发短信验证码）
 authentication
   .BankCardFourAuthVerify({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -28,7 +28,7 @@ authentication
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -38,7 +38,7 @@ authentication
 // 银行卡四要素确认请求（上传短信验证码）
 authentication
   .BankCardFourAuthConfirm({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -59,7 +59,7 @@ authentication
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -69,7 +69,7 @@ authentication
 // 银行卡四要素验证
 authentication
   .BankCardFourVerify({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -88,7 +88,7 @@ authentication
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -98,7 +98,7 @@ authentication
 // 银行卡三要素验证
 authentication
   .BankCardThreeVerify({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -116,7 +116,7 @@ authentication
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -126,7 +126,7 @@ authentication
 // 身份证实名验证
 authentication
   .IDCardVerify({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -143,7 +143,7 @@ authentication
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -153,7 +153,7 @@ authentication
 // 银行卡信息查询
 authentication
   .GetBankCardInfo({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -170,7 +170,7 @@ authentication
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -191,7 +191,7 @@ function parse(file) {
 // 上传非居民身份证验证名单信息
 authentication
   .UserExemptedInfo({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -211,6 +211,7 @@ authentication
     gender: '男',
     notify_url: 'https://www.example.com',
     ref: 'test019011901',
+    resident_type:"1",
   })
   .then((data) => {
     if (data.code === '0000') {
@@ -219,7 +220,7 @@ authentication
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常
@@ -229,7 +230,7 @@ authentication
 // 查看用户是否在非居民身份证验证名单中
 authentication
   .UserWhiteCheck({
-    
+
     /**
       * @param {string} request-id：请求 ID，请求的唯一标识
       * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
@@ -246,7 +247,7 @@ authentication
     } else {
       // 失败返回
       console.log('失败返回 ', 'code：' + data.code + ' message：' + data.message + ' request_id：' + data.request_id)
-    } 
+    }
   })
   .catch((err) => {
     // 发生异常

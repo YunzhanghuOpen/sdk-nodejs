@@ -83,6 +83,8 @@ caculatorLabor
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
     color: "#FF3D3D",
+    navbar_hide: 0,
+    title: "云账户"
 })
 .then((data) => {
   if (data.code === '0000') {
@@ -113,6 +115,8 @@ caculatorLabor
     real_name: "张三",
     id_card:   "11010519491231002X",
     color: "#FF3D3D",
+    navbar_hide: 0,
+    title: "云账户"
 })
 .then((data) => {
   if (data.code === '0000') {
