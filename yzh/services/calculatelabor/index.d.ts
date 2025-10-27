@@ -160,6 +160,10 @@ interface CalculationYearH5UrlRequest {
   broker_id: string;
   /** 主题颜色 */
   color: string;
+  /** 是否隐藏导航栏 0：展示导航栏（默认） 1：隐藏导航栏 */
+  navbar_hide: number;
+  /** 页面标题 */
+  title: string;
 }
 
 /** CalculationYearH5UrlResponse 连续劳务年度税费测算-H5 返回 */
@@ -180,6 +184,10 @@ interface CalculationH5UrlRequest {
   id_card: string;
   /** 主题颜色 */
   color: string;
+  /** 是否隐藏导航栏 0：展示导航栏（默认） 1：隐藏导航栏 */
+  navbar_hide: number;
+  /** 页面标题 */
+  title: string;
 }
 
 /** CalculationH5UrlResponse 连续劳务单笔结算税费测算-H5 返回 */
