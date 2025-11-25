@@ -736,6 +736,12 @@ interface TaxDetail {
   user_received_additional_tax: string;
   /** 平台企业实缴附加税费 */
   dealer_received_additional_tax: string;
+  /** 预扣城建附加税 */
+  additional_urban_tax: string;
+  /** 预扣教育附加税 */
+  additional_tuition_tax: string;
+  /** 预扣地方教育附加税 */
+  additional_local_tuition_tax: string;
 }
 
 export class PaymentClient extends YZHclient {

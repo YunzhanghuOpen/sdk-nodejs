@@ -150,6 +150,12 @@ interface CalcTaxDetail {
   personal_tax_rate: string;
   /** 预扣个税速算扣除数 */
   deduct_tax: string;
+  /** 预扣城建附加税 */
+  additional_urban_tax: string;
+  /** 预扣教育附加税 */
+  additional_tuition_tax: string;
+  /** 预扣地方教育附加税 */
+  additional_local_tuition_tax: string;
 }
 
 /** CalculationYearH5UrlRequest 连续劳务年度税费测算-H5 请求 */
