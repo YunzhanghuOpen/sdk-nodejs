@@ -35,4 +35,6 @@ var usercollect_1 = require("./usercollect");
 Object.defineProperty(exports, "UserCollectServiceClient", { enumerable: true, get: function () { return usercollect_1.UserCollectServiceClient; } });
 var realname_1 = require("./realname");
 Object.defineProperty(exports, "RealNameServiceClient", { enumerable: true, get: function () { return realname_1.RealNameServiceClient; } });
+var taxclearrefund_1 = require("./taxclearrefund");
+Object.defineProperty(exports, "TaxClearRefundClient", { enumerable: true, get: function () { return taxclearrefund_1.TaxClearRefundClient; } });
 

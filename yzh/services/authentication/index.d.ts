@@ -146,6 +146,24 @@ interface GetBankCardInfoResponse {
     is_support: boolean;
 }
 
+/** GetUserWhiteApproveInfoRequest 非居民身份证验证名单审核结果查询请求 */
+interface GetUserWhiteApproveInfoRequest {
+    /** 姓名 */
+    real_name: string;
+    /** 证件号码 */
+    id_card: string;
+    /** 证件类型编码 */
+    card_type: string;
+}
+
+/** GetUserWhiteApproveInfoResponse  */
+interface GetUserWhiteApproveInfoResponse {
+    /** 审核状态 pass：通过 reviewing：审核中 reject：拒绝 */
+    status: string;
+    /** 审核信息 */
+    comment: string;
+}
+
 export declare class AuthenticationClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
@@ -190,6 +208,10 @@ export declare class AuthenticationClient extends YZHclient {
         req: GetBankCardInfoRequest,
         cb?: (error: null | string, rep: GetBankCardInfoResponse) => void
     ): Promise<GetBankCardInfoResponse>;
+    GetUserWhiteApproveInfo(
+        req: GetUserWhiteApproveInfoRequest,
+        cb?: (error: null | string, rep: GetUserWhiteApproveInfoResponse) => void
+    ): Promise<GetUserWhiteApproveInfoResponse>;
 }
 
 export {};

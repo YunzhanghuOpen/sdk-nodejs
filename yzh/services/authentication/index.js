@@ -39,5 +39,9 @@ class AuthenticationClient extends client_1.default {
     async GetBankCardInfo(req, cb) {
         return this.request('get', '/api/payment/v1/card', req, { encryption: false }, cb);
     }
+    // GetUserWhiteApproveInfo 非居民身份证验证名单审核结果查询
+    async GetUserWhiteApproveInfo(req, cb) {
+        return this.request('get', '/api/payment/v1/user/white/approve', req, { encryption: false }, cb);
+    }
 }
 exports.AuthenticationClient = AuthenticationClient;
