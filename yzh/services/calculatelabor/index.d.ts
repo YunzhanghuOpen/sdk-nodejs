@@ -80,6 +80,8 @@ interface CalcTaxRequest {
   pay: string;
   /** 测算类型 */
   tax_type: string;
+  /** 税前订单金额返回值类型 */
+  before_tax_amount_type: string;
 }
 
 /** CalcTaxResponse 订单税费试算返回 */
