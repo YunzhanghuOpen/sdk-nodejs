@@ -13,6 +13,8 @@ interface H5UserPresignRequest {
     certificate_type: number;
     /** 是否收集手机号码 0：不收集（默认） 1：收集手机号码 */
     collect_phone_no: number;
+    /** 签约页面打开方式 1：微信小程序打开签约页面 */
+    page_open_way: number;
 }
 
 /** H5UserPresignResponse 预申请签约返回 */
