@@ -190,7 +190,7 @@ interface GetOrderResponse {
   broker_real_fee: string;
   /** 应收加成服务费抵扣金额 */
   broker_deduct_fee: string;
-  /** 应收用户加成服务费金额 */
+  /** 应收劳动者加成服务费金额 */
   user_fee: string;
   /** 实收综合服务主体加成服务费金额 */
   received_broker_fee: string;
@@ -198,7 +198,7 @@ interface GetOrderResponse {
   received_broker_real_fee: string;
   /** 实收加成服务费抵扣金额 */
   received_broker_deduct_fee: string;
-  /** 实收用户加成服务费金额 */
+  /** 实收劳动者加成服务费金额 */
   received_user_fee: string;
   /** 订单备注 */
   pay_remark: string;
@@ -216,7 +216,7 @@ interface GetOrderResponse {
   tax: string;
   /** 系统支付费用，该字段已废弃 */
   sys_fee: string;
-  /** 用户实收金额 */
+  /** 劳动者实收金额 */
   user_real_amount: string;
   /** 缴税明细 */
   tax_detail: TaxDetail;
@@ -224,18 +224,20 @@ interface GetOrderResponse {
   received_tax_amount: string;
   /** 互联网平台名称 */
   dealer_platform_name: string;
-  /** 用户名称/昵称 */
+  /** 劳动者名称/昵称 */
   dealer_user_nickname: string;
-  /** 用户唯一标识码 */
+  /** 劳动者唯一标识码 */
   dealer_user_id: string;
-  /** 用户实收金额（追缴前） */
+  /** 劳动者应收金额（追缴退回前） */
   user_real_excluding_vat_amount: string;
-  /** 已追缴增附税（本笔订单） */
+  /** 追缴增附税 */
   user_recover_tax_amount: string;
   /** 预扣个税税率 */
   personal_tax_rate: string;
   /** 预扣个税速算扣除数 */
   deduct_tax: string;
+  /** 追缴个税 */
+  user_recover_personal_tax_amount: string;
 }
 
 /** GetDealerVARechargeAccountRequest 查询平台企业汇款信息请求 */
@@ -650,7 +652,7 @@ interface GetOrderLxlwResponse {
   broker_real_fee: string;
   /** 应收加成服务费抵扣金额 */
   broker_deduct_fee: string;
-  /** 应收用户加成服务费金额 */
+  /** 应收劳动者加成服务费金额 */
   user_fee: string;
   /** 实收综合服务主体加成服务费金额 */
   received_broker_fee: string;
@@ -658,7 +660,7 @@ interface GetOrderLxlwResponse {
   received_broker_real_fee: string;
   /** 实收加成服务费抵扣金额 */
   received_broker_deduct_fee: string;
-  /** 实收用户加成服务费金额 */
+  /** 实收劳动者加成服务费金额 */
   received_user_fee: string;
   /** 订单备注 */
   pay_remark: string;
@@ -676,7 +678,7 @@ interface GetOrderLxlwResponse {
   tax: string;
   /** 系统支付费用，该字段已废弃 */
   sys_fee: string;
-  /** 用户实收金额 */
+  /** 劳动者实收金额 */
   user_real_amount: string;
   /** 缴税明细 */
   tax_detail: TaxDetail;
@@ -684,18 +686,20 @@ interface GetOrderLxlwResponse {
   received_tax_amount: string;
   /** 互联网平台名称 */
   dealer_platform_name: string;
-  /** 用户名称/昵称 */
+  /** 劳动者名称/昵称 */
   dealer_user_nickname: string;
-  /** 用户唯一标识码 */
+  /** 劳动者唯一标识码 */
   dealer_user_id: string;
-  /** 用户实收金额（追缴前） */
+  /** 劳动者应收金额（追缴退回前） */
   user_real_excluding_vat_amount: string;
-  /** 已追缴增附税（本笔订单） */
+  /** 追缴增附税 */
   user_recover_tax_amount: string;
   /** 预扣个税税率 */
   personal_tax_rate: string;
   /** 预扣个税速算扣除数 */
   deduct_tax: string;
+  /** 追缴个税 */
+  user_recover_personal_tax_amount: string;
 }
 
 /** TaxDetail 缴税明细 */
@@ -712,27 +716,27 @@ interface TaxDetail {
   received_value_added_tax: string;
   /** 实缴附加税费 */
   received_additional_tax: string;
-  /** 用户预扣个税 */
+  /** 劳动者预扣个税 */
   user_personal_tax: string;
   /** 平台企业预扣个税 */
   dealer_personal_tax: string;
-  /** 用户预扣增值税 */
+  /** 劳动者预扣增值税 */
   user_value_added_tax: string;
   /** 平台企业预扣增值税 */
   dealer_value_added_tax: string;
-  /** 用户预扣附加税费 */
+  /** 劳动者预扣附加税费 */
   user_additional_tax: string;
   /** 平台企业预扣附加税费 */
   dealer_additional_tax: string;
-  /** 用户实缴个税 */
+  /** 劳动者实缴个税 */
   user_received_personal_tax: string;
   /** 平台企业实缴个税 */
   dealer_received_personal_tax: string;
-  /** 用户实缴增值税 */
+  /** 劳动者实缴增值税 */
   user_received_value_added_tax: string;
   /** 平台企业实缴增值税 */
   dealer_received_value_added_tax: string;
-  /** 用户实缴附加税费 */
+  /** 劳动者实缴附加税费 */
   user_received_additional_tax: string;
   /** 平台企业实缴附加税费 */
   dealer_received_additional_tax: string;
@@ -742,6 +746,22 @@ interface TaxDetail {
   additional_tuition_tax: string;
   /** 预扣地方教育附加税 */
   additional_local_tuition_tax: string;
+}
+
+/** CancelOrderInBatchRequest 取消批次中单笔订单请求  */
+interface CancelOrderInBatchRequest {
+  /** 平台企业批次号 */
+  batch_id: string;
+  /** 平台企业 ID */
+  dealer_id: string;
+  /** 综合服务主体 ID */
+  broker_id: string;
+  /** 平台企业订单号 */
+  order_id: string;
+}
+
+/** CancelOrderInBatchResponse 取消批次中单笔订单返回  */
+interface CancelOrderInBatchResponse {
 }
 
 export class PaymentClient extends YZHclient {
@@ -966,6 +986,20 @@ export class PaymentClient extends YZHclient {
       '/api/payment/v1/query-order',
       req,
       {encryption: req?.data_type === 'encryption' },
+      cb
+    );
+  }
+
+   // CancelOrderInBatch 取消批次中单笔订单
+  async CancelOrderInBatch(
+    req: CancelOrderInBatchRequest,
+    cb?: (error: null | string,rep: CancelOrderInBatchResponse)=>void
+  ): Promise<CancelOrderInBatchResponse> {
+    return this.request(
+      'post',
+      '/api/payment/v1/order-batch/cancel-order',
+      req,
+      {encryption: false },
       cb
     );
   }

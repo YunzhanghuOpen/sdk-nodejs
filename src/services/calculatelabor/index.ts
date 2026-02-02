@@ -82,6 +82,10 @@ interface CalcTaxRequest {
   tax_type: string;
   /** 税前订单金额返回值类型 */
   before_tax_amount_type: string;
+  /** 将追缴税费纳入测算 */
+  include_recovery_amount: number;
+  /** 将劳动者服务费纳入测算 */
+  include_user_service_fee: number;
 }
 
 /** CalcTaxResponse 订单税费试算返回 */
@@ -90,19 +94,19 @@ interface CalcTaxResponse {
   pay: string;
   /** 税费总额 */
   tax: string;
-  /** 税后结算金额 */
+  /** 劳动者预估到手金额 */
   after_tax_amount: string;
   /** 缴税明细 */
   tax_detail: CalcTaxDetail;
   /** 税前订单金额 */
   before_tax_amount: string;
-  /** 用户税费总额 */
+  /** 劳动者税费总额 */
   user_tax: string;
   /** 平台企业税费总额 */
   dealer_tax: string;
   /** 云账户税费总额 */
   broker_tax: string;
-  /** 用户服务费 */
+  /** 劳动者服务费 */
   user_fee: string;
   /** 结果 */
   status: string;
@@ -112,14 +116,24 @@ interface CalcTaxResponse {
   status_message: string;
   /** 结果详细状态码描述 */
   status_detail_message: string;
-  /** 用户实收金额（未扣除追缴的增附税） */
+  /** 劳动者预估应收金额（追缴退回前） */
   user_real_excluding_vat_amount: string;
-  /** 用户还未缴清的增附税 */
+  /** 劳动者还未缴清的增附税 */
   user_remaining_repayment_amount: string;
-  /** 已追缴增附税（本笔订单） */
+  /** 追缴增附税 */
   user_recover_tax_amount: string;
   /** 待追缴增附税总金额 */
   user_total_recover_tax_amount: string;
+  /** 劳动者还未缴清的个税 */
+  user_remaining_repayment_personal_amount: string;
+  /** 追缴个税 */
+  user_recover_personal_tax_amount: string;
+  /** 待追缴个税总金额 */
+  user_total_recover_personal_tax_amount: string;
+  /** 退回增附税 */
+  user_refund_tax_amount: string;
+  /** 退回个税 */
+  user_refund_personal_tax_amount: string;
 }
 
 /** CalcTaxDetail 税费明细 */
