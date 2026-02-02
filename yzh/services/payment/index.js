@@ -79,5 +79,9 @@ class PaymentClient extends client_1.default {
             cb
         );
     }
+    // CancelOrderInBatch 取消批次中单笔订单
+    async CancelOrderInBatch(req, cb) {
+        return this.request('post', '/api/payment/v1/order-batch/cancel-order', req, { encryption: false }, cb);
+    }
 }
 exports.PaymentClient = PaymentClient;
