@@ -105,6 +105,8 @@ interface UserExemptedInfoRequest {
     image_urls: string[];
     /** 外籍人员类型 */
     resident_type: string;
+    /** 港澳台通行证号码 */
+    permit_card: string;
 }
 
 /** UserExemptedInfoResponse 上传非居民身份证验证名单信息返回 */

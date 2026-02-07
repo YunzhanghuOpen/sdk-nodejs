@@ -44,6 +44,8 @@ invoice
     request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
+    start_date: '2026-01-01',
+    end_date: '2026-01-26',
   })
   .then((data) => {
     if (data.code === '0000') {
@@ -79,6 +81,8 @@ invoice
     remark: '',
     receive_emails: ['username1@example.com'],
     invoice_media: '1',
+    start_date: '2026-01-01',
+    end_date: '2026-01-26',
   })
   .then((data) => {
     if (data.code === '0000') {
