@@ -239,6 +239,7 @@ authentication
     notify_url: 'https://www.example.com',
     ref: 'test019011901',
     resident_type:"1",
+    permit_card:"H12345678",
   })
   .then((data) => {
     if (data.code === '0000') {

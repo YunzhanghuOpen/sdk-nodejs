@@ -29,6 +29,10 @@ interface GetInvoiceAmountRequest {
     broker_id: string;
     /** 平台企业 ID */
     dealer_id: string;
+    /** 查询开始日期 */
+    start_date: string;
+    /** 查询结束日期 */
+    end_date: string;
 }
 
 /** GetInvoiceAmountResponse 查询可开具发票额度和发票开具信息返回 */
@@ -63,6 +67,10 @@ interface ApplyInvoiceRequest {
     receive_emails: string[];
     /** 发票介质 */
     invoice_media: string;
+    /** 查询开始日期 */
+    start_date: string;
+    /** 查询结束日期 */
+    end_date: string;
 }
 
 /** ApplyInvoiceResponse 发票开具申请返回 */
