@@ -132,6 +132,58 @@ interface GetRefundTaxInfoRequest {
   batch_id: string;
 }
 
+/** GetRefundTaxLaborInfoRequest 查询税费退补涉及劳动者请求 */
+interface GetRefundTaxLaborInfoRequest {
+  /** 综合服务主体 ID */
+  broker_id: string;
+  /** 平台企业 ID */
+  dealer_id: string;
+  /** 批次号 */
+  batch_id: string;
+  /** 税款所属期 */
+  tax_month: string;
+  /** 偏移量 */
+  offset: number;
+  /** 每页返回条数 */
+  length: number;
+}
+
+/** GetRefundTaxLaborInfoResponse 查询税费退补涉及劳动者返回 */
+interface GetRefundTaxLaborInfoResponse {
+  /** 税款所属期 */
+  tax_month: string;
+  /** 批次号 */
+  batch_id: string;
+  /** 批次生成时间 */
+  batch_create_time: string;
+  /** 退补税劳动者数量 */
+  labor_num: string;
+  /** 退补税订单数量 */
+  order_num: string;
+  /** 总数据条数 */
+  total_num: string;
+  /** 退补税劳动者明细 */
+  labor_refund_info: LaborRefundInfo[];
+}
+
+/** LaborRefundInfo 退补税劳动者明细 */
+interface LaborRefundInfo {
+  /** 劳动者姓名 */
+  real_name: string;
+  /** 劳动者证件号 */
+  id_card: string;
+  /** 本批次退补给劳动者税费总额 */
+  refund_tax: string;
+  /** 退补税状态 */
+  tax_refund_status: string;
+  /** 劳动者收款账户 */
+  receiving_account: string;
+  /** 劳动者收款账号 */
+  receiving_channel: string;
+  /** 退补税费时间 */
+  refund_tax_finished_time: string;
+}
+
 export class TaxClearRefundClient extends YZHclient {
   // eslint-disable-next-line no-useless-constructor
   constructor(conf: {
@@ -184,6 +236,20 @@ export class TaxClearRefundClient extends YZHclient {
     return this.request(
       'get',
       '/api/payment/v1/query-clear-status',
+      req,
+      {encryption: false },
+      cb
+    );
+  }
+
+  // GetRefundTaxLaborInfo 查询税费退补涉及劳动者
+  async GetRefundTaxLaborInfo(
+    req: GetRefundTaxLaborInfoRequest, 
+    cb?: (error: null | string,rep: GetRefundTaxLaborInfoResponse)=>void
+  ): Promise<GetRefundTaxLaborInfoResponse> {
+    return this.request(
+      'get', 
+      '/api/payment/v1/query-clear-labor-info', 
       req,
       {encryption: false },
       cb
