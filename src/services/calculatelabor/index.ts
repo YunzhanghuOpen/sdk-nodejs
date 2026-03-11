@@ -23,7 +23,7 @@ interface LaborCaculatorResponse {
     /** 综合所得汇算清缴 */
     year_tax_info: YearTaxInfo;
     /** 月度税务信息列表 */
-    month_tax_list: MontTax[];
+    month_tax_list: MonthTax[];
 }
 
 /** YearTaxInfo 综合所得汇算清缴信息 */
@@ -42,8 +42,8 @@ interface YearTaxInfo {
     total_tax_rate: string;
 }
 
-/** MontTax 月度税务信息 */
-interface MontTax {
+/** MonthTax 月度税务信息 */
+interface MonthTax {
     /** 月份 */
     month: number;
     /** 含增值税收入 */
