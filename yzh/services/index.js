@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserCollectServiceClient = exports.UploadUserSignServiceClient = exports.TaxClient = exports.PaymentClient = exports.InvoiceClient = exports.H5UserSignServiceClient = exports.DataServiceClient = exports.CustomClient = exports.CalculateLaborServiceClient = exports.BizlicXjjH5APIServiceClient = exports.BizlicXjjH5ServiceClient = exports.BizlicGxV2H5APIServiceClient = exports.BizlicGxV2H5ServiceClient = exports.AuthenticationClient = exports.ApiUserSignServiceClient = exports.RealNameServiceClient = exports.Util = void 0;
+exports.TaxClearRefundClient = exports.RealNameServiceClient = exports.UserCollectServiceClient = exports.UploadUserSignServiceClient = exports.TaxClient = exports.PaymentClient = exports.InvoiceClient = exports.H5UserSignServiceClient = exports.DataServiceClient = exports.CustomClient = exports.CalculateLaborServiceClient = exports.BizlicXjjH5APIServiceClient = exports.BizlicXjjH5ServiceClient = exports.BizlicGxV2H5APIServiceClient = exports.BizlicGxV2H5ServiceClient = exports.AuthenticationClient = exports.ApiUserSignServiceClient = exports.Util = void 0;
 var utils_1 = require("../common/utils");
 Object.defineProperty(exports, "Util", { enumerable: true, get: function () { return utils_1.Util; } });
 var apiusersign_1 = require("./apiusersign");
@@ -37,4 +37,3 @@ var realname_1 = require("./realname");
 Object.defineProperty(exports, "RealNameServiceClient", { enumerable: true, get: function () { return realname_1.RealNameServiceClient; } });
 var taxclearrefund_1 = require("./taxclearrefund");
 Object.defineProperty(exports, "TaxClearRefundClient", { enumerable: true, get: function () { return taxclearrefund_1.TaxClearRefundClient; } });
-
