@@ -165,6 +165,6 @@ export class H5UserSignServiceClient extends YZHclient {
         req: H5UserReleaseApplyRequest,
         cb?: (error: null | string, rep: H5UserReleaseApplyResponse) => void
     ): Promise<H5UserReleaseApplyResponse> {
-        return this.request('post', '/api/sdk/v1/release/h5', req, { encryption: false }, cb);
+        return this.request('get', '/api/sdk/v1/release/h5', req, { encryption: false }, cb);
     }
 }

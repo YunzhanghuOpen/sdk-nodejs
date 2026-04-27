@@ -25,7 +25,7 @@ class H5UserSignServiceClient extends client_1.default {
     }
     // H5UserReleaseApply 申请解约
     async H5UserReleaseApply(req, cb) {
-        return this.request('post', '/api/sdk/v1/release/h5', req, { encryption: false }, cb);
+        return this.request('get', '/api/sdk/v1/release/h5', req, { encryption: false }, cb);
     }
 }
 exports.H5UserSignServiceClient = H5UserSignServiceClient;

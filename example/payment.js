@@ -63,9 +63,6 @@ payment
     pay: '0.01',
     check_name: 'Check',
     pay_remark: 'test',
-    /**
-      * @param {string} order_title：支付宝转账备注
-      */
     order_title: '支付宝转账备注',
     notify_url: 'https://www.example.com',
     project_id: '',
