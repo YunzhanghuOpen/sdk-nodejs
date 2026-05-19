@@ -15,5 +15,6 @@ class RealNameServiceClient extends client_1.default {
     async QueryRealNameInfo(req, cb) {
         return this.request('get', '/api/user/v1/query/realname/info', req, { encryption: false }, cb);
     }
+    
 }
 exports.RealNameServiceClient = RealNameServiceClient;

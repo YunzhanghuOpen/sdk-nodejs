@@ -85,32 +85,6 @@ interface H5UserReleaseResponse {
     status: string;
 }
 
-/** H5UserReleaseApplyRequest 申请解约请求 */
-interface H5UserReleaseApplyRequest {
-    /** 平台企业 ID */
-    dealer_id: string;
-    /** 综合服务主体 ID */
-    broker_id: string;
-    /** 姓名 */
-    real_name: string;
-    /** 证件号码 */
-    id_card: string;
-    /** 主题颜色 */
-    color: string;
-    /** 回调 URL */
-    url: string;
-    /** 跳转 URL */
-    redirect_url: string;
-}
-
-/** H5UserReleaseApplyResponse 申请解约返回 */
-interface H5UserReleaseApplyResponse {
-    /** 签约状态 */
-    status: number;
-    /** H5 解约页面 URL */
-    url: string;
-}
-
 export declare class H5UserSignServiceClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;
@@ -139,10 +113,6 @@ export declare class H5UserSignServiceClient extends YZHclient {
         req: H5UserReleaseRequest,
         cb?: (error: null | string, rep: H5UserReleaseResponse) => void
     ): Promise<H5UserReleaseResponse>;
-    H5UserReleaseApply(
-        req: H5UserReleaseApplyRequest,
-        cb?: (error: null | string, rep: H5UserReleaseApplyResponse) => void
-    ): Promise<H5UserReleaseApplyResponse>;
 }
 
 export {};
