@@ -134,6 +134,8 @@ interface DealerOrderInfo {
   received_tax_amount: string;
   /** 缴税明细 */
   tax_detail: OrderTaxDetail;
+  /** 平台企业用户 ID */
+  user_id: string;
 }
 
 /** ListDailyOrderV2Request 查询日订单数据（支付和退款订单）请求 */
