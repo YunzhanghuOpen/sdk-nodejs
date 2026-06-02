@@ -9,9 +9,9 @@ payment
   .CreateBankpayOrder({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     order_id: 'nodetest123',
@@ -48,9 +48,9 @@ payment
   .CreateAlipayOrder({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     order_id: 'nodetest123',
@@ -88,9 +88,9 @@ payment
   .CreateWxpayOrder({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     order_id: 'nodetest1234',
@@ -128,9 +128,9 @@ payment
   .GetOrder({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     order_id: 'nodetest123',
@@ -156,9 +156,9 @@ payment
   .ListAccount({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
@@ -182,9 +182,9 @@ payment
   .GetEleReceiptFile({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     order_id: '120530112204453',
@@ -209,9 +209,9 @@ payment
   .CancelOrder({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
@@ -229,9 +229,9 @@ payment
   .RetryOrder({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
@@ -251,9 +251,9 @@ payment
   .GetDealerVARechargeAccount({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
@@ -278,9 +278,9 @@ payment
   .CheckUserAmount({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     broker_id: config.broker_id,
@@ -307,9 +307,9 @@ payment
   .CreateBatchOrder({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     batch_id: 'batchtest123456',
@@ -359,9 +359,9 @@ payment
   .ConfirmBatchOrder({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     batch_id: 'batchtest123456',
@@ -388,9 +388,9 @@ payment
   .QueryBatchOrder({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
@@ -415,9 +415,9 @@ payment
   .CancelBatchOrder({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     batch_id: 'batchtest123456',
@@ -444,9 +444,9 @@ payment
 .GetOrderLxlw({
 
     /**
-        * @param {string} request-id：请求 ID，请求的唯一标识
-        * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-        * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+        * @param {string} request_id：请求 ID，请求的唯一标识
+        * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+        * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
         */
     request_id: 'requestIdExample123456789',
     order_id: '180490818101749',
@@ -472,9 +472,9 @@ payment
   .CancelOrderInBatch({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     batch_id: 'batchtest123456',
