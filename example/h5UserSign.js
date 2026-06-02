@@ -20,7 +20,6 @@ h5usersign
     id_card: '11010519491231002X',
     certificate_type: 0,
     collect_phone_no: 0,
-    page_open_way: 1,
   })
   .then((data) => {
     if (data.code === '0000') {

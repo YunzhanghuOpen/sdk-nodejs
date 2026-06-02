@@ -45,7 +45,6 @@ apiusersign
     broker_id: config.broker_id,
     real_name: '张三',
     id_card: '11010519491231002X',
-    user_id: 'userId00001',
     card_type: 'idcard',
   })
   .then((data) => {
@@ -76,7 +75,6 @@ apiusersign
     broker_id: config.broker_id,
     real_name: ' 张三',
     id_card: '11010519491231002X',
-    user_id: 'userId00001',
   })
   .then((data) => {
     if (data.code === '0000') {
@@ -106,7 +104,6 @@ apiusersign
     broker_id: config.broker_id,
     real_name: '张三',
     id_card: '11010519491231002X',
-    user_id: 'userId00001',
     card_type: 'idcard',
   })
   .then((data) => {
