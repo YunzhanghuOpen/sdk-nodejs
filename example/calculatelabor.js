@@ -55,7 +55,6 @@ caculatorLabor
     id_card:   "11010519491231002X",
     pay:      "99",
     tax_type:      "before_tax",
-    before_tax_amount_type:      "max",
     include_recovery_amount:      1,
     include_user_service_fee:      1,
 })
