@@ -9,9 +9,9 @@ apiusersign
   .ApiUserSignContract({
 
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
@@ -36,16 +36,15 @@ apiusersign
   .ApiUserSign({
     
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
     real_name: '张三',
     id_card: '11010519491231002X',
-    user_id: 'userId00001',
     card_type: 'idcard',
   })
   .then((data) => {
@@ -67,16 +66,15 @@ apiusersign
   .GetApiUserSignStatus({
     
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
     real_name: ' 张三',
     id_card: '11010519491231002X',
-    user_id: 'userId00001',
   })
   .then((data) => {
     if (data.code === '0000') {
@@ -92,21 +90,20 @@ apiusersign
     console.log(err.toString())
   })
 
-// 用户解约（测试账号专用接口）
+// 用户解约
 apiusersign
   .ApiUserSignRelease({
     
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
-    dealer_id: this.dealer_id,
-    broker_id: this.broker_id,
+    dealer_id: config.dealer_id,
+    broker_id: config.broker_id,
     real_name: '张三',
     id_card: '11010519491231002X',
-    user_id: 'userId00001',
     card_type: 'idcard',
   })
   .then((data) => {

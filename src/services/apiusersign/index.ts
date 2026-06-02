@@ -72,7 +72,7 @@ interface GetApiUserSignStatusResponse {
     status: string;
 }
 
-/** ApiUserSignReleaseRequest 用户解约（测试账号专用接口）请求 */
+/** ApiUserSignReleaseRequest 用户解约请求 */
 interface ApiUserSignReleaseRequest {
     /** 综合服务主体 ID */
     broker_id: string;
@@ -86,7 +86,7 @@ interface ApiUserSignReleaseRequest {
     card_type: string;
 }
 
-/** ApiUserSignReleaseResponse 用户解约（测试账号专用接口）返回 */
+/** ApiUserSignReleaseResponse 用户解约返回 */
 interface ApiUserSignReleaseResponse {
     /** 是否解约成功 */
     status: string;
@@ -140,7 +140,7 @@ export class ApiUserSignServiceClient extends YZHclient {
         return this.request('get', '/api/sign/v1/user/status', req, { encryption: false }, cb);
     }
 
-    // ApiUserSignRelease 用户解约（测试账号专用接口）
+    // ApiUserSignRelease 用户解约
     async ApiUserSignRelease(
         req: ApiUserSignReleaseRequest,
         cb?: (error: null | string, rep: ApiUserSignReleaseResponse) => void

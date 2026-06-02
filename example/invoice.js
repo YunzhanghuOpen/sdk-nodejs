@@ -9,9 +9,9 @@ invoice
   .GetInvoiceStat({
     
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
@@ -37,9 +37,9 @@ invoice
   .GetInvoiceAmount({
     
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
@@ -66,21 +66,21 @@ invoice
   .ApplyInvoice({
     
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     dealer_id: config.dealer_id,
     broker_id: config.broker_id,
     invoice_apply_id: 'test1234567890',
     amount: '1.00',
-    invoice_type: '2',
+    invoice_type: '1',
     bank_name_account: '交通银行北京东大桥支行 12343456654321',
     goods_services_name: '*测试分类*test测试内容',
     remark: '',
     receive_emails: ['username1@example.com'],
-    invoice_media: '1',
+    invoice_media: '3',
     start_date: '2026-01-01',
     end_date: '2026-01-26',
   })
@@ -103,9 +103,9 @@ invoice
   .GetInvoiceStatus({
     
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     invoice_apply_id: 'test1234567890',
@@ -130,9 +130,9 @@ invoice
   .GetInvoiceFile({
     
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     invoice_apply_id: 'test1234567890',
@@ -157,9 +157,9 @@ invoice
   .SendReminderEmail({
     
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     invoice_apply_id: 'test1234567890',
@@ -184,9 +184,9 @@ invoice
   .GetInvoiceInformation({
     
     /**
-      * @param {string} request-id：请求 ID，请求的唯一标识
-      * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
-      * 如未自定义 request-id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+      * @param {string} request_id：请求 ID，请求的唯一标识
+      * 建议平台企业自定义 request_id，并记录在日志中，便于问题发现及排查
+      * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
     invoice_apply_id: 'test1234567890',

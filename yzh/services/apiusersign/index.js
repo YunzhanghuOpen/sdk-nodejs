@@ -23,7 +23,7 @@ class ApiUserSignServiceClient extends client_1.default {
     async GetApiUserSignStatus(req, cb) {
         return this.request('get', '/api/sign/v1/user/status', req, { encryption: false }, cb);
     }
-    // ApiUserSignRelease 用户解约（测试账号专用接口）
+    // ApiUserSignRelease 用户解约
     async ApiUserSignRelease(req, cb) {
         return this.request('post', '/api/sign/v1/user/release', req, { encryption: false }, cb);
     }
