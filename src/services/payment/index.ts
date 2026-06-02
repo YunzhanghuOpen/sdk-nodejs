@@ -74,6 +74,8 @@ interface CreateAlipayOrderRequest {
     dealer_user_nickname: string;
     /** 用户唯一标识码 */
     dealer_user_id: string;
+    /** 支付宝转账备注 */
+    order_title: string;
 }
 
 /** CreateAlipayOrderResponse 支付宝实时支付返回 */
@@ -238,6 +240,8 @@ interface GetOrderResponse {
     deduct_tax: string;
     /** 追缴个税 */
     user_recover_personal_tax_amount: string;
+    /** 支付宝转账备注 */
+    order_title: string;
 }
 
 /** GetDealerVARechargeAccountRequest 查询平台企业汇款信息请求 */
@@ -696,6 +700,8 @@ interface GetOrderLxlwResponse {
     deduct_tax: string;
     /** 追缴个税 */
     user_recover_personal_tax_amount: string;
+    /** 支付宝转账备注 */
+    order_title: string;
 }
 
 /** TaxDetail 缴税明细 */
@@ -744,7 +750,7 @@ interface TaxDetail {
     additional_local_tuition_tax: string;
 }
 
-/** CancelOrderInBatchRequest 取消批次中单笔订单请求  */
+/** CancelOrderInBatchRequest 取消批次中单笔订单请求 */
 interface CancelOrderInBatchRequest {
     /** 平台企业批次号 */
     batch_id: string;

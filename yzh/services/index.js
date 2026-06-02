@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserCollectServiceClient = exports.UploadUserSignServiceClient = exports.TaxClearRefundClient = exports.TaxClient = exports.RealNameServiceClient = exports.PaymentClient = exports.InvoiceClient = exports.H5UserSignServiceClient = exports.DataServiceClient = exports.CustomClient = exports.CalculateLaborServiceClient = exports.BizlicXjjH5APIServiceClient = exports.BizlicXjjH5ServiceClient = exports.BizlicGxV2H5APIServiceClient = exports.BizlicGxV2H5ServiceClient = exports.AuthenticationClient = exports.ApiUserSignServiceClient = exports.Util = void 0;
+exports.UserCollectServiceClient = exports.UploadUserSignServiceClient = exports.TaxClearRefundClient = exports.TaxClient = exports.RealNameServiceClient = exports.PaymentClient = exports.InvoiceClient = exports.H5UserSignServiceClient = exports.FaceAuthServiceClient = exports.DataServiceClient = exports.CustomClient = exports.CalculateLaborServiceClient = exports.BizlicXjjH5APIServiceClient = exports.BizlicXjjH5ServiceClient = exports.BizlicGxV2H5APIServiceClient = exports.BizlicGxV2H5ServiceClient = exports.AuthenticationClient = exports.ApiUserSignServiceClient = exports.Util = void 0;
 var utils_1 = require("../common/utils");
 Object.defineProperty(exports, "Util", { enumerable: true, get: function () { return utils_1.Util; } });
 var apiusersign_1 = require("./apiusersign");
@@ -21,6 +21,8 @@ var custom_1 = require("./custom");
 Object.defineProperty(exports, "CustomClient", { enumerable: true, get: function () { return custom_1.CustomClient; } });
 var dataservice_1 = require("./dataservice");
 Object.defineProperty(exports, "DataServiceClient", { enumerable: true, get: function () { return dataservice_1.DataServiceClient; } });
+var faceauth_1 = require("./faceauth");
+Object.defineProperty(exports, "FaceAuthServiceClient", { enumerable: true, get: function () { return faceauth_1.FaceAuthServiceClient; } });
 var h5usersign_1 = require("./h5usersign");
 Object.defineProperty(exports, "H5UserSignServiceClient", { enumerable: true, get: function () { return h5usersign_1.H5UserSignServiceClient; } });
 var invoice_1 = require("./invoice");

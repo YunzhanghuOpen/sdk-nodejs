@@ -8,6 +8,7 @@ export { BizlicXjjH5APIServiceClient } from './bizlicxjjh5api';
 export { CalculateLaborServiceClient } from './calculatelabor';
 export { CustomClient } from './custom';
 export { DataServiceClient } from './dataservice';
+export { FaceAuthServiceClient } from './faceauth';
 export { H5UserSignServiceClient } from './h5usersign';
 export { InvoiceClient } from './invoice';
 export { PaymentClient } from './payment';

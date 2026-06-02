@@ -92,7 +92,7 @@ apiusersign
     console.log(err.toString())
   })
 
-// 用户解约（测试账号专用接口）
+// 用户解约
 apiusersign
   .ApiUserSignRelease({
     
@@ -102,8 +102,8 @@ apiusersign
       * 如未自定义 request_id，将使用 SDK 中的 UUID 方法自动生成。注意：UUID 方法生成的 request_id 不能保证全局唯一，推荐自定义 request_id
       */
     request_id: 'requestIdExample123456789',
-    dealer_id: this.dealer_id,
-    broker_id: this.broker_id,
+    dealer_id: config.dealer_id,
+    broker_id: config.broker_id,
     real_name: '张三',
     id_card: '11010519491231002X',
     user_id: 'userId00001',
