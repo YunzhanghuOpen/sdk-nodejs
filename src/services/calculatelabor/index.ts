@@ -108,6 +108,8 @@ interface CalcTaxResponse {
     broker_tax: string;
     /** 劳动者服务费 */
     user_fee: string;
+    /** 是否使用基本减除费用 */
+    basic_deducted: string;
     /** 结果 */
     status: string;
     /** 结果详细状态码 */

@@ -79,6 +79,16 @@ class PaymentClient extends client_1.default {
             cb
         );
     }
+    // GetLaborRefundOrder 查询劳动者退款订单信息
+    async GetLaborRefundOrder(req, cb) {
+        return this.request(
+            'get',
+            '/api/payment/v1/query-labor-refund-order',
+            req,
+            { encryption: false },
+            cb
+        );
+    }
     // CancelOrderInBatch 取消批次中单笔订单
     async CancelOrderInBatch(req, cb) {
         return this.request('post', '/api/payment/v1/order-batch/cancel-order', req, { encryption: false }, cb);

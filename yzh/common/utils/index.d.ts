@@ -12,10 +12,10 @@ export declare class Util extends YZHclient {
         timeout?: number;
     });
     /**
-     * 生成最终客服链接
+     * 生成专属服务链接
      * @param {string} baseUrl 基础链接
      * @param {string} memberId 客户系统内用户唯一ID
-     * @returns {string} customerLink：最终客服链接
+     * @returns {string} customerLink：专属服务链接
      */
     getCustomerLink: (baseUrl: string, memberId: string) => string;
 }

@@ -105,6 +105,8 @@ interface UserExemptedInfoRequest {
     image_urls: string[];
     /** 外籍人员类型 */
     resident_type: string;
+    /** 证件有效期 */
+    expiry_date: string;
     /** 港澳台通行证号码 */
     permit_card: string;
 }

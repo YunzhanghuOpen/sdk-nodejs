@@ -7,10 +7,10 @@ class Util extends client_1.default {
     constructor(conf) {
         super(conf);
         /**
-         * 生成最终客服链接
+         * 生成专属服务链接
          * @param {string} baseUrl 基础链接
          * @param {string} memberId 客户系统内用户唯一ID
-         * @returns {string} customerLink：最终客服链接
+         * @returns {string} customerLink：专属服务链接
          */
         this.getCustomerLink = (baseUrl, memberId) => {
             try {
