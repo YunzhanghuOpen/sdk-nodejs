@@ -6,4 +6,4 @@ const util = new yunzhanghu.Util(config)
 
 const url = util.getCustomerLink('https://www.example.com', 'testmemberid')
 
-console.log('生成最终客服链接：', url)
+console.log('生成专属服务链接：', url)

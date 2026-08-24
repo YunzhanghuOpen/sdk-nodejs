@@ -30,12 +30,14 @@ interface H5UserPresignResponse {
 
 /** H5UserSignRequest 申请签约请求 */
 interface H5UserSignRequest {
-    /** H5 签约 token */
+    /** 签约 token */
     token: string;
-    /** H5 页面主题颜色 */
+    /** 主题颜色 */
     color: string;
-    /** 回调 URL 地址 */
+    /** 签约完成回调地址 */
     url: string;
+    /** 签约事件状态回调地址 */
+    event_callback_url: string;
     /** 跳转 URL */
     redirect_url: string;
 }
@@ -44,6 +46,8 @@ interface H5UserSignRequest {
 interface H5UserSignResponse {
     /** H5 签约页面 URL */
     url: string;
+    /** 微信签约小程序码 URL */
+    wx_mp_code_url: string;
 }
 
 /** GetH5UserSignStatusRequest 获取用户签约状态请求 */

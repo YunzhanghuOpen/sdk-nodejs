@@ -149,6 +149,8 @@ interface GetOrderRequest {
 interface GetOrderResponse {
     /** 平台企业订单号 */
     order_id: string;
+    /** 退回类型 */
+    refund_origin: string;
     /** 订单金额 */
     pay: string;
     /** 综合服务主体 ID */
@@ -233,12 +235,18 @@ interface GetOrderResponse {
     user_real_excluding_vat_amount: string;
     /** 追缴增附税 */
     user_recover_tax_amount: string;
+    /** 劳动者还未缴清的个税 */
+    user_remaining_repayment_personal_amount: string;
     /** 预扣个税税率 */
     personal_tax_rate: string;
     /** 预扣个税速算扣除数 */
     deduct_tax: string;
+    /** 是否使用基本减除费用 */
+    basic_deducted: string;
     /** 追缴个税 */
     user_recover_personal_tax_amount: string;
+    /** 待追缴个税总金额 */
+    user_total_recover_personal_tax_amount: string;
     /** 支付宝转账备注 */
     order_title: string;
 }
@@ -609,6 +617,8 @@ interface GetOrderLxlwRequest {
 interface GetOrderLxlwResponse {
     /** 平台企业订单号 */
     order_id: string;
+    /** 退回类型 */
+    refund_origin: string;
     /** 订单金额 */
     pay: string;
     /** 综合服务主体 ID */
@@ -693,12 +703,18 @@ interface GetOrderLxlwResponse {
     user_real_excluding_vat_amount: string;
     /** 追缴增附税 */
     user_recover_tax_amount: string;
+    /** 劳动者还未缴清的个税 */
+    user_remaining_repayment_personal_amount: string;
     /** 预扣个税税率 */
     personal_tax_rate: string;
     /** 预扣个税速算扣除数 */
     deduct_tax: string;
+    /** 是否使用基本减除费用 */
+    basic_deducted: string;
     /** 追缴个税 */
     user_recover_personal_tax_amount: string;
+    /** 待追缴个税总金额 */
+    user_total_recover_personal_tax_amount: string;
     /** 支付宝转账备注 */
     order_title: string;
 }
@@ -747,6 +763,92 @@ interface TaxDetail {
     additional_tuition_tax: string;
     /** 预扣地方教育附加税 */
     additional_local_tuition_tax: string;
+}
+
+/** GetLaborRefundOrderRequest 查询劳动者退款订单信息请求 */
+interface GetLaborRefundOrderRequest {
+    /** 平台企业 ID */
+    dealer_id: string;
+    /** 平台企业订单号 */
+    order_id: string;
+    /** 支付路径 */
+    channel: string;
+}
+
+/** GetLaborRefundOrderResponse 查询劳动者退款订单信息返回 */
+interface GetLaborRefundOrderResponse {
+    /** 综合服务主体 ID */
+    broker_id: string;
+    /** 平台企业 ID */
+    dealer_id: string;
+    /** 综合服务平台流水号 */
+    ref: string;
+    /** 退款流水号 */
+    refund_ref: string;
+    /** 平台企业订单号 */
+    order_id: string;
+    /** 姓名 */
+    real_name: string;
+    /** 账号 */
+    card_no: string;
+    /** 身份证号码 */
+    id_card: string;
+    /** 手机号 */
+    phone_no: string;
+    /** 退款类型 */
+    refund_type: string;
+    /** 退款总金额 */
+    refund_total_amount: string;
+    /** 退回劳动者实收金额 */
+    refund_user_real_amount: string;
+    /** 是否退加成服务费 */
+    is_refund_fee: string;
+    /** 退回劳动者加成服务费金额 */
+    refund_user_fee: string;
+    /** 退回平台企业加成服务费金额 */
+    refund_broker_fee: string;
+    /** 退回平台企业服务费实收金额 */
+    refund_real_fee: string;
+    /** 退回平台企业服务费抵扣金额 */
+    refund_deduct_fee: string;
+    /** 是否退税费 */
+    is_refund_tax: string;
+    /** 退回税费总额 */
+    refund_tax_amount: string;
+    /** 退回个税金额 */
+    refund_personal_tax: string;
+    /** 退回增值税金额 */
+    refund_value_added_tax: string;
+    /** 退回附加税金额 */
+    refund_additional_tax: string;
+    /** 退回已追缴个税 */
+    refund_labor_recovery_personal_tax: string;
+    /** 退回已追缴增附税 */
+    refund_labor_recovery_added_tax: string;
+    /** 退回劳动者个税 */
+    refund_user_personal_tax: string;
+    /** 退回劳动者增值税 */
+    refund_user_value_added_tax: string;
+    /** 退回劳动者附加税 */
+    refund_user_additional_tax: string;
+    /** 退回平台企业个税 */
+    refund_dealer_personal_tax: string;
+    /** 退回平台企业增值税 */
+    refund_dealer_value_added_tax: string;
+    /** 退回平台企业附加税 */
+    refund_dealer_additional_tax: string;
+    /** 退回云账户个税 */
+    refund_broker_personal_tax: string;
+    /** 退回云账户增值税 */
+    refund_broker_value_added_tax: string;
+    /** 退回云账户附加税 */
+    refund_broker_additional_tax: string;
+    /** 退款状态 */
+    refund_status: string;
+    /** 退款创建时间 */
+    create_time: string;
+    /** 退款完成时间 */
+    finished_at: string;
 }
 
 /** CancelOrderInBatchRequest 取消批次中单笔订单请求 */
@@ -836,6 +938,10 @@ export declare class PaymentClient extends YZHclient {
         req: GetOrderLxlwRequest,
         cb?: (error: null | string, rep: GetOrderLxlwResponse) => void
     ): Promise<GetOrderLxlwResponse>;
+    GetLaborRefundOrder(
+        req: GetLaborRefundOrderRequest,
+        cb?: (error: null | string, rep: GetLaborRefundOrderResponse) => void
+    ): Promise<GetLaborRefundOrderResponse>;
     CancelOrderInBatch(
         req: CancelOrderInBatchRequest,
         cb?: (error: null | string, rep: CancelOrderInBatchResponse) => void
