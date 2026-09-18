@@ -719,52 +719,6 @@ interface GetOrderLxlwResponse {
     order_title: string;
 }
 
-/** TaxDetail 缴税明细 */
-interface TaxDetail {
-    /** 预扣个税 */
-    personal_tax: string;
-    /** 预扣增值税 */
-    value_added_tax: string;
-    /** 预扣附加税费 */
-    additional_tax: string;
-    /** 实缴个税 */
-    received_personal_tax: string;
-    /** 实缴增值税 */
-    received_value_added_tax: string;
-    /** 实缴附加税费 */
-    received_additional_tax: string;
-    /** 劳动者预扣个税 */
-    user_personal_tax: string;
-    /** 平台企业预扣个税 */
-    dealer_personal_tax: string;
-    /** 劳动者预扣增值税 */
-    user_value_added_tax: string;
-    /** 平台企业预扣增值税 */
-    dealer_value_added_tax: string;
-    /** 劳动者预扣附加税费 */
-    user_additional_tax: string;
-    /** 平台企业预扣附加税费 */
-    dealer_additional_tax: string;
-    /** 劳动者实缴个税 */
-    user_received_personal_tax: string;
-    /** 平台企业实缴个税 */
-    dealer_received_personal_tax: string;
-    /** 劳动者实缴增值税 */
-    user_received_value_added_tax: string;
-    /** 平台企业实缴增值税 */
-    dealer_received_value_added_tax: string;
-    /** 劳动者实缴附加税费 */
-    user_received_additional_tax: string;
-    /** 平台企业实缴附加税费 */
-    dealer_received_additional_tax: string;
-    /** 预扣城建附加税 */
-    additional_urban_tax: string;
-    /** 预扣教育附加税 */
-    additional_tuition_tax: string;
-    /** 预扣地方教育附加税 */
-    additional_local_tuition_tax: string;
-}
-
 /** GetLaborRefundOrderRequest 查询劳动者退款订单信息请求 */
 interface GetLaborRefundOrderRequest {
     /** 平台企业 ID */
@@ -849,6 +803,52 @@ interface GetLaborRefundOrderResponse {
     create_time: string;
     /** 退款完成时间 */
     finished_at: string;
+}
+
+/** TaxDetail 缴税明细 */
+interface TaxDetail {
+    /** 预扣个税 */
+    personal_tax: string;
+    /** 预扣增值税 */
+    value_added_tax: string;
+    /** 预扣附加税费 */
+    additional_tax: string;
+    /** 实缴个税 */
+    received_personal_tax: string;
+    /** 实缴增值税 */
+    received_value_added_tax: string;
+    /** 实缴附加税费 */
+    received_additional_tax: string;
+    /** 劳动者预扣个税 */
+    user_personal_tax: string;
+    /** 平台企业预扣个税 */
+    dealer_personal_tax: string;
+    /** 劳动者预扣增值税 */
+    user_value_added_tax: string;
+    /** 平台企业预扣增值税 */
+    dealer_value_added_tax: string;
+    /** 劳动者预扣附加税费 */
+    user_additional_tax: string;
+    /** 平台企业预扣附加税费 */
+    dealer_additional_tax: string;
+    /** 劳动者实缴个税 */
+    user_received_personal_tax: string;
+    /** 平台企业实缴个税 */
+    dealer_received_personal_tax: string;
+    /** 劳动者实缴增值税 */
+    user_received_value_added_tax: string;
+    /** 平台企业实缴增值税 */
+    dealer_received_value_added_tax: string;
+    /** 劳动者实缴附加税费 */
+    user_received_additional_tax: string;
+    /** 平台企业实缴附加税费 */
+    dealer_received_additional_tax: string;
+    /** 预扣城建附加税 */
+    additional_urban_tax: string;
+    /** 预扣教育附加税 */
+    additional_tuition_tax: string;
+    /** 预扣地方教育附加税 */
+    additional_local_tuition_tax: string;
 }
 
 /** CancelOrderInBatchRequest 取消批次中单笔订单请求 */
