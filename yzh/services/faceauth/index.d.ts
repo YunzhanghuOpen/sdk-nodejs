@@ -65,6 +65,28 @@ interface FaceAuthDetail {
     fail_reason: string;
 }
 
+/** NotifyFaceAuthRequest 人脸识别实名核验结果回调通知请求 */
+export interface NotifyFaceAuthRequest {
+    /** 综合服务主体 ID */
+    broker_id: string;
+    /** 平台企业 ID */
+    dealer_id: string;
+    /** 姓名 */
+    real_name: string;
+    /** 身份证号码 */
+    id_card: string;
+    /** 人脸识别实名核验唯一 ID */
+    record_id: string;
+    /** 平台企业实名核验 ID */
+    verification_id: string;
+    /** 实名核验状态 */
+    status: string;
+    /** 实名核验完成时间 */
+    verify_time: string;
+    /** 实名核验失败详情 */
+    detail: FaceAuthDetail;
+}
+
 export declare class FaceAuthServiceClient extends YZHclient {
     constructor(conf: {
         dealer_id: string;

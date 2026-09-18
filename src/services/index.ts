@@ -17,3 +17,7 @@ export { TaxClient } from './tax';
 export { TaxClearRefundClient } from './taxclearrefund';
 export { UploadUserSignServiceClient } from './uploadusersign';
 export { UserCollectServiceClient } from './usercollect';
+export { WalletBalanceQueryClient } from './walletbalancequery';
+export { WalletDeductClient } from './walletdeduct';
+export { WalletIncomeClient } from './walletincome';
+export { WalletWithdrawClient } from './walletwithdraw';

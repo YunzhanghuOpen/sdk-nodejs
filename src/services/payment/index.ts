@@ -1020,13 +1020,7 @@ export class PaymentClient extends YZHclient {
         req: GetLaborRefundOrderRequest,
         cb?: (error: null | string, rep: GetLaborRefundOrderResponse) => void
     ): Promise<GetLaborRefundOrderResponse> {
-        return this.request(
-            'get',
-            '/api/payment/v1/query-labor-refund-order',
-            req,
-            { encryption: false },
-            cb
-        );
+        return this.request('get', '/api/payment/v1/query-labor-refund-order', req, { encryption: false }, cb);
     }
 
     // CancelOrderInBatch 取消批次中单笔订单

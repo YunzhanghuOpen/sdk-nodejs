@@ -67,7 +67,7 @@ interface FaceAuthDetail {
 }
 
 /** NotifyFaceAuthRequest 人脸识别实名核验结果回调通知请求 */
-interface NotifyFaceAuthRequest {
+export interface NotifyFaceAuthRequest {
     /** 综合服务主体 ID */
     broker_id: string;
     /** 平台企业 ID */
